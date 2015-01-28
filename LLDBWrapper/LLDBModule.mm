@@ -10,6 +10,7 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBModule
+LLDBOBJECT_INIT_IMPL(lldb::SBModule);
 - (LLDBFileSpec *)fileSpec
 {
 	LLDBFileSpec*	f1	=	[[LLDBFileSpec alloc] init];

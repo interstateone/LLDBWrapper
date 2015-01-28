@@ -10,13 +10,14 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBInstruction
+LLDBOBJECT_INIT_IMPL(lldb::SBInstruction);
 - (NSString *)mnemonicForTarget:(LLDBTarget *)target
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(target, LLDBTarget);
 	
 	////
 	
-	return	string_from_utf8_c_string(_raw.GetMnemonic(target->_raw));
+	return	fromC(_raw.GetMnemonic(target->_raw));
 }
 - (NSString *)operandsForTarget:(LLDBTarget *)target
 {
@@ -24,7 +25,7 @@
 	
 	////
 	
-	return	string_from_utf8_c_string(_raw.GetOperands(target->_raw));
+	return	fromC(_raw.GetOperands(target->_raw));
 }
 - (NSString *)commentForTarget:(LLDBTarget *)target
 {
@@ -32,7 +33,7 @@
 	
 	////
 	
-	return	string_from_utf8_c_string(_raw.GetComment(target->_raw));
+	return	fromC(_raw.GetComment(target->_raw));
 }
 
 

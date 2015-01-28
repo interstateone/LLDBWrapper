@@ -12,6 +12,8 @@
 	<dict>
 		<key>001C1CFB11B39CFCFC759E7C27598F55486FA6E1</key>
 		<string>https://github.com/Eonil/LLDB.Swift.git</string>
+		<key>48B9C1DE76C8BEA5F768021CB65ADA820F587B93</key>
+		<string>https://github.com/Eonil/LLDBWrapper.ObjectiveC.git</string>
 		<key>8FCE9684CD523B6697D2B9630EF1DB032F46FA7C</key>
 		<string>https://github.com/Eonil/ClangWrapper.Swift.git</string>
 		<key>9B76F7F7455EC6A07EA1AD0D4AAF24D2E732CD1B</key>
@@ -22,6 +24,8 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>001C1CFB11B39CFCFC759E7C27598F55486FA6E1</key>
+		<string>../../LLDBWrapper</string>
+		<key>48B9C1DE76C8BEA5F768021CB65ADA820F587B93</key>
 		<string>..</string>
 		<key>8FCE9684CD523B6697D2B9630EF1DB032F46FA7C</key>
 		<string>../../ClangWrapper</string>
@@ -29,11 +33,11 @@
 		<string>../../Unix/homebrew</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Eonil/LLDB.Swift.git</string>
+	<string>https://github.com/Eonil/LLDBWrapper.ObjectiveC.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>001C1CFB11B39CFCFC759E7C27598F55486FA6E1</string>
+	<string>48B9C1DE76C8BEA5F768021CB65ADA820F587B93</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -59,6 +63,14 @@
 			<string>001C1CFB11B39CFCFC759E7C27598F55486FA6E1</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LLDBWrapper</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>48B9C1DE76C8BEA5F768021CB65ADA820F587B93</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LLDBWrapper.ObjectiveC</string>
 		</dict>
 	</array>
 </dict>

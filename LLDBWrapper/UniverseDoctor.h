@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Eonil. All rights reserved.
 //
 
+#pragma once
 #import "BasicObject.h"
 
 

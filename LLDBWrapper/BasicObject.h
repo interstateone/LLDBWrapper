@@ -6,6 +6,7 @@
 //
 //
 
+#pragma once
 #import <Foundation/Foundation.h>
 #import "UniverseCommon.h"
 
@@ -31,4 +32,5 @@
 - (id)mutableCopy UNIVERSE_UNAVAILABLE_METHOD;
 + (id)new UNIVERSE_UNAVAILABLE_METHOD;
 - (id)copy UNIVERSE_UNAVAILABLE_METHOD;
+- (id)copyScriptingValue:(id)value forKey:(NSString *)key withProperties:(NSDictionary *)properties UNIVERSE_UNAVAILABLE_METHOD;
 @end

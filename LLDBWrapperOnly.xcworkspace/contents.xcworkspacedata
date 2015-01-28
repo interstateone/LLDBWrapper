@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:LLDBSymbolContextList.h">
+   </FileRef>
+   <FileRef
+      location = "group:LLDBSymbolContextList.m">
+   </FileRef>
+   <FileRef
       location = "container:LLDBWrapper.xcodeproj">
    </FileRef>
 </Workspace>

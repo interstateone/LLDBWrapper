@@ -10,6 +10,7 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBInstructionList
+LLDBOBJECT_INIT_IMPL(lldb::SBInstructionList);
 - (size_t)size
 {
 	return	_raw.GetSize();

@@ -10,6 +10,7 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBValueList
+LLDBOBJECT_INIT_IMPL(lldb::SBValueList);
 - (uint32_t)size
 {
 	return	_raw.GetSize();

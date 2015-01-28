@@ -6,6 +6,7 @@
 //
 //
 
+#pragma once
 #import "LLDBObject.h"
 #import	"LLDBDeclarations.h"
 

@@ -10,6 +10,7 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBTarget
+LLDBOBJECT_INIT_IMPL(lldb::SBTarget);
 - (void)dealloc
 {
 	bool	f1	=	_raw.GetDebugger().DeleteTarget(_raw);
@@ -34,7 +35,8 @@
 	char const*	args[2]	=	{"AAA", NULL};
 	char const*	envs[2]	=	{"aaa", NULL};
 	
-	return	try_instantiation_of_wrapper<lldb::SBProcess, LLDBProcess>(_raw.LaunchSimple(args, envs, [workingDirectory UTF8String]));
+	auto p	=	_raw.LaunchSimple(args, envs, [workingDirectory UTF8String]);
+	return	[[LLDBProcess alloc] initWithCPPObject:p];
 	
 //	LLDBProcess*	p1	=	[LLDBProcess LLDBObject____INTERNAL____instantiation];
 //	p1->_raw			=	_raw.LaunchSimple(args, envs, [workingDirectory UTF8String]);
@@ -47,17 +49,13 @@
 	
 	////
 	
-	LLDBProcess*		p1	=	[[LLDBProcess alloc] init];
 	lldb::SBListener	lis1{};
 	lldb::SBError		err1{};
-	UNIVERSE_DEBUG_ASSERT(lis1.IsValid() == false);
-	UNIVERSE_DEBUG_ASSERT(err1.IsValid() == false);
-	
-	p1->_raw			=	_raw.AttachToProcessWithID(lis1, pid, err1);
-	UNIVERSE_DEBUG_ASSERT(err1.IsValid() or p1->_raw.IsValid());
+	auto const			p	=	_raw.AttachToProcessWithID(lis1, pid, err1);
+	UNIVERSE_DEBUG_ASSERT(err1.IsValid() or p.IsValid());
 	handle_error(err1, error);
 	
-	return	p1;
+	return	[[LLDBProcess alloc] initWithCPPObject:p];
 }
 
 - (NSUInteger)numberOfModules
@@ -82,7 +80,7 @@
 }
 - (NSString *)triple
 {
-	return	string_from_utf8_c_string(_raw.GetTriple());
+	return	fromC(_raw.GetTriple());
 }
 
 

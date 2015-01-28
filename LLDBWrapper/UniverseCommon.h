@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Eonil. All rights reserved.
 //
 
+#pragma once
 #ifdef	__cplusplus
 extern "C"
 {

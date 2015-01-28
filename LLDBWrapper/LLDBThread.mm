@@ -33,10 +33,87 @@
 
 
 @implementation LLDBThread
+LLDBOBJECT_INIT_IMPL(lldb::SBThread);
++ (LLDBThread *)threadWithMaybeCPPObject:(lldb::SBThread)raw
+{
+	if (raw.IsValid())
+	{
+		return	nil;
+	}
+	else
+	{
+		return	[[LLDBThread alloc] initWithCPPObject:raw];
+	}
+}
+
+
+
+
+- (LLDBStopReason)stopReason
+{
+	return	fromCPP(_raw.GetStopReason());
+}
+- (size_t)stopReasonDataCount
+{
+	return	_raw.GetStopReasonDataCount();
+}
+- (uint64_t)stopReasonDataAtIndex:(uint32_t)index
+{
+	return	_raw.GetStopReasonDataAtIndex(index);
+}
+- (NSString *)stopDescription
+{
+	//	Passing `nullptr` will provide exact length including terminating NULL byte.
+	//	https://github.com/ice799/lldb/blob/master/source/API/SBThread.cpp#L83
+	//
+	//	This function is fundamentally inefficient, and there's no way t avoid it.
+
+	auto const	len		=	_raw.GetStopDescription(nullptr, 0);
+	char		buf[len];
+	auto const	len1	=	_raw.GetStopDescription(buf, len);
+	assert(buf[len-1] == 0);
+	assert(len1 == len);
+	
+	return	fromC(buf);
+}
+- (LLDBValue *)stopReturnValue
+{
+	return	[[LLDBValue alloc] initWithCPPObject:_raw.GetStopReturnValue()];
+}
+
+
+
+
+
+
+- (LLDBThreadIDType)threadID
+{
+	return	_raw.GetThreadID();
+}
+- (uint32_t)indexID
+{
+	return	_raw.GetIndexID();
+}
 - (NSString *)name
 {
-	return	string_from_utf8_c_string(_raw.GetName());
+	return	fromC(_raw.GetName());
 }
+- (NSString *)queueName
+{
+	return	fromC(_raw.GetQueueName());
+}
+- (LLDBQueueIDType)queueID
+{
+	return	_raw.GetQueueID();
+}
+
+
+
+
+
+
+
+
 
 - (void)stepOver
 {
@@ -72,6 +149,39 @@
 {
 	_raw.StepInstruction(stepOver ? true : false);
 }
+- (LLDBError *)stepOverUntilFrame:(LLDBFrame *)frame file:(LLDBFileSpec *)fileSpec line:(uint32_t)line
+{
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(frame, LLDBFrame);
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(fileSpec, LLDBFileSpec);
+	
+	auto const	r	=	_raw.StepOverUntil(frame->_raw, fileSpec->_raw, line);
+	return	[LLDBError errorWithMaybeCPPObject:r];
+}
+- (LLDBError *)jumpToFile:(LLDBFileSpec *)fileSpec line:(uint32_t)line
+{
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(fileSpec, LLDBFileSpec);
+	
+	auto const	r	=	_raw.JumpToLine(fileSpec->_raw, line);
+	return	[LLDBError errorWithMaybeCPPObject:r];
+}
+- (void)runToAddress:(LLDBAddressType)address
+{
+	_raw.RunToAddress(address);
+}
+- (LLDBError *)returnFromFrame:(LLDBFrame *)frame returnValue:(LLDBValue *__autoreleasing *)returnValue
+{
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(frame, LLDBFrame);
+	UNIVERSE_DEBUG_ASSERT(returnValue != nullptr);
+	
+	lldb::SBValue	rv;
+	auto const	e	=	_raw.ReturnFromFrame(frame->_raw, rv);
+	*returnValue	=	[[LLDBValue alloc] initWithCPPObject:rv];
+	return	[LLDBError errorWithMaybeCPPObject:e];
+}
+
+
+
+
 
 
 - (BOOL)suspend
@@ -95,34 +205,25 @@
 
 
 
-- (NSUInteger)numberOfFrames
+- (uint32_t)numberOfFrames
 {
 	return	_raw.GetNumFrames();
 }
-- (LLDBFrame *)frameAtIndex:(NSUInteger)index
+- (LLDBFrame *)frameAtIndex:(uint32_t)index
 {
-	UNIVERSE_DEBUG_ASSERT(index < UINT32_MAX);
-	UNIVERSE_DEBUG_ASSERT(index < [self numberOfFrames]);
+	UNIVERSE_DEBUG_ASSERT(index < _raw.GetNumFrames());
 	
-	////
-	
-	LLDBFrame*	f1	=	[[LLDBFrame alloc] init];
-	f1->_raw		=	_raw.GetFrameAtIndex((uint32_t)index);
-	return	f1;
+	return	[[LLDBFrame alloc] initWithCPPObject:_raw.GetFrameAtIndex(index)];
 }
 
 - (LLDBProcess *)process
 {
-	LLDBProcess*	p1	=	[[LLDBProcess alloc] init];
-	p1->_raw			=	_raw.GetProcess();
-	return	p1;
+	return	[[LLDBProcess alloc] initWithCPPObject:_raw.GetProcess()];
 }
 
 - (BOOL)isEqualToThread:(LLDBThread *)object
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(object, LLDBThread);
-	
-	////
 	
 	return	self == object || _raw.operator==(object->_raw) == true;
 }

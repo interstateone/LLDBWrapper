@@ -10,6 +10,7 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBBreakpoint
+LLDBOBJECT_INIT_IMPL(lldb::SBBreakpoint);
 - (BOOL)isEnabled
 {
 	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());

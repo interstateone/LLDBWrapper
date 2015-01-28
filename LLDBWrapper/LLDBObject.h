@@ -6,6 +6,7 @@
 //
 //
 
+#pragma once
 #import "BasicObject.h"
 
 /*!

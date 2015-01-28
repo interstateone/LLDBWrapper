@@ -10,9 +10,10 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBFileSpec
+LLDBOBJECT_INIT_IMPL(lldb::SBFileSpec);
 - (NSString *)filename
 {
-	return	[NSString stringWithUTF8String:_raw.GetFilename()];
+	return	fromC(_raw.GetFilename());
 }
 
 

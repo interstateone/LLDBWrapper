@@ -6,24 +6,54 @@
 //
 //
 
+#pragma once
 #import "LLDBObject.h"
 
 
-@class	LLDBObject;
-@class	LLDBContext;
+
+
+
+typedef	uint64_t	LLDBAddressType;
+typedef uint64_t	LLDBThreadIDType;
+typedef uint64_t	LLDBProcessIDType;
+typedef uint64_t	LLDBQueueIDType;
+
+
+
+
 @class	LLDBDebugger;
-@class	LLDBTarget;
 @class	LLDBBreakpoint;
-//@class	LLDBSourceManager;
-@class	LLDBFileSpec;
-@class	LLDBModule;
+
+@class	LLDBTarget;
 @class	LLDBProcess;
 @class	LLDBThread;
 @class	LLDBFrame;
+
+
+//@class	LLDBSourceManager;
+@class	LLDBFileSpec;
+@class	LLDBLineEntry;
+
+@class	LLDBModule;
+@class	LLDBCompileUnit;
 @class	LLDBFunction;
+@class	LLDBBlock;
 @class	LLDBInstructionList;
 @class	LLDBInstruction;
 @class	LLDBSymbol;
 @class	LLDBValueList;
 @class	LLDBValue;
+@class	LLDBSymbolContext;
+
 @class	LLDBError;
+
+@class	LLDBBroadcaster;
+@class	LLDBListener;
+@class	LLDBEvent;
+
+
+
+
+
+@class	LLDBObject;
+

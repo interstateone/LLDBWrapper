@@ -10,6 +10,7 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBSymbol
+LLDBOBJECT_INIT_IMPL(lldb::SBSymbol);
 - (NSString *)name
 {
 	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());

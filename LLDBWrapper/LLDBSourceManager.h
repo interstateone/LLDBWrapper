@@ -10,4 +10,5 @@
 //#import "LLDBDeclarations.h"
 //
 //@interface LLDBSourceManager : LLDBObject
+//- (instancetype)init UNIVERSE_UNAVAILABLE_METHOD;
 //@end

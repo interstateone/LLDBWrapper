@@ -10,13 +10,14 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBValue
+LLDBOBJECT_INIT_IMPL(lldb::SBValue);
 - (NSString *)name
 {
-	return	[NSString stringWithUTF8String:_raw.GetName()];
+	return	fromC(_raw.GetName());
 }
 - (NSString *)typeName
 {
-	return	string_from_utf8_c_string(_raw.GetTypeName());
+	return	fromC(_raw.GetTypeName());
 }
 //- (NSString *)displayTypeName
 //{
@@ -24,7 +25,7 @@
 //}
 - (NSString *)value
 {
-	return	[NSString stringWithUTF8String:_raw.GetValue()];
+	return	fromC(_raw.GetValue());
 }
 - (NSInteger)numberOfChildren
 {
@@ -42,15 +43,15 @@
 }
 - (NSString *)location
 {
-	return	string_from_utf8_c_string(_raw.GetLocation());
+	return	fromC(_raw.GetLocation());
 }
 - (NSString *)summary
 {
-	return	string_from_utf8_c_string(_raw.GetSummary());
+	return	fromC(_raw.GetSummary());
 }
 - (NSString *)objectDescription
 {
-	return	string_from_utf8_c_string(_raw.GetObjectDescription());
+	return	fromC(_raw.GetObjectDescription());
 }
 
 

@@ -10,13 +10,14 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBFunction
+LLDBOBJECT_INIT_IMPL(lldb::SBFunction);
 - (NSString *)name
 {
-	return	[NSString stringWithUTF8String:_raw.GetName()];
+	return	fromC(_raw.GetName());
 }
 - (NSString *)mangledName
 {
-	return	[NSString stringWithUTF8String:_raw.GetMangledName()];
+	return	fromC(_raw.GetMangledName());
 }
 - (id)instructionsForTarget:(LLDBTarget *)target
 {

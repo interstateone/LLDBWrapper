@@ -6,13 +6,13 @@
 //
 //
 
+#pragma once
 #import <Foundation/Foundation.h>
 
 #import	"LLDBObject.h"
 #import "LLDBDebugger.h"
 #import "LLDBTarget.h"
 #import "LLDBBreakpoint.h"
-#import "LLDBFileSpec.h"
 #import "LLDBModule.h"
 #import "LLDBProcess.h"
 #import "LLDBThread.h"
@@ -25,3 +25,16 @@
 #import "LLDBValueList.h"
 #import "LLDBError.h"
 
+
+#import "LLDBSourceManager.h"
+#import "LLDBCompileUnit.h"
+#import "LLDBFileSpec.h"
+#import "LLDBLineEntry.h"
+
+
+
+
+
+#import "LLDBBroadcaster.h"
+#import "LLDBListener.h"
+#import "LLDBEvent.h"

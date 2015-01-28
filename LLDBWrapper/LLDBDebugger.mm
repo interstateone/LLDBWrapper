@@ -38,6 +38,7 @@ NSString* const	LLDBArchDefault64Bit	=	[NSString stringWithUTF8String:LLDB_ARCH_
 
 
 @implementation LLDBDebugger
+LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 - (instancetype)init
 {
 	self	=	[super init];
@@ -80,11 +81,8 @@ NSString* const	LLDBArchDefault64Bit	=	[NSString stringWithUTF8String:LLDB_ARCH_
 }
 
 - (NSString *)stringOfState:(LLDBStateType)state
-{
-//	UNIVERSE_DEBUG_ASSERT(state >= std::numeric_limits<std::underlying_type<LLDBStateType>::type>::min());
-//	UNIVERSE_DEBUG_ASSERT(state <= std::numeric_limits<std::underlying_type<LLDBStateType>::type>::max());
-	
-	return	[NSString stringWithUTF8String:_raw.StateAsCString((lldb::StateType)state)];
+{	
+	return	fromC(_raw.StateAsCString(toCPP(state)));
 }
 
 
