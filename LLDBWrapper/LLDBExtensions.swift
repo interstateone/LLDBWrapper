@@ -13,6 +13,18 @@ import LLDBWrapper
 
 
 
+
+
+
+
+
+
+
+
+///	MARK:
+///	MARK:	Drivers
+
+
 extension LLDBDebugger {
 	var	allTargets:[LLDBTarget] {
 		get {
@@ -35,13 +47,40 @@ extension LLDBTarget {
 	}
 }
 
-extension LLDBModule {
-	var	allSymbols:[LLDBSymbol] {
-		get {
-			return	(0..<self.numberOfSymbols).map { i in self.symbolAtIndex(i) }
-		}
-	}
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///	MARK:
+///	MARK:	Execution States
 
 extension LLDBProcess {
 	var	allThreads:[LLDBThread] {
@@ -191,10 +230,54 @@ extension LLDBValueList: CollectionType {
 
 
 
+extension LLDBValue {
+	var	allChildren:[LLDBValue] {
+		get {
+			return	(0..<self.numberOfChildren).map { i in self.childAtIndex(i) }
+		}
+	}
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///	MARK:
+///	MARK:	Code Database
+
+extension LLDBModule {
+	var	allSymbols:[LLDBSymbol] {
+		get {
+			return	(0..<self.numberOfSymbols).map { i in self.symbolAtIndex(i) }
+		}
+	}
+}
 
 
 extension LLDBInstructionList: CollectionType {
@@ -241,17 +324,6 @@ extension LLDBInstructionList: CollectionType {
 
 
 
-extension LLDBValue {
-	var	allChildren:[LLDBValue] {
-		get {
-			return	(0..<self.numberOfChildren).map { i in self.childAtIndex(i) }
-		}
-	}
-}
-
-
-
-
 
 
 
@@ -291,6 +363,10 @@ extension LLDBCompileUnit {
 		}
 	}
 }
+
+
+
+
 
 
 
