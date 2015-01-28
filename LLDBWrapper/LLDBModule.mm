@@ -11,6 +11,19 @@
 
 @implementation LLDBModule
 LLDBOBJECT_INIT_IMPL(lldb::SBModule);
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
+
+
+
+
+
+
+
+
+
 - (LLDBFileSpec *)fileSpec
 {
 	return	[[LLDBFileSpec alloc] initWithCPPObject:_raw.GetFileSpec()];

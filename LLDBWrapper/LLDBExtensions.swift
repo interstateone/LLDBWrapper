@@ -333,3 +333,44 @@ extension LLDBBroadcaster {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+///	MARK:
+///	MARK:	Infrastructure Utilities
+
+extension LLDBData {
+	var	data:NSData {
+		get {
+			let	d		=	NSMutableData()
+			var	e		=	nil as LLDBError?
+			d.length	=	Int(self.byteSize)
+			let	sz1		=	self.readRawDataWithOffset(LLDBOffsetType(0), buffer: d.mutableBytes, size: self.byteSize, error: &e)
+			precondition(e == nil, "An error `\(e)` occured while reading from this object.")
+			precondition(sz1 == UInt(d.length))
+			precondition(sz1 == self.byteSize)
+			return	d
+		}
+		set(v) {
+			var	e		=	nil as LLDBError?
+			self.setDataWithBuffer(v.bytes, size: size_t(v.length), endian: self.byteOrder, addressSize: self.addressByteSize, error: &e)
+			
+			precondition(e == nil, "An error `\(e)` occured while writing to this object.")
+		}
+	}
+}
+
+
+
+
+
+
+

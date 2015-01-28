@@ -11,6 +11,8 @@
 #import "LLDBDeclarations.h"
 
 @interface LLDBModule : LLDBObject
+- (instancetype)init UNIVERSE_UNAVAILABLE_METHOD;
+
 - (LLDBFileSpec*)fileSpec;
 
 //@property (readonly,nonatomic,assign)	NSUInteger	numberOfCompileUnits;

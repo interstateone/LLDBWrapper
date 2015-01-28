@@ -23,7 +23,6 @@
 #import "LLDBSymbol.h"
 #import "LLDBValue.h"
 #import "LLDBValueList.h"
-#import "LLDBError.h"
 
 
 #import "LLDBSourceManager.h"
@@ -38,3 +37,11 @@
 #import "LLDBBroadcaster.h"
 #import "LLDBListener.h"
 #import "LLDBEvent.h"
+
+
+
+
+
+
+#import	"LLDBData.h"
+#import "LLDBError.h"

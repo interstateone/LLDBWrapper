@@ -92,3 +92,53 @@ toCPP(LLDBErrorType v) -> lldb::ErrorType {
 
 
 
+
+
+
+static inline auto
+fromCPP(lldb::AddressClass v) -> LLDBAddressClass {
+	return	(LLDBAddressClass)v;
+}
+static inline auto
+toCPP(LLDBAddressClass v) -> lldb::AddressClass {
+	return	(lldb::AddressClass)v;
+}
+
+
+
+
+
+
+
+
+
+
+static inline auto
+fromCPP(lldb::ByteOrder v) -> LLDBByteOrder {
+	return	(LLDBByteOrder)v;
+}
+static inline auto
+toCPP(LLDBByteOrder v) -> lldb::ByteOrder {
+	return	(lldb::ByteOrder)v;
+}
+
+
+
+
+
+
+
+
+
+
+static inline auto
+fromCPP(lldb::SectionType v) -> LLDBSectionType {
+	return	(LLDBSectionType)v;
+}
+static inline auto
+toCPP(LLDBSectionType v) -> lldb::SectionType {
+	return	(lldb::SectionType)v;
+}
+
+
+

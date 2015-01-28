@@ -39,3 +39,8 @@ fromC(char const* string) -> NSString*
 		return	[NSString stringWithUTF8String:string];
 	}
 }
+
+
+
+
+

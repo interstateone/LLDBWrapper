@@ -12,7 +12,6 @@
 #import "LLDBEnums.h"
 
 @interface	LLDBError : LLDBObject
-
 - (instancetype)init UNIVERSE_UNAVAILABLE_METHOD;
 
 @property	(readonly,nonatomic,copy)	NSString*		string;

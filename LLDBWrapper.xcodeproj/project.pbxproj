@@ -18,7 +18,7 @@
 		4584EEAC1A780B64009A6CCB /* LLDBBroadcaster.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4584EEAA1A780B64009A6CCB /* LLDBBroadcaster.mm */; };
 		4584EEAF1A780B76009A6CCB /* LLDBCompileUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EEAD1A780B76009A6CCB /* LLDBCompileUnit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4584EEB01A780B76009A6CCB /* LLDBCompileUnit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4584EEAE1A780B76009A6CCB /* LLDBCompileUnit.mm */; };
-		4584EEB31A780B7F009A6CCB /* LLDBData.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EEB11A780B7F009A6CCB /* LLDBData.h */; };
+		4584EEB31A780B7F009A6CCB /* LLDBData.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EEB11A780B7F009A6CCB /* LLDBData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4584EEB41A780B7F009A6CCB /* LLDBData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4584EEB21A780B7F009A6CCB /* LLDBData.mm */; };
 		4584EEB71A780B8C009A6CCB /* LLDBDeclaration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EEB51A780B8C009A6CCB /* LLDBDeclaration.h */; };
 		4584EEB81A780B8C009A6CCB /* LLDBDeclaration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4584EEB61A780B8C009A6CCB /* LLDBDeclaration.m */; };
@@ -33,7 +33,7 @@
 		4584EECB1A780BC2009A6CCB /* LLDBModuleSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EEC91A780BC2009A6CCB /* LLDBModuleSpec.h */; };
 		4584EECC1A780BC2009A6CCB /* LLDBModuleSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4584EECA1A780BC2009A6CCB /* LLDBModuleSpec.m */; };
 		4584EECF1A780BCB009A6CCB /* LLDBSection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EECD1A780BCB009A6CCB /* LLDBSection.h */; };
-		4584EED01A780BCB009A6CCB /* LLDBSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4584EECE1A780BCB009A6CCB /* LLDBSection.m */; };
+		4584EED01A780BCB009A6CCB /* LLDBSection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4584EECE1A780BCB009A6CCB /* LLDBSection.mm */; };
 		4584EED51A780C07009A6CCB /* LLDBSymbolContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EED31A780C07009A6CCB /* LLDBSymbolContext.h */; };
 		4584EED61A780C07009A6CCB /* LLDBSymbolContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 4584EED41A780C07009A6CCB /* LLDBSymbolContext.m */; };
 		4584EED91A780C1D009A6CCB /* LLDBType.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EED71A780C1D009A6CCB /* LLDBType.h */; };
@@ -260,7 +260,7 @@
 		4584EEC91A780BC2009A6CCB /* LLDBModuleSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDBModuleSpec.h; sourceTree = "<group>"; };
 		4584EECA1A780BC2009A6CCB /* LLDBModuleSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDBModuleSpec.m; sourceTree = "<group>"; };
 		4584EECD1A780BCB009A6CCB /* LLDBSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDBSection.h; sourceTree = "<group>"; };
-		4584EECE1A780BCB009A6CCB /* LLDBSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDBSection.m; sourceTree = "<group>"; };
+		4584EECE1A780BCB009A6CCB /* LLDBSection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LLDBSection.mm; sourceTree = "<group>"; };
 		4584EED31A780C07009A6CCB /* LLDBSymbolContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDBSymbolContext.h; sourceTree = "<group>"; };
 		4584EED41A780C07009A6CCB /* LLDBSymbolContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDBSymbolContext.m; sourceTree = "<group>"; };
 		4584EED71A780C1D009A6CCB /* LLDBType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDBType.h; sourceTree = "<group>"; };
@@ -443,13 +443,10 @@
 				4584EEBE1A780B9D009A6CCB /* LLDBHostOS.m */,
 				4584EEC91A780BC2009A6CCB /* LLDBModuleSpec.h */,
 				4584EECA1A780BC2009A6CCB /* LLDBModuleSpec.m */,
-				4584EECD1A780BCB009A6CCB /* LLDBSection.h */,
-				4584EECE1A780BCB009A6CCB /* LLDBSection.m */,
 				4584EED31A780C07009A6CCB /* LLDBSymbolContext.h */,
 				4584EED41A780C07009A6CCB /* LLDBSymbolContext.m */,
 				4584EEF81A780D2D009A6CCB /* LLDBSymbolContextList.h */,
 				4584EEF91A780D2D009A6CCB /* LLDBSymbolContextList.m */,
-				4584EEF71A780C6A009A6CCB /* (type stuffs) */,
 			);
 			name = "(empty stubs)";
 			sourceTree = "<group>";
@@ -522,11 +519,11 @@
 			children = (
 				45A0FB86199FBA9C0020D59D /* LLDBWrapper.h */,
 				45A0FB87199FBA9C0020D59D /* LLDBWrapper.m */,
+				4580C75219BB64B300BDB38A /* LLDBDeclarations.h */,
+				4580C75319BB64B300BDB38A /* LLDBDeclarations.mm */,
 				459CA8271A6E6C2100867082 /* LLDBEnums.h */,
 				459CA8281A6E6C2100867082 /* LLDBEnums.mm */,
 				459CA8201A6E6A5600867082 /* (basics) */,
-				4580C75219BB64B300BDB38A /* LLDBDeclarations.h */,
-				4580C75319BB64B300BDB38A /* LLDBDeclarations.mm */,
 				45A389761A70D305008C6793 /* (junkyard) */,
 				4580C72E19BB592000BDB38A /* LLDBObject.h */,
 				4580C72F19BB592000BDB38A /* LLDBObject.mm */,
@@ -535,10 +532,8 @@
 				45F0CA561A78BC9B00004A75 /* (program aseemblies) */,
 				45F0CA571A78BCB400004A75 /* (execution states) */,
 				4584EEFD1A780E15009A6CCB /* (event listening) */,
-				4584EEB11A780B7F009A6CCB /* LLDBData.h */,
-				4584EEB21A780B7F009A6CCB /* LLDBData.mm */,
-				4580C75E19BB69BF00BDB38A /* LLDBError.h */,
-				4580C75F19BB69BF00BDB38A /* LLDBError.mm */,
+				45ED48AF1A790CB400A16068 /* (infrastructures) */,
+				4584EEF71A780C6A009A6CCB /* (type stuffs) */,
 				4584EEFE1A780E46009A6CCB /* (empty stubs) */,
 				45F73ADB1A77FFBD00AAEF0C /* LLDBExtensions.swift */,
 				4580C71E19BB556C00BDB38A /* LLDB_Internals.h */,
@@ -641,6 +636,17 @@
 			path = SampleProgram3;
 			sourceTree = "<group>";
 		};
+		45ED48AF1A790CB400A16068 /* (infrastructures) */ = {
+			isa = PBXGroup;
+			children = (
+				4584EEB11A780B7F009A6CCB /* LLDBData.h */,
+				4584EEB21A780B7F009A6CCB /* LLDBData.mm */,
+				4580C75E19BB69BF00BDB38A /* LLDBError.h */,
+				4580C75F19BB69BF00BDB38A /* LLDBError.mm */,
+			);
+			name = "(infrastructures)";
+			sourceTree = "<group>";
+		};
 		45F0CA551A78BC6300004A75 /* (source file tracking) */ = {
 			isa = PBXGroup;
 			children = (
@@ -661,6 +667,8 @@
 			children = (
 				4580C76619BB746F00BDB38A /* LLDBModule.h */,
 				4580C76719BB746F00BDB38A /* LLDBModule.mm */,
+				4584EECD1A780BCB009A6CCB /* LLDBSection.h */,
+				4584EECE1A780BCB009A6CCB /* LLDBSection.mm */,
 				4580C74619BB62D100BDB38A /* LLDBFunction.h */,
 				4580C74719BB62D100BDB38A /* LLDBFunction.mm */,
 				4580C74A19BB63AA00BDB38A /* LLDBInstructionList.h */,
@@ -973,7 +981,7 @@
 				4584EEB01A780B76009A6CCB /* LLDBCompileUnit.mm in Sources */,
 				4584EEDE1A780C27009A6CCB /* LLDBTypeCategory.m in Sources */,
 				45F73AAC1A77FB1D00AAEF0C /* LLDBBreakpoint.mm in Sources */,
-				4584EED01A780BCB009A6CCB /* LLDBSection.m in Sources */,
+				4584EED01A780BCB009A6CCB /* LLDBSection.mm in Sources */,
 				4584EEA41A7809A8009A6CCB /* LLDBAddress.mm in Sources */,
 				45F73ABC1A77FC4700AAEF0C /* UniverseCommon.m in Sources */,
 				4584EEB41A780B7F009A6CCB /* LLDBData.mm in Sources */,

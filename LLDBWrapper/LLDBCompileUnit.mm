@@ -11,7 +11,6 @@
 
 @implementation LLDBCompileUnit
 LLDBOBJECT_INIT_IMPL(lldb::SBCompileUnit);
-
 - (instancetype)init
 {
 	UNIVERSE_DELETED_METHOD();

@@ -87,7 +87,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBTarget);
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(fileSpec, LLDBFileSpec);
 	
-	return	try_instantiation_of_wrapper<lldb::SBModule, LLDBModule>(_raw.FindModule(fileSpec->_raw));
+	return	[[LLDBModule alloc] initWithCPPObject:_raw.FindModule(fileSpec->_raw)];
 }
 - (NSString *)triple
 {
@@ -130,12 +130,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBTarget);
 
 - (NSString *)description
 {
-	lldb::SBStream	s;
-	bool			r	=	_raw.GetDescription(s, lldb::DescriptionLevel::eDescriptionLevelVerbose);
-	UNIVERSE_DEBUG_ASSERT(r == true);
-	
-	NSString*		s1	=	[[NSString alloc] initWithBytes:s.GetData() length:s.GetSize() encoding:NSUTF8StringEncoding];
-	return			s1;
+	return	get_description_of(_raw, lldb::DescriptionLevel::eDescriptionLevelVerbose);
 }
 @end
 

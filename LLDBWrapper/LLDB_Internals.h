@@ -199,14 +199,6 @@
 - (instancetype)initWithCPPObject:(lldb::SBValue)raw;
 @end
 
-@interface	LLDBModule ()
-{
-	@package
-	lldb::SBModule			_raw;
-}
-- (instancetype)initWithCPPObject:(lldb::SBModule)raw;
-@end
-
 
 
 
@@ -276,13 +268,6 @@
 
 
 
-@interface LLDBData ()
-{
-	@package
-	lldb::SBData			_raw;
-}
-@end
-
 @interface LLDBDeclaration ()
 {
 	@package
@@ -308,28 +293,6 @@
 
 
 
-
-
-@interface LLDBModuleSpec ()
-{
-	@package
-	lldb::SBModuleSpec		_raw;
-}
-@end
-
-@interface LLDBSection ()
-{
-	@package
-	lldb::SBSection			_raw;
-}
-@end
-
-//@interface LLDBSourceManager ()
-//{
-//	@package
-//	lldb::SBSourceManager		_raw;
-//}
-//@end
 
 //@interface LLDBStream ()
 //{
@@ -432,6 +395,67 @@
 
 
 
+
+
+
+
+
+
+
+
+
+#pragma mark	-
+#pragma mark	Code Database
+
+@interface	LLDBModule ()
+{
+	@package
+	lldb::SBModule			_raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBModule)raw;
+@end
+
+@interface LLDBModuleSpec ()
+{
+	@package
+	lldb::SBModuleSpec		_raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBModuleSpec)raw;
+@end
+
+@interface LLDBSection ()
+{
+	@package
+	lldb::SBSection			_raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBSection)raw;
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #pragma mark	-
 #pragma mark	Source Tracking
 
@@ -510,6 +534,13 @@
 + (LLDBError*)errorWithMaybeCPPObject:(lldb::SBError)maybeCPPObject;		///<	Accepts invalid C++ object. Returns `nil` if C++ object is invalid.
 @end
 
+@interface LLDBData ()
+{
+	@package
+	lldb::SBData			_raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBData)raw;
+@end
 
 
 

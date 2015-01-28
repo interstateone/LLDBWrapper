@@ -18,6 +18,7 @@ typedef uint64_t	LLDBThreadIDType;
 typedef uint64_t	LLDBProcessIDType;
 typedef uint64_t	LLDBQueueIDType;
 typedef int32_t		LLDBBreakpointIDType;
+typedef	uint64_t	LLDBOffsetType;
 
 
 
@@ -37,6 +38,7 @@ typedef int32_t		LLDBBreakpointIDType;
 
 @class	LLDBModule;
 @class	LLDBCompileUnit;
+@class	LLDBSection;
 @class	LLDBFunction;
 @class	LLDBBlock;
 @class	LLDBInstructionList;
@@ -46,7 +48,6 @@ typedef int32_t		LLDBBreakpointIDType;
 @class	LLDBValue;
 @class	LLDBSymbolContext;
 
-@class	LLDBError;
 
 @class	LLDBBroadcaster;
 @class	LLDBListener;
@@ -54,7 +55,8 @@ typedef int32_t		LLDBBreakpointIDType;
 
 
 
-
+@class	LLDBError;
+@class	LLDBData;
 
 @class	LLDBObject;
 
