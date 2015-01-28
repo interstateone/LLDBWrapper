@@ -11,18 +11,39 @@
 
 @implementation LLDBInstructionList
 LLDBOBJECT_INIT_IMPL(lldb::SBInstructionList);
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
+
+
+
 - (size_t)size
 {
 	return	_raw.GetSize();
 }
 - (LLDBInstruction *)instructionAtIndex:(uint32_t)index
 {
-	auto	r	=	_raw.GetInstructionAtIndex(index);
-	return	try_instantiation_of_wrapper<lldb::SBInstruction, LLDBInstruction>(r);
+	return	[[LLDBInstruction alloc] initWithCPPObject:_raw.GetInstructionAtIndex(index)];
 }
 
 
 
+
+
+
+
+
+
+
+- (BOOL)isEqualTo:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
+- (BOOL)isEqual:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
 - (NSString *)description
 {
 	return	get_description_of(_raw);

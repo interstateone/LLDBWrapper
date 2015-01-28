@@ -11,7 +11,6 @@
 
 @implementation LLDBBreakpointLocation
 LLDBOBJECT_INIT_IMPL(lldb::SBBreakpointLocation);
-
 - (instancetype)init
 {
 	UNIVERSE_DELETED_METHOD();

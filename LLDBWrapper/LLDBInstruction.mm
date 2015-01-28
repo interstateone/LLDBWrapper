@@ -11,6 +11,16 @@
 
 @implementation LLDBInstruction
 LLDBOBJECT_INIT_IMPL(lldb::SBInstruction);
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
+
+
+
+
+
+
 - (NSString *)mnemonicForTarget:(LLDBTarget *)target
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(target, LLDBTarget);
@@ -38,6 +48,26 @@ LLDBOBJECT_INIT_IMPL(lldb::SBInstruction);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+- (BOOL)isEqualTo:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
+- (BOOL)isEqual:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
 - (NSString *)description
 {
 	return	get_description_of(_raw);

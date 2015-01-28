@@ -19,12 +19,14 @@ typedef uint64_t	LLDBProcessIDType;
 typedef uint64_t	LLDBQueueIDType;
 typedef int32_t		LLDBBreakpointIDType;
 typedef	uint64_t	LLDBOffsetType;
-
+typedef uint64_t	LLDBUserIDType;
+typedef	int32_t		LLDBWatchIDType;
 
 
 @class	LLDBDebugger;
 @class	LLDBBreakpoint;
 @class	LLDBBreakpointLocation;
+@class	LLDBWatchpoint;
 
 @class	LLDBTarget;
 @class	LLDBProcess;
@@ -56,6 +58,7 @@ typedef	uint64_t	LLDBOffsetType;
 
 
 @class	LLDBError;
+@class	LLDBAddress;
 @class	LLDBData;
 
 @class	LLDBObject;

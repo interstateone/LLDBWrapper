@@ -13,6 +13,10 @@
 
 
 @interface	LLDBThread : LLDBObject
+- (instancetype)init UNIVERSE_UNAVAILABLE_METHOD;
+
+
+
 @property	(readonly,nonatomic,assign)	LLDBStopReason	stopReason;
 @property	(readonly,nonatomic,assign)	size_t			stopReasonDataCount;
 //--------------------------------------------------------------------------
@@ -93,12 +97,16 @@
 
 @property	(readonly,nonatomic,strong)	LLDBProcess*	process;
 
-- (BOOL)	isEqualToThread:(LLDBThread*)object;
-- (BOOL)	isEqual:(id)object;
-
 //@property	(readonly,nonatomic,copy)	NSString*		status;
 
 
+
+
+
+
+
+- (BOOL)	isEqualToThread:(LLDBThread*)object;
+- (BOOL)	isEqual:(id)object;
 @end
 
 

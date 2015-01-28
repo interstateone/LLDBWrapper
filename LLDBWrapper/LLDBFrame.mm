@@ -11,6 +11,10 @@
 
 @implementation LLDBFrame
 LLDBOBJECT_INIT_IMPL(lldb::SBFrame);
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
 
 
 
@@ -75,32 +79,6 @@ LLDBOBJECT_INIT_IMPL(lldb::SBFrame);
 
 
 
-- (BOOL)isEqualToFrame:(LLDBFrame *)frame
-{
-	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(frame, LLDBFrame);
-	
-	return	_raw.operator==(frame->_raw) == true;
-}
-- (BOOL)isEqualTo:(id)object
-{
-	if (object == self)
-	{
-		return	YES;
-	}
-	
-	if ([object isKindOfClass:[LLDBFrame class]])
-	{
-		return	[self isEqualToFrame:object];
-	}
-	else
-	{
-		return	NO;
-	}
-}
-- (BOOL)isEqual:(id)object
-{
-	return	[self isEqualTo:object];
-}
 
 
 
@@ -149,6 +127,44 @@ LLDBOBJECT_INIT_IMPL(lldb::SBFrame);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+- (BOOL)isEqualToFrame:(LLDBFrame *)frame
+{
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(frame, LLDBFrame);
+	
+	return	_raw.operator==(frame->_raw) == true;
+}
+- (BOOL)isEqualTo:(id)object
+{
+	if (object == self)
+	{
+		return	YES;
+	}
+	
+	if ([object isKindOfClass:[LLDBFrame class]])
+	{
+		return	[self isEqualToFrame:object];
+	}
+	else
+	{
+		return	NO;
+	}
+}
+- (BOOL)isEqual:(id)object
+{
+	return	[self isEqualTo:object];
+}
 - (NSString *)description
 {
 	return	get_description_of(_raw);

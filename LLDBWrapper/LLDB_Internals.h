@@ -21,6 +21,7 @@
 #import "LLDBTarget.h"
 #import "LLDBBreakpoint.h"
 #import "LLDBBreakpointLocation.h"
+#import "LLDBWatchpoint.h"
 
 #import "LLDBSourceManager.h"
 #import "LLDBCompileUnit.h"
@@ -38,8 +39,6 @@
 #import "LLDBValueList.h"
 #import "LLDBValue.h"
 
-#import "LLDBError.h"
-#import "LLDBAddress.h"
 
 #import "LLDBSourceManager.h"
 #import "LLDBModule.h"
@@ -52,7 +51,6 @@
 #import "LLDBEvent.h"
 #import "LLDBListener.h"
 
-#import "LLDBData.h"
 #import "LLDBDeclaration.h"
 #import "LLDBHostOS.h"
 #import "LLDBSection.h"
@@ -64,14 +62,18 @@
 #import "LLDBTypeNameSpecifier.h"
 #import "LLDBTypeSummary.h"
 #import "LLDBTypeSynthetic.h"
-#import "LLDBWatchpoint.h"
+
+
+#import "LLDBData.h"
+#import "LLDBError.h"
+#import "LLDBAddress.h"
+
+
 
 #import "LLDB_Internals_EnumTranslation.h"
 #import "LLDB_Internals_ObjectTranslation.h"
 
 
-@interface	LLDBObject ()
-@end
 
 
 
@@ -87,42 +89,6 @@
 
 
 
-#pragma mark	-	
-#pragma mark	Driver
-
-
-
-@interface	LLDBDebugger ()
-{
-	@package
-	lldb::SBDebugger	_raw;
-}
-- (instancetype)initWithCPPObject:(lldb::SBDebugger)raw;
-@end
-
-@interface	LLDBTarget ()
-{
-	@package
-	lldb::SBTarget		_raw;
-}
-- (instancetype)initWithCPPObject:(lldb::SBTarget)raw;
-@end
-
-@interface	LLDBBreakpoint ()
-{
-	@package
-	lldb::SBBreakpoint	_raw;
-}
-- (instancetype)initWithCPPObject:(lldb::SBBreakpoint)raw;
-@end
-
-@interface	LLDBBreakpointLocation ()
-{
-	@package
-	lldb::SBBreakpointLocation	_raw;
-}
-- (instancetype)initWithCPPObject:(lldb::SBBreakpointLocation)raw;
-@end
 
 
 
@@ -371,14 +337,112 @@
 }
 @end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark	-
+#pragma mark	Driver Interface
+
+
+
+@interface	LLDBDebugger ()
+{
+	@package
+	lldb::SBDebugger	_raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBDebugger)raw;
+@end
+
+@interface	LLDBTarget ()
+{
+	@package
+	lldb::SBTarget		_raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBTarget)raw;
+@end
+
+@interface	LLDBBreakpoint ()
+{
+	@package
+	lldb::SBBreakpoint	_raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBBreakpoint)raw;
+@end
+
+@interface	LLDBBreakpointLocation ()
+{
+	@package
+	lldb::SBBreakpointLocation	_raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBBreakpointLocation)raw;
+@end
+
 @interface LLDBWatchpoint ()
 {
 	@package
 	lldb::SBWatchpoint			_raw;
 }
+- (instancetype)initWithCPPObject:(lldb::SBWatchpoint)raw;
 @end
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark	-
+#pragma mark	Execution States
 
 
 
@@ -542,6 +606,8 @@
 - (instancetype)initWithCPPObject:(lldb::SBData)raw;
 @end
 
+@interface	LLDBObject ()
+@end
 
 
 

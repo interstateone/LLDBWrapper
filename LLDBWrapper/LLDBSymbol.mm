@@ -11,6 +11,17 @@
 
 @implementation LLDBSymbol
 LLDBOBJECT_INIT_IMPL(lldb::SBSymbol);
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
+
+
+
+
+
+
+
 - (NSString *)name
 {
 	return	fromC(_raw.GetName());
@@ -19,13 +30,80 @@ LLDBOBJECT_INIT_IMPL(lldb::SBSymbol);
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(target, LLDBTarget);
 	
-	////
+	return	[[LLDBInstructionList alloc] initWithCPPObject:_raw.GetInstructions(target->_raw)];
+}
+- (LLDBInstructionList *)instructionsForTarget:(LLDBTarget *)target flavor:(NSString *)flavor
+{
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(target, LLDBTarget);
 	
-	auto	r	=	_raw.GetInstructions(target->_raw);
-	return	try_instantiation_of_wrapper<lldb::SBInstructionList, LLDBInstructionList>(r);
+	return	[[LLDBInstructionList alloc] initWithCPPObject:_raw.GetInstructions(target->_raw, flavor.UTF8String)];
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+- (LLDBAddress *)startAddress
+{
+	return	[[LLDBAddress alloc] initWithCPPObject:_raw.GetStartAddress()];
+}
+- (LLDBAddress *)endAddress
+{
+	return	[[LLDBAddress alloc] initWithCPPObject:_raw.GetEndAddress()];
+}
+- (uint32_t)prologueByteSize
+{
+	return	_raw.GetPrologueByteSize();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- (BOOL)isEqualToSymbol:(LLDBSymbol *)object
+{
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(object, LLDBSymbol);
+	return	_raw.operator==(object->_raw);
+}
+- (BOOL)isEqualTo:(id)object
+{
+	if (self == object)
+	{
+		return	YES;
+	}
+	
+	if ([object isKindOfClass:[LLDBSymbol class]])
+	{
+		return	[self isEqualToSymbol:object];
+	}
+	
+	return	NO;
+}
+- (BOOL)isEqual:(id)object
+{
+	return	[self isEqualTo:object];
+}
 
 - (NSString *)description
 {

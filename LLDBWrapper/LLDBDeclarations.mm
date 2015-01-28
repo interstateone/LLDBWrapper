@@ -16,3 +16,5 @@ static_assert(std::is_same<LLDBProcessIDType, lldb::pid_t>::value, "One of more 
 static_assert(std::is_same<LLDBQueueIDType, lldb::queue_id_t>::value, "One of more typedef to C++ numeric type doesn't match.");
 static_assert(std::is_same<LLDBBreakpointIDType, lldb::break_id_t>::value, "One of more typedef to C++ numeric type doesn't match.");
 static_assert(std::is_same<LLDBOffsetType, lldb::offset_t>::value, "One of more typedef to C++ numeric type doesn't match.");
+static_assert(std::is_same<LLDBUserIDType, lldb::user_id_t>::value, "One of more typedef to C++ numeric type doesn't match.");
+static_assert(std::is_same<LLDBWatchIDType, lldb::watch_id_t>::value, "One of more typedef to C++ numeric type doesn't match.");

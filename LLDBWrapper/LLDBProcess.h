@@ -126,6 +126,13 @@
 ////------------------------------------------------------------------
 //- (NSString*)extendedBacktraceTypeAtIndex:(uint32_t)index;
 
+
+
+
+
+
+- (BOOL)isEqualTo:(id)object UNIVERSE_UNAVAILABLE_METHOD;
+- (BOOL)isEqual:(id)object UNIVERSE_UNAVAILABLE_METHOD;
 @end
 
 

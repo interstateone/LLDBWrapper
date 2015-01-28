@@ -13,6 +13,10 @@
 
 @interface	LLDBFrame : LLDBObject
 - (instancetype)init UNIVERSE_UNAVAILABLE_METHOD;
+
+
+
+
 @property	(readonly,nonatomic,assign)	uint32_t		frameID;
 //- (LLDBSymbolContext*)symbolContext:(uint32_t)resolveScope;
 @property	(readonly,nonatomic,copy)	LLDBModule*			module;
@@ -57,11 +61,6 @@
 
 @property	(readonly,nonatomic,copy)	NSString*			disassembly;
 
-- (BOOL)	isEqualToFrame:(LLDBFrame*)frame;
-- (BOOL)	isEqualTo:(id)object;
-- (BOOL)	isEqual:(id)object;
-
-
 /// The version that doesn't supply a 'use_dynamic' value will use the
 /// target's default.
 - (LLDBValueList*)variablesWithArguments:(BOOL)arguments locals:(BOOL)locals statics:(BOOL)statics inScopeOnly:(BOOL)inScopeOnly;
@@ -85,6 +84,11 @@
 
 
 
+
+
+- (BOOL)	isEqualToFrame:(LLDBFrame*)frame;
+- (BOOL)	isEqualTo:(id)object;
+- (BOOL)	isEqual:(id)object;
 @end
 
 

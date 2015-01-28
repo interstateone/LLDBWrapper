@@ -11,6 +11,20 @@
 
 @implementation LLDBValueList
 LLDBOBJECT_INIT_IMPL(lldb::SBValueList);
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
+
+
+
+
+
+
+
+
+
+
 - (uint32_t)size
 {
 	return	_raw.GetSize();
@@ -19,14 +33,28 @@ LLDBOBJECT_INIT_IMPL(lldb::SBValueList);
 {
 	UNIVERSE_DEBUG_ASSERT(index < _raw.GetSize());
 	
-	////
-
-	auto	r	=	_raw.GetValueAtIndex(index);
-	return	try_instantiation_of_wrapper<lldb::SBValue, LLDBValue>(r);
+	return	[[LLDBValue alloc] initWithCPPObject:_raw.GetValueAtIndex(index)];
 }
 
 
 
+
+
+
+
+
+
+
+
+
+- (BOOL)isEqualTo:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
+- (BOOL)isEqual:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
 - (NSString *)description
 {
 	UNIVERSE_DELETED_METHOD();

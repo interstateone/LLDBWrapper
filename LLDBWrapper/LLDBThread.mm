@@ -45,6 +45,14 @@ LLDBOBJECT_INIT_IMPL(lldb::SBThread);
 		return	[[LLDBThread alloc] initWithCPPObject:raw];
 	}
 }
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
+
+
+
+
 
 
 
@@ -221,6 +229,20 @@ LLDBOBJECT_INIT_IMPL(lldb::SBThread);
 	return	[[LLDBProcess alloc] initWithCPPObject:_raw.GetProcess()];
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - (BOOL)isEqualToThread:(LLDBThread *)object
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(object, LLDBThread);
@@ -231,10 +253,6 @@ LLDBOBJECT_INIT_IMPL(lldb::SBThread);
 {
 	return	object == self || ([object isKindOfClass:[LLDBThread class]] && [self isEqualToThread:object]);
 }
-
-
-
-
 - (NSString *)description
 {
 	return	get_description_of(_raw);

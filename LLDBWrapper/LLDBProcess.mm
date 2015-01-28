@@ -14,6 +14,18 @@
 
 @implementation LLDBProcess
 LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
+
+
+
+
+
+
+
+
 - (LLDBTarget *)target
 {
 	return	[[LLDBTarget alloc] initWithCPPObject:_raw.GetTarget()];
@@ -273,6 +285,23 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 }
 
 
+
+
+
+
+
+
+
+
+
+- (BOOL)isEqualTo:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
+- (BOOL)isEqual:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
 - (NSString *)description
 {
 	return	get_description_of(_raw);

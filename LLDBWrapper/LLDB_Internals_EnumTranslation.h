@@ -142,3 +142,31 @@ toCPP(LLDBSectionType v) -> lldb::SectionType {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+static inline auto
+fromCPP(lldb::Format v) -> LLDBFormat {
+	return	(LLDBFormat)v;
+}
+static inline auto
+toCPP(LLDBFormat v) -> lldb::Format {
+	return	(lldb::Format)v;
+}
+
+
+
+
+
+
+
+
+
