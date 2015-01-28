@@ -17,12 +17,13 @@ typedef	uint64_t	LLDBAddressType;
 typedef uint64_t	LLDBThreadIDType;
 typedef uint64_t	LLDBProcessIDType;
 typedef uint64_t	LLDBQueueIDType;
-
+typedef int32_t		LLDBBreakpointIDType;
 
 
 
 @class	LLDBDebugger;
 @class	LLDBBreakpoint;
+@class	LLDBBreakpointLocation;
 
 @class	LLDBTarget;
 @class	LLDBProcess;
@@ -30,7 +31,7 @@ typedef uint64_t	LLDBQueueIDType;
 @class	LLDBFrame;
 
 
-//@class	LLDBSourceManager;
+@class	LLDBSourceManager;
 @class	LLDBFileSpec;
 @class	LLDBLineEntry;
 

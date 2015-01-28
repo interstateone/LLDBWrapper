@@ -67,3 +67,28 @@ toCPP(LLDBValueType v) -> lldb::ValueType {
 	return	(lldb::ValueType)v;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+static inline auto
+fromCPP(lldb::ErrorType v) -> LLDBErrorType {
+	return	(LLDBErrorType)v;
+}
+static inline auto
+toCPP(LLDBErrorType v) -> lldb::ErrorType {
+	return	(lldb::ErrorType)v;
+}
+
+
+
+
+
+

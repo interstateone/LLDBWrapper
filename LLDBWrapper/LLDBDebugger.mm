@@ -38,6 +38,11 @@ NSString* const	LLDBArchDefault64Bit	=	[NSString stringWithUTF8String:LLDB_ARCH_
 
 
 @implementation LLDBDebugger
+{
+	@private
+	LLDBSourceManager*	_srcmgr;
+}
+
 LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 - (instancetype)init
 {
@@ -50,7 +55,8 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 		
 		////
 	
-		SBDebugger::Create();
+		_raw	=	SBDebugger::Create();
+		_srcmgr	=	[[LLDBSourceManager alloc] initWithCPPObject:_raw.GetSourceManager()];
 	}
 	return	self;
 }
@@ -127,6 +133,8 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 //	m1->_raw				=	_raw.GetSourceManager();
 //	return	m1;
 //}
+
+
 
 
 

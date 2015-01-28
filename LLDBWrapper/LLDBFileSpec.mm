@@ -15,8 +15,20 @@ LLDBOBJECT_INIT_IMPL(lldb::SBFileSpec);
 {
 	return	fromC(_raw.GetFilename());
 }
+- (NSString *)directory
+{
+	return	fromC(_raw.GetDirectory());
+}
 
 
+- (BOOL)isEqualTo:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
+- (BOOL)isEqual:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
 - (NSString *)description
 {
 	return	get_description_of(_raw);

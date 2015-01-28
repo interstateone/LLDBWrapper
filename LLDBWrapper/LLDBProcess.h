@@ -80,8 +80,8 @@
 - (uint32_t)stopID:(BOOL)includeExpressionStops;
 - (uint32_t)stopID;
 
-- (size_t)	readMemory:(LLDBAddressType)address buffer:(void*)buffer size:(size_t)size error:(LLDBError**)error;
-- (size_t)	writeMemory:(LLDBAddressType)address buffer:(const void*)buffer size:(size_t)size error:(LLDBError**)error;
+- (size_t)	readMemory:(LLDBAddressType)address buffer:(void*)buffer size:(size_t)size error:(LLDBError**)error;			///<	`error` parameter cannot be `nil`.
+- (size_t)	writeMemory:(LLDBAddressType)address buffer:(const void*)buffer size:(size_t)size error:(LLDBError**)error;		///<	`error` parameter cannot be `nil`.
 
 + (LLDBStateType)stateFromEvent:(LLDBEvent*)event;
 + (BOOL)	restartedFromEvent:(LLDBEvent*)event;
@@ -91,9 +91,9 @@
 //@property	(readonly,nonatomic,copy)	LLDBBroadcaster*	broadcaster;
 //+ (NSString*)broadcasterClass;
 
-- (uint32_t)numberOfSupportedHardwareWatchpoints:(LLDBError**)error;
+- (uint32_t)numberOfSupportedHardwareWatchpoints:(LLDBError**)error;			///<	`error` parameter cannot be `nil`.
 
-- (uint32_t)loadImage:(LLDBFileSpec*)imageSpec error:(LLDBError**)error;
+- (uint32_t)loadImage:(LLDBFileSpec*)imageSpec error:(LLDBError**)error;		///<	`error` parameter cannot be `nil`.
 - (LLDBError*)unloadImage:(uint32_t)imageToken;
 
 ////------------------------------------------------------------------

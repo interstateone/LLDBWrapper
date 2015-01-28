@@ -22,6 +22,42 @@ LLDBOBJECT_INIT_IMPL(lldb::SBError);
 		return	nil;
 	}
 }
+
+
+
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
+
+
+
+
+- (NSString *)string
+{
+	return	fromC(_raw.GetCString());
+}
+- (uint32_t)error
+{
+	return	_raw.GetError();
+}
+- (LLDBErrorType)type
+{
+	return	fromCPP(_raw.GetType());
+}
+
+
+
+
+- (BOOL)isEqualTo:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
+- (BOOL)isEqual:(id)object
+{
+	UNIVERSE_DELETED_METHOD();
+}
+
 - (NSString *)description
 {
 	return	get_description_of(_raw);

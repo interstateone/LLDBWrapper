@@ -13,9 +13,7 @@
 LLDBOBJECT_INIT_IMPL(lldb::SBSymbol);
 - (NSString *)name
 {
-	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
-	
-	return	string_from_utf8_c_string(_raw.GetName());
+	return	fromC(_raw.GetName());
 }
 - (LLDBInstructionList *)instructionsForTarget:(LLDBTarget *)target
 {

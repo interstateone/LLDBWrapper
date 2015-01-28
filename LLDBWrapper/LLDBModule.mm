@@ -13,30 +13,24 @@
 LLDBOBJECT_INIT_IMPL(lldb::SBModule);
 - (LLDBFileSpec *)fileSpec
 {
-	LLDBFileSpec*	f1	=	[[LLDBFileSpec alloc] init];
-	f1->_raw			=	_raw.GetFileSpec();
-	return	f1;
+	return	[[LLDBFileSpec alloc] initWithCPPObject:_raw.GetFileSpec()];
 }
 
 
-- (NSUInteger)numberOfSymbols
+
+
+- (size_t)numberOfSymbols
 {
-	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
-	
 	return	_raw.GetNumSymbols();
 }
-- (LLDBSymbol *)symbolAtIndex:(NSUInteger)index
+- (LLDBSymbol *)symbolAtIndex:(size_t)index
 {
-	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
-	
-	return	try_instantiation_of_wrapper<lldb::SBSymbol, LLDBSymbol>(_raw.GetSymbolAtIndex(index));
+	return	[[LLDBSymbol alloc] initWithCPPObject:_raw.GetSymbolAtIndex(index)];
 }
 
 - (BOOL)isEqualToModule:(LLDBModule *)object
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(object, LLDBModule);
-	
-	////
 	
 	return	self == object || _raw.operator==(object->_raw);
 }

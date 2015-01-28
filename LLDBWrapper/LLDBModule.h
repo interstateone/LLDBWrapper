@@ -17,8 +17,8 @@
 //- (LLDBSymbol*)compileUnitAtIndex:(NSUInteger)index;
 
 
-@property (readonly,nonatomic,assign)	NSUInteger	numberOfSymbols;
-- (LLDBSymbol*)symbolAtIndex:(NSUInteger)index;
+@property (readonly,nonatomic,assign)	size_t	numberOfSymbols;
+- (LLDBSymbol*)symbolAtIndex:(size_t)index;
 
 - (BOOL)isEqualToModule:(LLDBModule*)object;
 - (BOOL)isEqual:(id)object;

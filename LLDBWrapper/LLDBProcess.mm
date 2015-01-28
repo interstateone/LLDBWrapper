@@ -168,16 +168,20 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (size_t)readMemory:(LLDBAddressType)address buffer:(void *)buffer size:(size_t)size error:(LLDBError *__autoreleasing *)error
 {
+	UNIVERSE_DEBUG_ASSERT(error != nullptr);
+	
 	lldb::SBError	e;
 	auto const		r	=	_raw.ReadMemory(address, buffer, size, e);
-	handle_error(e, error);
+	*error				=	[LLDBError errorWithMaybeCPPObject:e];
 	return	r;
 }
 - (size_t)writeMemory:(LLDBAddressType)address buffer:(const void *)buffer size:(size_t)size error:(LLDBError *__autoreleasing *)error
 {
+	UNIVERSE_DEBUG_ASSERT(error != nullptr);
+	
 	lldb::SBError	e;
 	auto const		r	=	_raw.WriteMemory(address, buffer, size, e);
-	handle_error(e, error);
+	*error				=	[LLDBError errorWithMaybeCPPObject:e];
 	return	r;
 }
 
@@ -228,18 +232,21 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (uint32_t)numberOfSupportedHardwareWatchpoints:(LLDBError *__autoreleasing *)error
 {
+	UNIVERSE_DEBUG_ASSERT(error != nil);
+	
 	lldb::SBError	e;
 	auto const		r	=	_raw.GetNumSupportedHardwareWatchpoints(e);
-	handle_error(e, error);
+	*error				=	[LLDBError errorWithMaybeCPPObject:e];
 	return	r;
 }
 - (uint32_t)loadImage:(LLDBFileSpec *)imageSpec error:(LLDBError *__autoreleasing *)error
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(imageSpec, LLDBFileSpec);
+	UNIVERSE_DEBUG_ASSERT(error != nil);
 	
 	lldb::SBError	e;
 	auto const		r	=	_raw.LoadImage(imageSpec->_raw, e);
-	handle_error(e, error);
+	*error				=	[LLDBError errorWithMaybeCPPObject:e];
 	return	r;
 }
 - (LLDBError *)unloadImage:(uint32_t)imageToken

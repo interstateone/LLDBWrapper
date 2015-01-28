@@ -11,6 +11,10 @@
 
 @implementation LLDBTarget
 LLDBOBJECT_INIT_IMPL(lldb::SBTarget);
+- (instancetype)init
+{
+	UNIVERSE_DELETED_METHOD();
+}
 - (void)dealloc
 {
 	bool	f1	=	_raw.GetDebugger().DeleteTarget(_raw);
@@ -19,11 +23,20 @@ LLDBOBJECT_INIT_IMPL(lldb::SBTarget);
 
 - (LLDBFileSpec *)executableFileSpec
 {
-	return	try_instantiation_of_wrapper<lldb::SBFileSpec, LLDBFileSpec>(_raw.GetExecutable());
+	return	[[LLDBFileSpec alloc] initWithCPPObject:_raw.GetExecutable()];
+}
+- (LLDBBreakpoint *)createBreakpointByName:(NSString *)symbolName
+{
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(symbolName, NSString);
+	
+	return	[[LLDBBreakpoint alloc] initWithCPPObject:_raw.BreakpointCreateByName([symbolName UTF8String], nullptr)];
 }
 - (LLDBBreakpoint *)createBreakpointByName:(NSString *)symbolName moduleName:(NSString *)moduleName
 {
-	return	try_instantiation_of_wrapper<lldb::SBBreakpoint, LLDBBreakpoint>(_raw.BreakpointCreateByName([symbolName UTF8String], [moduleName UTF8String]));
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(symbolName, NSString);
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(moduleName, NSString);
+	
+	return	[[LLDBBreakpoint alloc] initWithCPPObject:_raw.BreakpointCreateByName([symbolName UTF8String], [moduleName UTF8String])];
 }
 
 - (LLDBProcess *)launchProcessSimplyWithWorkingDirectory:(NSString *)workingDirectory
@@ -46,35 +59,33 @@ LLDBOBJECT_INIT_IMPL(lldb::SBTarget);
 - (LLDBProcess *)attachToProcessWithID:(uint64_t)pid error:(LLDBError *__autoreleasing *)error
 {
 	UNIVERSE_DEBUG_ASSERT(pid != 0);
-	
-	////
+	UNIVERSE_DEBUG_ASSERT(error != nullptr);
 	
 	lldb::SBListener	lis1{};
-	lldb::SBError		err1{};
-	auto const			p	=	_raw.AttachToProcessWithID(lis1, pid, err1);
-	UNIVERSE_DEBUG_ASSERT(err1.IsValid() or p.IsValid());
-	handle_error(err1, error);
+	lldb::SBError		e{};
+	auto const			p	=	_raw.AttachToProcessWithID(lis1, pid, e);
+	*error					=	[LLDBError errorWithMaybeCPPObject:e];
 	
 	return	[[LLDBProcess alloc] initWithCPPObject:p];
 }
 
-- (NSUInteger)numberOfModules
+
+
+
+
+- (uint32_t)numberOfModules
 {
 	return	_raw.GetNumModules();
 }
-- (LLDBModule *)moduleAtIndex:(NSUInteger)index
+- (LLDBModule *)moduleAtIndex:(uint32_t)index
 {
-	UNIVERSE_DEBUG_ASSERT(index < [self numberOfModules]);
-	
-	////
+	UNIVERSE_DEBUG_ASSERT(index < _raw.GetNumModules());
 
-	return	try_instantiation_of_wrapper<lldb::SBModule, LLDBModule>(_raw.GetModuleAtIndex((uint32_t)index));
+	return	[[LLDBModule alloc] initWithCPPObject:_raw.GetModuleAtIndex(index)];
 }
 - (LLDBModule *)findModule:(LLDBFileSpec *)fileSpec
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(fileSpec, LLDBFileSpec);
-	
-	////
 	
 	return	try_instantiation_of_wrapper<lldb::SBModule, LLDBModule>(_raw.FindModule(fileSpec->_raw));
 }
@@ -84,24 +95,28 @@ LLDBOBJECT_INIT_IMPL(lldb::SBTarget);
 }
 
 
-- (NSUInteger)numberOfBreakpoints
+
+
+
+
+- (uint32_t)numberOfBreakpoints
 {
-	return	_raw.GetNumModules();
+	return	_raw.GetNumBreakpoints();
 }
-- (LLDBBreakpoint *)breakpointAtIndex:(NSUInteger)index
+- (LLDBBreakpoint *)breakpointAtIndex:(uint32_t)index
 {
-	UNIVERSE_DEBUG_ASSERT(index < [self numberOfBreakpoints]);
+	UNIVERSE_DEBUG_ASSERT(index < _raw.GetNumBreakpoints());
 	
-	////
-	
-	return	try_instantiation_of_wrapper<lldb::SBBreakpoint, LLDBBreakpoint>(_raw.GetBreakpointAtIndex((uint32_t)index));
+	return	[[LLDBBreakpoint alloc] initWithCPPObject:_raw.GetBreakpointAtIndex(index)];
 }
+
+
+
+
 
 - (BOOL)isEqualToTarget:(LLDBTarget *)object
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(object, LLDBTarget);
-	
-	////
 	
 	return	self == object || _raw.operator==(object->_raw) == true;
 }

@@ -20,6 +20,7 @@
 #import "LLDBDebugger.h"
 #import "LLDBTarget.h"
 #import "LLDBBreakpoint.h"
+#import "LLDBBreakpointLocation.h"
 
 #import "LLDBSourceManager.h"
 #import "LLDBCompileUnit.h"
@@ -30,26 +31,32 @@
 #import "LLDBThread.h"
 #import "LLDBFrame.h"
 #import "LLDBFunction.h"
+#import "LLDBBlock.h"
 #import "LLDBInstructionList.h"
 #import "LLDBInstruction.h"
 #import "LLDBSymbol.h"
 #import "LLDBValueList.h"
 #import "LLDBValue.h"
+
 #import "LLDBError.h"
-#import "LLDBModule.h"
 #import "LLDBAddress.h"
-#import "LLDBBlock.h"
-#import "LLDBBroadcaster.h"
-#import "LLDBData.h"
-#import "LLDBDeclaration.h"
-#import "LLDBEvent.h"
-#import "LLDBHostOS.h"
-#import "LLDBListener.h"
-#import "LLDBModuleSpec.h"
-#import "LLDBSection.h"
+
 #import "LLDBSourceManager.h"
+#import "LLDBModule.h"
+#import "LLDBModuleSpec.h"
 #import "LLDBSymbolContext.h"
 #import "LLDBSymbolContextList.h"
+
+
+#import "LLDBBroadcaster.h"
+#import "LLDBEvent.h"
+#import "LLDBListener.h"
+
+#import "LLDBData.h"
+#import "LLDBDeclaration.h"
+#import "LLDBHostOS.h"
+#import "LLDBSection.h"
+
 #import "LLDBType.h"
 #import "LLDBTypeCategory.h"
 #import "LLDBTypeFilter.h"
@@ -107,6 +114,14 @@
 	lldb::SBBreakpoint	_raw;
 }
 - (instancetype)initWithCPPObject:(lldb::SBBreakpoint)raw;
+@end
+
+@interface	LLDBBreakpointLocation ()
+{
+	@package
+	lldb::SBBreakpointLocation	_raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBBreakpointLocation)raw;
 @end
 
 
@@ -420,13 +435,19 @@
 #pragma mark	-
 #pragma mark	Source Tracking
 
-//@interface	LLDBSourceManager ()
-//{
-//	@package
-//	lldb::SBSourceManager	_raw;
-//}
-//- (instancetype)initWithCPPObject:(lldb::SBSourceManager)raw;
-//@end
+@interface	LLDBSourceManager ()
+{
+	@package
+	
+	///	This need to be a pointer because SBSourceManager does not have
+	///	a proper empty-state that are required to an Objective-C++ class.
+	///
+	///	It is possible to hack this around uninitialsed memory, but it's too complex and unsafe when
+	///	compared to its benefit -- save of single pointer allocation that is not frequently required.
+	lldb::SBSourceManager*	_rawptr;
+}
+- (instancetype)initWithCPPObject:(lldb::SBSourceManager)rawptr;
+@end
 
 @interface LLDBCompileUnit ()
 {
@@ -556,9 +577,7 @@ handle_error(lldb::SBError const& error, LLDBError** output)
 	
 	if (ok1 == NO && output != NULL)
 	{
-		LLDBError*	e1	=	[[LLDBError alloc] init];
-		e1->_raw		=	error;
-		*output			=	e1;
+		*output			=	[[LLDBError alloc] initWithCPPObject:error];
 	}
 	
 	return	ok1;
@@ -581,6 +600,17 @@ get_description_of(T _raw)
 {
 	lldb::SBStream	s;
 	bool			r	=	_raw.GetDescription(s);
+	UNIVERSE_DEBUG_ASSERT(r == true);
+	
+	NSString*		s1	=	[[NSString alloc] initWithBytes:s.GetData() length:s.GetSize() encoding:NSUTF8StringEncoding];
+	return			s1;
+}
+template <typename T>
+static inline NSString*
+get_description_of(T _raw, lldb::DescriptionLevel level)
+{
+	lldb::SBStream	s;
+	bool			r	=	_raw.GetDescription(s, level);
 	UNIVERSE_DEBUG_ASSERT(r == true);
 	
 	NSString*		s1	=	[[NSString alloc] initWithBytes:s.GetData() length:s.GetSize() encoding:NSUTF8StringEncoding];
