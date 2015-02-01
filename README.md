@@ -22,8 +22,8 @@ Caution
 Though this framework originally intended to work with open-sourced LLDB build, but there were
 two problems.
 
--	Building of LLDB takes too much. And you are very likely to have several build issues. 
-	(such as code signing)
+-	Building of LLDB takes too long and needs some unfamiliar works. You are very likely to 
+	have several build issues. (such as code signing)
 
 -	Built binary is very large. It usually takes hundred megabytes. Then it also cannot be
 	included in Git repository. (Github allows only files up to about 100MiB)
