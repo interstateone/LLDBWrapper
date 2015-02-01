@@ -76,12 +76,12 @@ can be added later if I feel need for it.
 
 
 
-Lessons from History
---------------------
--	I have tried to generate SWIG-like C API from C++ source code, but I realised it requires 
-	too much work and Swift compiler is not stable enough yet. I don't have such time. DO NOT 
-	TRY THIS AT HOME EVER AGAIN unless you have enough idle time. (I wasted about 3 weeks and
-	finally abandoned the approach --- failure)
+Lessons from Trials
+---------------------------
+I have tried to generate SWIG-like C API from C++ source code, but I realised it requires 
+too much work and Swift compiler is not stable enough yet. I don't have such time. DO NOT 
+TRY THIS AT HOME EVER AGAIN unless you have enough idle time. (I wasted about 3 weeks and
+finally abandoned the approach --- failure)
 
 
 
