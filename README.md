@@ -17,8 +17,32 @@ Named as `LLDBWrapper` to avoid possible name conflict with any existing system 
 
 
 
+
+
+
+
+Getting Started
+---------------
+First, select and run "TestdriveApp" target to verify correct program execution.
+A debugger will start up and launch predefined test program target. ("SampleProgram3")
+Press `Command+R` to perform "step-over". If you see stack frame changes with some print
+output, it's working.
+
+Now see the source code of "TestdriveApp" to see how to use this framework.
+
+
+
+
+
 Caution
 -------
+
+-	You have to add `$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks` to 
+	`LD_RUNPATH_SEARCH_PATHS` in build settings of your build target.
+
+-	Do not embed included `LLDB.framework` in your product. That is not a fake. See below 
+	for details.
+
 Though this framework originally intended to work with open-sourced LLDB build, but there were
 two problems.
 
@@ -72,7 +96,7 @@ Wrapping Design Choices
 	method with invalid object will return `nil`.
 
 -	`SB~` classes are also proxies, and can become invalid state (`IsValid() == true`) at any time.
-	Objective-C object will perform debug mode assertions for calling any method on invalid state.
+	Objective-C wrapper will perform debug mode assertions for invalid state on all method call.
 
 -	Equality and comparison operators will be provided if original C++ classes provides corresponding 
 	operators.
@@ -89,7 +113,7 @@ Wrapping Design Choices
 
 -	Enums should be redefined in C side, and mapped to corresponding C++ constants.
 
--	No exception. Because (1) to be used with Swift. (2) I don't think exceptions are truly good one.
+-	No exception. (1) To be used with Swift. (2) I don't think exceptions are truly good one.
 	Wrapper method must return a proper error or crash reliably.
 	
 

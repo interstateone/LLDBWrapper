@@ -60,6 +60,7 @@ typedef	int32_t		LLDBWatchIDType;
 @class	LLDBError;
 @class	LLDBAddress;
 @class	LLDBData;
+@class	LLDBFileHandle;
 
 @class	LLDBObject;
 

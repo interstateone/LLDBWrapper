@@ -105,20 +105,20 @@ public extension LLDBProcess {
 //		let	len	=	writeToStandardInput(d)
 //		precondition(len == d.length, "Couldn't write all string to STDIN.")
 	//	}
-	public func readFromStandardOutput(maximumLength:Int) -> NSData {
+	public func readFromStandardOutput() -> NSData {
+		let	len			=	8192
 		let	d			=	NSMutableData()
-		let	len			=	size_t(maximumLength)
-		d.length		=	maximumLength
-		let	read_len	=	self.getStandardOutput(UnsafeMutablePointer<CChar>(d.mutableBytes), length: len)
+		d.length		=	len
+		let	read_len	=	self.getStandardOutput(UnsafeMutablePointer<CChar>(d.mutableBytes), length: size_t(len))
 		let	read_len1	=	Int(read_len)
 		let	d1			=	d.subdataWithRange(NSRange(location: 0, length: read_len1))
 		return	d1
 	}
-	public func readFromStandardError(maximumLength:Int) -> NSData {
+	public func readFromStandardError() -> NSData {
+		let	len			=	8192
 		let	d			=	NSMutableData()
-		let	len			=	size_t(maximumLength)
-		d.length		=	maximumLength
-		let	read_len	=	self.getStandardError(UnsafeMutablePointer<CChar>(d.mutableBytes), length: len)
+		d.length		=	len
+		let	read_len	=	self.getStandardError(UnsafeMutablePointer<CChar>(d.mutableBytes), length: size_t(len))
 		let	read_len1	=	Int(read_len)
 		let	d1			=	d.subdataWithRange(NSRange(location: 0, length: read_len1))
 		return	d1

@@ -35,13 +35,60 @@ NSString* const	LLDBArchDefault64Bit	=	[NSString stringWithUTF8String:LLDB_ARCH_
 
 
 
+//class FileHandleBridge {
+//public:
+//	FileHandleBridge() {
+//	}
+//	FileHandleBridge(NSFileHandle* cocoa) : _cocoa(cocoa)
+//	{
+//		UNIVERSE_DEBUG_ASSERT(_cocoa != NULL);
+//		_cstream	=	fdopen(_cocoa.fileDescriptor, "rw");
+//		UNIVERSE_DEBUG_ASSERT(_cstream != NULL);
+//	}
+//	
+//	auto
+//	getCFileStreamHandle() -> FILE*
+//	{
+//		return	_cstream;
+//	}
+//	
+//private:
+//	~FileHandleBridge()
+//	{
+//		UNIVERSE_DEBUG_ASSERT(_cocoa != NULL);
+//		UNIVERSE_DEBUG_ASSERT(_cstream != NULL);
+//		auto const	r	=	fclose(_cstream);
+//		UNIVERSE_DEBUG_ASSERT(r == 0);
+//	}
+//	NSFileHandle*	_cocoa		=	nil;
+//	FILE*			_cstream	=	NULL;
+//};
+
+
+
+
+
+
+
+
+
+
+
 
 
 @implementation LLDBDebugger
 {
 	@private
 	LLDBSourceManager*	_srcmgr;
+
+//	FILE*	_inputFH;
+//	FILE*	_outputFH;
+//	FILE*	_errorFH;
 }
+
+
+
+
 
 LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 - (instancetype)init
@@ -57,13 +104,35 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 	
 		_raw	=	SBDebugger::Create();
 		_srcmgr	=	[[LLDBSourceManager alloc] initWithCPPObject:_raw.GetSourceManager()];
+		
+//		_inputFH	=	NULL;
+//		_outputFH	=	NULL;
+//		_errorFH	=	NULL;
 	}
 	return	self;
 }
 - (void)dealloc
 {
-	precondition_valid_state_of(_raw);
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
 	SBDebugger::Destroy(_raw);
+	
+//	if (_inputFH != NULL) {
+//		auto const	r	=	fclose(_inputFH);
+//		_inputFH		=	NULL;
+//		UNIVERSE_DEBUG_ASSERT(r == 0);
+//	}
+//	
+//	if (_outputFH != NULL) {
+//		auto const	r	=	fclose(_outputFH);
+//		_outputFH		=	NULL;
+//		UNIVERSE_DEBUG_ASSERT(r == 0);
+//	}
+//	
+//	if (_errorFH != NULL) {
+//		auto const	r	=	fclose(_errorFH);
+//		_errorFH		=	NULL;
+//		UNIVERSE_DEBUG_ASSERT(r == 0);
+//	}
 	
 	////
 	
@@ -115,6 +184,54 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 	
 	return	[[LLDBTarget alloc] initWithCPPObject:_raw.CreateTargetWithFileAndArch(filename.UTF8String, archname.UTF8String)];
 }
+
+
+- (void)deleteTarget:(LLDBTarget *)target
+{
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	auto const	r	=	_raw.DeleteTarget(target->_raw);
+	UNIVERSE_DEBUG_ASSERT(r == true);
+}
+
+
+
+
+
+
+
+//- (FILE *)outputFileHandle
+//{
+//	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+//	
+//	return	_raw.GetOutputFileHandle();
+//}
+//- (void)setOutputFileHandle:(FILE *)outputFileHandle
+//{
+//	[self setOutputFileHandle:outputFileHandle transferOwnership:NO];
+//}
+//- (void)setOutputFileHandle:(FILE *)outputFileHandle transferOwnership:(BOOL)transferOwnership
+//{
+//	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+//	
+//	_raw.SetOutputFileHandle(outputFileHandle, transferOwnership == true);
+//}
+//
+//- (void)setOutputFileHandle:(LLDBFileHandle *)outputFileHandle
+//{
+//	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+//	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE_OR_NIL(outputFileHandle, LLDBFileHandle);
+//	
+//	_outputFileHandle	=	outputFileHandle;
+//	_raw.SetOutputFileHandle([outputFileHandle fileStreamHandle], false);
+//}
+
+
+
+
+
+
+
 - (uint32_t)numberOfTargets
 {
 	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());

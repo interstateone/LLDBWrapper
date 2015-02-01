@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45A0FBA5199FBABD0020D59D"
-               BuildableName = "IndependentLLDBWrapperApplication.app"
-               BlueprintName = "IndependentLLDBWrapperApplication"
-               ReferencedContainer = "container:LLDBWrapper.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4500E7C51A77262300810EA8"
-               BuildableName = "Test2Tests.xctest"
-               BlueprintName = "Test2Tests"
+               BlueprintIdentifier = "45E5EF201A7E6817009967D2"
+               BuildableName = "TestdriveApp.app"
+               BlueprintName = "TestdriveApp"
                ReferencedContainer = "container:LLDBWrapper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,33 +28,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45A0FBBF199FBABD0020D59D"
-               BuildableName = "IndependentEonilLLDBApplicationTests.xctest"
-               BlueprintName = "IndependentEonilLLDBApplicationTests"
-               ReferencedContainer = "container:LLDBWrapper.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4500E7C51A77262300810EA8"
-               BuildableName = "Test2Tests.xctest"
-               BlueprintName = "Test2Tests"
-               ReferencedContainer = "container:LLDBWrapper.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45A0FBA5199FBABD0020D59D"
-            BuildableName = "IndependentLLDBWrapperApplication.app"
-            BlueprintName = "IndependentLLDBWrapperApplication"
+            BlueprintIdentifier = "45E5EF201A7E6817009967D2"
+            BuildableName = "TestdriveApp.app"
+            BlueprintName = "TestdriveApp"
             ReferencedContainer = "container:LLDBWrapper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -85,9 +51,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45A0FBA5199FBABD0020D59D"
-            BuildableName = "IndependentLLDBWrapperApplication.app"
-            BlueprintName = "IndependentLLDBWrapperApplication"
+            BlueprintIdentifier = "45E5EF201A7E6817009967D2"
+            BuildableName = "TestdriveApp.app"
+            BlueprintName = "TestdriveApp"
             ReferencedContainer = "container:LLDBWrapper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -103,9 +69,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "45A0FBA5199FBABD0020D59D"
-            BuildableName = "IndependentLLDBWrapperApplication.app"
-            BlueprintName = "IndependentLLDBWrapperApplication"
+            BlueprintIdentifier = "45E5EF201A7E6817009967D2"
+            BuildableName = "TestdriveApp.app"
+            BlueprintName = "TestdriveApp"
             ReferencedContainer = "container:LLDBWrapper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

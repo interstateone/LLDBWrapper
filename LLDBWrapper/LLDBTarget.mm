@@ -15,12 +15,17 @@ LLDBOBJECT_INIT_IMPL(lldb::SBTarget);
 {
 	UNIVERSE_DELETED_METHOD();
 }
-- (void)dealloc
-{
-	bool	f1	=	_raw.GetDebugger().DeleteTarget(_raw);
-	UNIVERSE_DEBUG_ASSERT(f1 == true);
-}
 
+
+
+
+
+- (LLDBProcess *)process
+{
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBProcess alloc] initWithCPPObject:_raw.GetProcess()];
+}
 - (LLDBFileSpec *)executableFileSpec
 {
 	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());

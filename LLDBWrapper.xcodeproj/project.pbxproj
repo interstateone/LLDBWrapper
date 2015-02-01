@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		451C11491A76C0BA004B217C /* LLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C993221A6E5D3400BA2BC4 /* LLDB.framework */; };
-		4580C70D19BB49B100BDB38A /* LLDBWrapper.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4584EEA31A7809A8009A6CCB /* LLDBAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EEA11A7809A8009A6CCB /* LLDBAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4584EEA41A7809A8009A6CCB /* LLDBAddress.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4584EEA21A7809A8009A6CCB /* LLDBAddress.mm */; };
 		4584EEA71A780B55009A6CCB /* LLDBBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EEA51A780B55009A6CCB /* LLDBBlock.h */; };
@@ -57,13 +56,6 @@
 		45A0BB1F1A794EC300D11282 /* LLDBWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; };
 		45A0BB201A794EC300D11282 /* LLDBWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45A0FB7A199FBA9C0020D59D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB79199FBA9C0020D59D /* Cocoa.framework */; };
-		45A0FBA7199FBABD0020D59D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB79199FBA9C0020D59D /* Cocoa.framework */; };
-		45A0FBAD199FBABD0020D59D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45A0FBAB199FBABD0020D59D /* InfoPlist.strings */; };
-		45A0FBAF199FBABD0020D59D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0FBAE199FBABD0020D59D /* main.m */; };
-		45A0FBB3199FBABD0020D59D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 45A0FBB1199FBABD0020D59D /* Credits.rtf */; };
-		45A0FBB6199FBABD0020D59D /* ApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0FBB5199FBABD0020D59D /* ApplicationController.m */; };
-		45A0FBB9199FBABD0020D59D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A0FBB7199FBABD0020D59D /* MainMenu.xib */; };
-		45A0FBBB199FBABD0020D59D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45A0FBBA199FBABD0020D59D /* Images.xcassets */; };
 		45A389751A70CE78008C6793 /* LLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C993221A6E5D3400BA2BC4 /* LLDB.framework */; };
 		45AED2CD1A751B35002F83AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AED2CC1A751B35002F83AB /* main.m */; };
 		45AED2E51A751B55002F83AB /* LLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C993221A6E5D3400BA2BC4 /* LLDB.framework */; };
@@ -81,6 +73,14 @@
 		45C993311A6E5D4A00BA2BC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C993301A6E5D4A00BA2BC4 /* Images.xcassets */; };
 		45C993341A6E5D4A00BA2BC4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C993321A6E5D4A00BA2BC4 /* MainMenu.xib */; };
 		45C993511A6E5DF700BA2BC4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 45C993501A6E5DF700BA2BC4 /* main.c */; };
+		45D680461A7E88E400B3933D /* LLDBFileHandle.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D680441A7E88E400B3933D /* LLDBFileHandle.h */; };
+		45D680471A7E88E400B3933D /* LLDBFileHandle.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45D680451A7E88E400B3933D /* LLDBFileHandle.mm */; };
+		45E5EF261A7E6817009967D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5EF251A7E6817009967D2 /* AppDelegate.swift */; };
+		45E5EF281A7E6817009967D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E5EF271A7E6817009967D2 /* Images.xcassets */; };
+		45E5EF2B1A7E6817009967D2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45E5EF291A7E6817009967D2 /* MainMenu.xib */; };
+		45E5EF4A1A7E6864009967D2 /* LLDBWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; };
+		45E5EF4B1A7E6864009967D2 /* LLDBWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45E5EF4F1A7E6870009967D2 /* LLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C993221A6E5D3400BA2BC4 /* LLDB.framework */; };
 		45ED48AD1A79012300A16068 /* LLDBBreakpointLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ED48AB1A79012300A16068 /* LLDBBreakpointLocation.h */; };
 		45ED48AE1A79012300A16068 /* LLDBBreakpointLocation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ED48AC1A79012300A16068 /* LLDBBreakpointLocation.mm */; };
 		45F63E741A7898EF00244DBC /* LLDB_Internals_EnumTranslation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F63E721A7898EF00244DBC /* LLDB_Internals_EnumTranslation.h */; };
@@ -143,13 +143,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4580C70E19BB4A4D00BDB38A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45A0FB6B199FBA850020D59D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45A0FB75199FBA9C0020D59D;
-			remoteInfo = InteractiveDebugger;
-		};
 		45995ADC1A7E2D9F00214E64 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45A0FB6B199FBA850020D59D /* Project object */;
@@ -163,6 +156,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 45A0FB75199FBA9C0020D59D;
 			remoteInfo = LLDBWrapper;
+		};
+		45ADEEC21A7E716000200F1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A0FB6B199FBA850020D59D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45C9934D1A6E5DF700BA2BC4;
+			remoteInfo = SampleProgram3;
 		};
 		45C511701A7955190055DC1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -178,30 +178,16 @@
 			remoteGlobalIDString = 45C9934D1A6E5DF700BA2BC4;
 			remoteInfo = SampleProgram3;
 		};
+		45E5EF4C1A7E6864009967D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A0FB6B199FBA850020D59D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45A0FB75199FBA9C0020D59D;
+			remoteInfo = LLDBWrapper;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4500E7D81A77262400810EA8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		453ABDFC19BB417700D404CD /* Copy Files */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Frameworks;
-			dstSubfolderSpec = 6;
-			files = (
-				4580C70D19BB49B100BDB38A /* LLDBWrapper.framework in Copy Files */,
-			);
-			name = "Copy Files";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		45A0BB231A794EC300D11282 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +229,17 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		45E5EF4E1A7E6864009967D2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45E5EF4B1A7E6864009967D2 /* LLDBWrapper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -344,16 +341,6 @@
 		45A0FB85199FBA9C0020D59D /* LLDBWrapper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LLDBWrapper-Prefix.pch"; sourceTree = "<group>"; };
 		45A0FB86199FBA9C0020D59D /* LLDBWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLDBWrapper.h; sourceTree = "<group>"; };
 		45A0FB87199FBA9C0020D59D /* LLDBWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLDBWrapper.m; sourceTree = "<group>"; };
-		45A0FBA6199FBABD0020D59D /* IndependentLLDBWrapperApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndependentLLDBWrapperApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		45A0FBAA199FBABD0020D59D /* IndependentLLDBWrapperApplication-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IndependentLLDBWrapperApplication-Info.plist"; sourceTree = "<group>"; };
-		45A0FBAC199FBABD0020D59D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		45A0FBAE199FBABD0020D59D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45A0FBB0199FBABD0020D59D /* IndependentLLDBWrapperApplication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IndependentLLDBWrapperApplication-Prefix.pch"; sourceTree = "<group>"; };
-		45A0FBB2199FBABD0020D59D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		45A0FBB4199FBABD0020D59D /* ApplicationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationController.h; sourceTree = "<group>"; };
-		45A0FBB5199FBABD0020D59D /* ApplicationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationController.m; sourceTree = "<group>"; };
-		45A0FBB8199FBABD0020D59D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		45A0FBBA199FBABD0020D59D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		45AED2C51A751B35002F83AB /* SampleProgram4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProgram4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45AED2CC1A751B35002F83AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45AED2E81A751B90002F83AB /* Try1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Try1.cpp; sourceTree = "<group>"; };
@@ -374,6 +361,14 @@
 		45C993331A6E5D4A00BA2BC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		45C9934E1A6E5DF700BA2BC4 /* SampleProgram3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SampleProgram3; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C993501A6E5DF700BA2BC4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		45D680441A7E88E400B3933D /* LLDBFileHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDBFileHandle.h; sourceTree = "<group>"; };
+		45D680451A7E88E400B3933D /* LLDBFileHandle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LLDBFileHandle.mm; sourceTree = "<group>"; };
+		45E5EF211A7E6817009967D2 /* TestdriveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestdriveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45E5EF241A7E6817009967D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45E5EF251A7E6817009967D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45E5EF271A7E6817009967D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		45E5EF2A1A7E6817009967D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		45E5EF491A7E681C009967D2 /* TestdriveApp copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "TestdriveApp copy-Info.plist"; path = "/Users/Eonil/Workshop/Incubation/LLDBWrapper/TestdriveApp copy-Info.plist"; sourceTree = "<absolute>"; };
 		45ED48AB1A79012300A16068 /* LLDBBreakpointLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDBBreakpointLocation.h; sourceTree = "<group>"; };
 		45ED48AC1A79012300A16068 /* LLDBBreakpointLocation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LLDBBreakpointLocation.mm; sourceTree = "<group>"; };
 		45F63E721A7898EF00244DBC /* LLDB_Internals_EnumTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDB_Internals_EnumTranslation.h; sourceTree = "<group>"; };
@@ -399,14 +394,6 @@
 				45A0FB7A199FBA9C0020D59D /* Cocoa.framework in Frameworks */,
 				45A389751A70CE78008C6793 /* LLDB.framework in Frameworks */,
 				45A0BB1E1A794EA900D11282 /* liblldb-core-hack.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45A0FBA3199FBABD0020D59D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45A0FBA7199FBABD0020D59D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +428,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45E5EF1E1A7E6817009967D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45E5EF4A1A7E6864009967D2 /* LLDBWrapper.framework in Frameworks */,
+				45E5EF4F1A7E6870009967D2 /* LLDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,13 +537,14 @@
 				45C473D01A77DFC100640712 /* liblldb-core-hack.a */,
 				45C993221A6E5D3400BA2BC4 /* LLDB.framework */,
 				45A0FB7F199FBA9C0020D59D /* LLDBWrapper */,
-				45A0FBA8199FBABD0020D59D /* IndependentInteractiveDebuggerApplication */,
 				45C993281A6E5D4A00BA2BC4 /* Workbench1 */,
 				45C9934F1A6E5DF700BA2BC4 /* SampleProgram3 */,
 				45AED2C61A751B35002F83AB /* SampleProgram4 */,
 				45C511521A7954F20055DC1D /* Workbench2 */,
+				45E5EF221A7E6817009967D2 /* TestdriveApp */,
 				45A0FB78199FBA9C0020D59D /* Frameworks */,
 				45A0FB77199FBA9C0020D59D /* Products */,
+				45E5EF491A7E681C009967D2 /* TestdriveApp copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -555,11 +552,11 @@
 			isa = PBXGroup;
 			children = (
 				45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */,
-				45A0FBA6199FBABD0020D59D /* IndependentLLDBWrapperApplication.app */,
 				45C993271A6E5D4A00BA2BC4 /* Workbench1.app */,
 				45C9934E1A6E5DF700BA2BC4 /* SampleProgram3 */,
 				45AED2C51A751B35002F83AB /* SampleProgram4.app */,
 				45C511511A7954F20055DC1D /* Workbench2.app */,
+				45E5EF211A7E6817009967D2 /* TestdriveApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -620,30 +617,6 @@
 			children = (
 				45A0FB81199FBA9C0020D59D /* LLDBWrapper-Info.plist */,
 				45A0FB85199FBA9C0020D59D /* LLDBWrapper-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		45A0FBA8199FBABD0020D59D /* IndependentInteractiveDebuggerApplication */ = {
-			isa = PBXGroup;
-			children = (
-				45A0FBB4199FBABD0020D59D /* ApplicationController.h */,
-				45A0FBB5199FBABD0020D59D /* ApplicationController.m */,
-				45A0FBB7199FBABD0020D59D /* MainMenu.xib */,
-				45A0FBBA199FBABD0020D59D /* Images.xcassets */,
-				45A0FBA9199FBABD0020D59D /* Supporting Files */,
-			);
-			path = IndependentInteractiveDebuggerApplication;
-			sourceTree = "<group>";
-		};
-		45A0FBA9199FBABD0020D59D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				45A0FBAA199FBABD0020D59D /* IndependentLLDBWrapperApplication-Info.plist */,
-				45A0FBAB199FBABD0020D59D /* InfoPlist.strings */,
-				45A0FBAE199FBABD0020D59D /* main.m */,
-				45A0FBB0199FBABD0020D59D /* IndependentLLDBWrapperApplication-Prefix.pch */,
-				45A0FBB1199FBABD0020D59D /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -723,6 +696,25 @@
 			path = SampleProgram3;
 			sourceTree = "<group>";
 		};
+		45E5EF221A7E6817009967D2 /* TestdriveApp */ = {
+			isa = PBXGroup;
+			children = (
+				45E5EF251A7E6817009967D2 /* AppDelegate.swift */,
+				45E5EF271A7E6817009967D2 /* Images.xcassets */,
+				45E5EF291A7E6817009967D2 /* MainMenu.xib */,
+				45E5EF231A7E6817009967D2 /* Supporting Files */,
+			);
+			path = TestdriveApp;
+			sourceTree = "<group>";
+		};
+		45E5EF231A7E6817009967D2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45E5EF241A7E6817009967D2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		45ED48AF1A790CB400A16068 /* (infrastructures) */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,6 +724,8 @@
 				4584EEB21A780B7F009A6CCB /* LLDBData.mm */,
 				4580C75E19BB69BF00BDB38A /* LLDBError.h */,
 				4580C75F19BB69BF00BDB38A /* LLDBError.mm */,
+				45D680441A7E88E400B3933D /* LLDBFileHandle.h */,
+				45D680451A7E88E400B3933D /* LLDBFileHandle.mm */,
 			);
 			name = "(infrastructures)";
 			sourceTree = "<group>";
@@ -802,6 +796,7 @@
 				4584EEB31A780B7F009A6CCB /* LLDBData.h in Headers */,
 				45F73ADA1A77FC5A00AAEF0C /* LLDB_Internals.h in Headers */,
 				45F73AC01A77FC5A00AAEF0C /* LLDBWrapper.h in Headers */,
+				45D680461A7E88E400B3933D /* LLDBFileHandle.h in Headers */,
 				45F73AC11A77FC5A00AAEF0C /* LLDBEnums.h in Headers */,
 				45F73AD21A77FC5A00AAEF0C /* LLDBFrame.h in Headers */,
 				45F73ACD1A77FC5A00AAEF0C /* LLDBSourceManager.h in Headers */,
@@ -868,26 +863,6 @@
 			productName = InteractiveDebugger;
 			productReference = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		45A0FBA5199FBABD0020D59D /* IndependentLLDBWrapperApplication */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 45A0FBCD199FBABE0020D59D /* Build configuration list for PBXNativeTarget "IndependentLLDBWrapperApplication" */;
-			buildPhases = (
-				45A0FBA2199FBABD0020D59D /* Sources */,
-				45A0FBA3199FBABD0020D59D /* Frameworks */,
-				45A0FBA4199FBABD0020D59D /* Resources */,
-				453ABDFC19BB417700D404CD /* Copy Files */,
-				4500E7D81A77262400810EA8 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4580C70F19BB4A4D00BDB38A /* PBXTargetDependency */,
-			);
-			name = IndependentLLDBWrapperApplication;
-			productName = IndependentInteractiveDebuggerApplication;
-			productReference = 45A0FBA6199FBABD0020D59D /* IndependentLLDBWrapperApplication.app */;
-			productType = "com.apple.product-type.application";
 		};
 		45AED2C41A751B35002F83AB /* SampleProgram4 */ = {
 			isa = PBXNativeTarget;
@@ -964,6 +939,26 @@
 			productReference = 45C9934E1A6E5DF700BA2BC4 /* SampleProgram3 */;
 			productType = "com.apple.product-type.tool";
 		};
+		45E5EF201A7E6817009967D2 /* TestdriveApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45E5EF3C1A7E6817009967D2 /* Build configuration list for PBXNativeTarget "TestdriveApp" */;
+			buildPhases = (
+				45E5EF1D1A7E6817009967D2 /* Sources */,
+				45E5EF1E1A7E6817009967D2 /* Frameworks */,
+				45E5EF1F1A7E6817009967D2 /* Resources */,
+				45E5EF4E1A7E6864009967D2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45ADEEC31A7E716000200F1E /* PBXTargetDependency */,
+				45E5EF4D1A7E6864009967D2 /* PBXTargetDependency */,
+			);
+			name = TestdriveApp;
+			productName = TestdriveApp;
+			productReference = 45E5EF211A7E6817009967D2 /* TestdriveApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -984,6 +979,9 @@
 					45C9934D1A6E5DF700BA2BC4 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					45E5EF201A7E6817009967D2 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 				};
 			};
 			buildConfigurationList = 45A0FB6E199FBA850020D59D /* Build configuration list for PBXProject "LLDBWrapper" */;
@@ -1000,11 +998,11 @@
 			projectRoot = "";
 			targets = (
 				45A0FB75199FBA9C0020D59D /* LLDBWrapper */,
-				45A0FBA5199FBABD0020D59D /* IndependentLLDBWrapperApplication */,
 				45C993261A6E5D4A00BA2BC4 /* Workbench1 */,
 				45C9934D1A6E5DF700BA2BC4 /* SampleProgram3 */,
 				45AED2C41A751B35002F83AB /* SampleProgram4 */,
 				45C511501A7954F20055DC1D /* Workbench2 */,
+				45E5EF201A7E6817009967D2 /* TestdriveApp */,
 			);
 		};
 /* End PBXProject section */
@@ -1014,17 +1012,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45A0FBA4199FBABD0020D59D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45A0FBAD199FBABD0020D59D /* InfoPlist.strings in Resources */,
-				45A0FBBB199FBABD0020D59D /* Images.xcassets in Resources */,
-				45A0FBB3199FBABD0020D59D /* Credits.rtf in Resources */,
-				45A0FBB9199FBABD0020D59D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1050,6 +1037,15 @@
 			files = (
 				45C993311A6E5D4A00BA2BC4 /* Images.xcassets in Resources */,
 				45C993341A6E5D4A00BA2BC4 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45E5EF1F1A7E6817009967D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45E5EF281A7E6817009967D2 /* Images.xcassets in Resources */,
+				45E5EF2B1A7E6817009967D2 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,6 +1090,7 @@
 				4584EED61A780C07009A6CCB /* LLDBSymbolContext.m in Sources */,
 				45F73ADC1A77FFBD00AAEF0C /* LLDBExtensions.swift in Sources */,
 				45F73AA71A77FB1D00AAEF0C /* LLDBDeclarations.mm in Sources */,
+				45D680471A7E88E400B3933D /* LLDBFileHandle.mm in Sources */,
 				4584EEFB1A780D2D009A6CCB /* LLDBSymbolContextList.m in Sources */,
 				4584EEE61A780C35009A6CCB /* LLDBTypeFormat.m in Sources */,
 				45F73AB41A77FB1D00AAEF0C /* LLDBInstructionList.mm in Sources */,
@@ -1112,15 +1109,6 @@
 				45F73AAD1A77FB1D00AAEF0C /* LLDBSourceManager.mm in Sources */,
 				4584EEB81A780B8C009A6CCB /* LLDBDeclaration.m in Sources */,
 				45F73AB71A77FB1D00AAEF0C /* LLDBValueList.mm in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45A0FBA2199FBABD0020D59D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45A0FBB6199FBABD0020D59D /* ApplicationController.m in Sources */,
-				45A0FBAF199FBABD0020D59D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,14 +1146,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45E5EF1D1A7E6817009967D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45E5EF261A7E6817009967D2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4580C70F19BB4A4D00BDB38A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45A0FB75199FBA9C0020D59D /* LLDBWrapper */;
-			targetProxy = 4580C70E19BB4A4D00BDB38A /* PBXContainerItemProxy */;
-		};
 		45995ADD1A7E2D9F00214E64 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 45C9934D1A6E5DF700BA2BC4 /* SampleProgram3 */;
@@ -1175,6 +1166,11 @@
 			isa = PBXTargetDependency;
 			target = 45A0FB75199FBA9C0020D59D /* LLDBWrapper */;
 			targetProxy = 45A0BB211A794EC300D11282 /* PBXContainerItemProxy */;
+		};
+		45ADEEC31A7E716000200F1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45C9934D1A6E5DF700BA2BC4 /* SampleProgram3 */;
+			targetProxy = 45ADEEC21A7E716000200F1E /* PBXContainerItemProxy */;
 		};
 		45C511711A7955190055DC1D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1186,33 +1182,14 @@
 			target = 45C9934D1A6E5DF700BA2BC4 /* SampleProgram3 */;
 			targetProxy = 45C993551A6E5E0A00BA2BC4 /* PBXContainerItemProxy */;
 		};
+		45E5EF4D1A7E6864009967D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45A0FB75199FBA9C0020D59D /* LLDBWrapper */;
+			targetProxy = 45E5EF4C1A7E6864009967D2 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		45A0FBAB199FBABD0020D59D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45A0FBAC199FBABD0020D59D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		45A0FBB1199FBABD0020D59D /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45A0FBB2199FBABD0020D59D /* en */,
-			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		45A0FBB7199FBABD0020D59D /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45A0FBB8199FBABD0020D59D /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
 		45C511591A7954F20055DC1D /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1225,6 +1202,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				45C993331A6E5D4A00BA2BC4 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		45E5EF291A7E6817009967D2 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45E5EF2A1A7E6817009967D2 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -1359,100 +1344,6 @@
 				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wno-format-security";
 				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
-		45A0FBCE199FBABE0020D59D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IndependentInteractiveDebuggerApplication/IndependentLLDBWrapperApplication-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "IndependentInteractiveDebuggerApplication/IndependentLLDBWrapperApplication-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = IndependentLLDBWrapperApplication;
-				SDKROOT = macosx;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		45A0FBCF199FBABE0020D59D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
-				);
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "IndependentInteractiveDebuggerApplication/IndependentLLDBWrapperApplication-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "IndependentInteractiveDebuggerApplication/IndependentLLDBWrapperApplication-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = IndependentLLDBWrapperApplication;
-				SDKROOT = macosx;
-				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -1833,6 +1724,102 @@
 			};
 			name = Release;
 		};
+		45E5EF381A7E6817009967D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = TestdriveApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks $(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45E5EF391A7E6817009967D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = TestdriveApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks $(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1850,15 +1837,6 @@
 			buildConfigurations = (
 				45A0FB9D199FBA9C0020D59D /* Debug */,
 				45A0FB9E199FBA9C0020D59D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		45A0FBCD199FBABE0020D59D /* Build configuration list for PBXNativeTarget "IndependentLLDBWrapperApplication" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45A0FBCE199FBABE0020D59D /* Debug */,
-				45A0FBCF199FBABE0020D59D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1895,6 +1873,15 @@
 			buildConfigurations = (
 				45C993531A6E5DF700BA2BC4 /* Debug */,
 				45C993541A6E5DF700BA2BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45E5EF3C1A7E6817009967D2 /* Build configuration list for PBXNativeTarget "TestdriveApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45E5EF381A7E6817009967D2 /* Debug */,
+				45E5EF391A7E6817009967D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

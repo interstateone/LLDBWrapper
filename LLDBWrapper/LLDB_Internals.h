@@ -66,6 +66,7 @@
 
 #import "LLDBData.h"
 #import "LLDBError.h"
+#import "LLDBFileHandle.h"
 #import "LLDBAddress.h"
 
 
@@ -607,6 +608,14 @@
 - (instancetype)initWithCPPObject:(lldb::SBData)raw;
 @end
 
+@interface LLDBFileHandle ()
+{
+	@package
+	FILE*					_raw;
+}
+- (instancetype)initWithCObject:(FILE*)raw;
+@end
+
 @interface	LLDBObject ()
 @end
 
@@ -715,14 +724,6 @@ get_description_of(T _raw, lldb::DescriptionLevel level)
 	return			s1;
 }
 
-
-
-template <typename T>
-static inline void
-precondition_valid_state_of(T& raw)
-{
-	UNIVERSE_DEBUG_ASSERT(raw.IsValid());
-}
 
 
 
