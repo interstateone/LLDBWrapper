@@ -44,6 +44,10 @@ library so should be correct. But I think this is not truly reliable because ori
 does not define specific value, and that means it must be treated as symbols rather than 
 numbers to be reliable. I will change this later to use name-based mapping. 
 
+-	This does not fully cover all API. Only covers what I need.
+	For example, this fully lacks asynchronous event notification part. Anyway such features
+	can be added later if I feel need for it.
+
 
 
 
