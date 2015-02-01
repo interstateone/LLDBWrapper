@@ -3,11 +3,9 @@ Eonil/LLDBWrapper
 Hoon H.
 
 2014/09/07
-2015/01/20
+2015/02/01
 
-**CURRENTLY WORK IN PROGRESS**
 
-**DOCUMENTATION IS NOT ACCURATE NOR IN SYNC**
 
 
 This is a wrapper of LLDB's public C++ API.
@@ -53,7 +51,8 @@ numbers to be reliable. I will change this later to use name-based mapping.
 Lessons from History
 --------------------
 -	I have tried to generate SWIG-like C API from C++ source code, but I realised it require 
-	too much work, and I don't have such time. DO NOT TRY THIS AT HOME EVER AGAIN.
+	too much work and Swift compiler is not stable enough yet. I don't have such time. DO NOT 
+	TRY THIS AT HOME EVER AGAIN.
 
 
 
