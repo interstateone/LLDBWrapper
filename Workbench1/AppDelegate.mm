@@ -47,7 +47,6 @@ using namespace	lldb;
 		SBValueList	vs	=	f.GetVariables(true, true, true, true);
 		NSLog(@"variables = %@", @(vs.GetSize()));
 	}
-	
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	char const*	path	=	[[[[NSBundle mainBundle] bundleURL] URLByDeletingLastPathComponent] URLByAppendingPathComponent:@"SampleProgram3"].path.UTF8String;

@@ -42,6 +42,12 @@ LLDBOBJECT_INIT_IMPL(lldb::SBAddress);
 	
 	_raw.SetAddress(section->_raw, offset);
 }
+- (void)setLoadAddress:(LLDBAddressType)loadAddress target:(LLDBTarget *)target
+{
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(target, LLDBTarget);
+	
+	_raw.SetLoadAddress(loadAddress, target->_raw);
+}
 - (BOOL)offsetAddress:(LLDBAddressType)offset
 {
 	return	_raw.OffsetAddress(offset) == true;

@@ -62,6 +62,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 }
 - (void)dealloc
 {
+	precondition_valid_state_of(_raw);
 	SBDebugger::Destroy(_raw);
 	
 	////
@@ -77,6 +78,8 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 
 - (BOOL)async
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetAsync() ? YES : NO;
 }
 - (void)setAsync:(BOOL)async
@@ -87,7 +90,9 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 }
 
 - (NSString *)stringOfState:(LLDBStateType)state
-{	
+{
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	fromC(_raw.StateAsCString(toCPP(state)));
 }
 
@@ -100,39 +105,37 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 
 - (LLDBTarget *)createTargetWithFilename:(NSString *)filename
 {
-	return	proxy_init(
-					   [[LLDBTarget alloc] init],
-					   _raw.CreateTarget([filename UTF8String])
-					   );
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBTarget alloc] initWithCPPObject:_raw.CreateTarget(filename.UTF8String)];
 }
 - (LLDBTarget *)createTargetWithFilename:(NSString *)filename andArchname:(NSString *)archname
 {
-	return	proxy_init(
-					   [[LLDBTarget alloc] init],
-					   _raw.CreateTargetWithFileAndArch([filename UTF8String], [archname UTF8String])
-					   );
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBTarget alloc] initWithCPPObject:_raw.CreateTargetWithFileAndArch(filename.UTF8String, archname.UTF8String)];
 }
-- (NSUInteger)numberOfTargets
+- (uint32_t)numberOfTargets
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetNumTargets();
 }
-- (LLDBTarget *)targetAtIndex:(NSUInteger)index
+- (LLDBTarget *)targetAtIndex:(uint32_t)index
 {
-	UNIVERSE_DEBUG_ASSERT(index < [self numberOfTargets]);
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	UNIVERSE_DEBUG_ASSERT(index < _raw.GetNumTargets());
 	
-	////
-	
-	LLDBTarget*	t1	=	[[LLDBTarget alloc] init];
-	t1->_raw		=	_raw.GetTargetAtIndex((uint32_t)index);
-	return	t1;
+	return	[[LLDBTarget alloc] initWithCPPObject:_raw.GetTargetAtIndex(index)];
 }
 
-//- (LLDBSourceManager *)sourceManager
-//{
-//	LLDBSourceManager*	m1	=	[LLDBSourceManager LLDBObject____INTERNAL____instantiation];
-//	m1->_raw				=	_raw.GetSourceManager();
-//	return	m1;
-//}
+- (LLDBSourceManager *)sourceManager
+{
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	LLDBSourceManager*	m1	=	[[LLDBSourceManager alloc] initWithCPPObject:_raw.GetSourceManager()];
+	return	m1;
+}
 
 
 
@@ -143,6 +146,8 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 
 - (NSString *)description
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	get_description_of(_raw);
 }
 @end

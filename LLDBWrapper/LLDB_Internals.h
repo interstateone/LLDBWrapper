@@ -559,6 +559,7 @@
 	lldb::SBLineEntry		_raw;
 }
 - (instancetype)initWithCPPObject:(lldb::SBLineEntry)raw;
+//+ (LLDBLineEntry*)lineEntryWithMaybeCPPObject:(lldb::SBLineEntry)maybeCPPObject;		///<	Accepts invalid C++ object. Returns `nil` if C++ object is invalid.
 @end
 
 
@@ -595,7 +596,7 @@
 	lldb::SBError			_raw;
 }
 - (instancetype)initWithCPPObject:(lldb::SBError)raw;						///<	Accepts no invalid C++ object. Never returns a `nil`. Crashes if `[super init]` returns `nil` (out of memory situation). You're responsible to keep some memory available.
-+ (LLDBError*)errorWithMaybeCPPObject:(lldb::SBError)maybeCPPObject;		///<	Accepts invalid C++ object. Returns `nil` if C++ object is invalid.
+//+ (LLDBError*)errorWithMaybeCPPObject:(lldb::SBError)maybeCPPObject;		///<	Accepts invalid C++ object. Returns `nil` if C++ object is invalid.
 @end
 
 @interface LLDBData ()
@@ -637,48 +638,48 @@
 
 
 
-
-template <typename T>
-static inline T*
-proxy_init(T* self, decltype(self->_raw) newRaw) {
-	if (newRaw.IsValid()) {
-		self->_raw	=	newRaw;
-		return	self;
-	} else {
-		return	nil;
-	}
-}
-
-
-template <typename RAW, typename WRAPPER>
-static inline WRAPPER*
-try_instantiation_of_wrapper(RAW raw)
-{
-	if (raw.IsValid())
-	{
-		WRAPPER*	w1		=	[[WRAPPER alloc] init];
-		w1->_raw			=	raw;
-		return	w1;
-	}
-	return	nil;
-}
-
-
-
-
-
-static inline BOOL
-handle_error(lldb::SBError const& error, LLDBError** output)
-{
-	BOOL			ok1		=	error.IsValid() and error.Success();
-	
-	if (ok1 == NO && output != NULL)
-	{
-		*output			=	[[LLDBError alloc] initWithCPPObject:error];
-	}
-	
-	return	ok1;
-}
+//
+//template <typename T>
+//static inline T*
+//proxy_init(T* self, decltype(self->_raw) newRaw) {
+//	if (newRaw.IsValid()) {
+//		self->_raw	=	newRaw;
+//		return	self;
+//	} else {
+//		return	nil;
+//	}
+//}
+//
+//
+//template <typename RAW, typename WRAPPER>
+//static inline WRAPPER*
+//try_instantiation_of_wrapper(RAW raw)
+//{
+//	if (raw.IsValid())
+//	{
+//		WRAPPER*	w1		=	[[WRAPPER alloc] init];
+//		w1->_raw			=	raw;
+//		return	w1;
+//	}
+//	return	nil;
+//}
+//
+//
+//
+//
+//
+//static inline BOOL
+//handle_error(lldb::SBError const& error, LLDBError** output)
+//{
+//	BOOL			ok1		=	error.IsValid() and error.Success();
+//	
+//	if (ok1 == NO && output != NULL)
+//	{
+//		*output			=	[[LLDBError alloc] initWithCPPObject:error];
+//	}
+//	
+//	return	ok1;
+//}
 
 
 
@@ -716,6 +717,14 @@ get_description_of(T _raw, lldb::DescriptionLevel level)
 
 
 
+template <typename T>
+static inline void
+precondition_valid_state_of(T& raw)
+{
+	UNIVERSE_DEBUG_ASSERT(raw.IsValid());
+}
+
+
 
 
 
@@ -726,6 +735,11 @@ get_description_of(T _raw, lldb::DescriptionLevel level)
 #define LLDBOBJECT_INIT_IMPL(typename)					\
 	- (instancetype)initWithCPPObject:(typename)raw		\
 	{													\
+		if (raw.IsValid() == false)						\
+		{												\
+			return	nil;								\
+		}												\
+														\
 		UNIVERSE_DEBUG_ASSERT(raw.IsValid() == true);	\
 		if (self = [super init]) {						\
 			_raw	=	raw;							\

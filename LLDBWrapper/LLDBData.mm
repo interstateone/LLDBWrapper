@@ -43,7 +43,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBData);
 	
 	lldb::SBError	e{};
 	auto const		r	=	_raw.ReadRawData(e, offset, buffer, size);
-	*error				=	[LLDBError errorWithMaybeCPPObject:e];
+	*error				=	[[LLDBError alloc] initWithCPPObject:e];
 	return	r;
 }
 - (void)setDataWithBuffer:(const void *)buffer size:(size_t)size endian:(LLDBByteOrder)endian addressSize:(uint8_t)addressSize error:(LLDBError *__autoreleasing *)error
@@ -52,7 +52,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBData);
 	
 	lldb::SBError	e{};
 	_raw.SetData(e, buffer, size, toCPP(endian), addressSize);
-	*error				=	[LLDBError errorWithMaybeCPPObject:e];
+	*error				=	[[LLDBError alloc] initWithCPPObject:e];
 }
 - (void)append:(LLDBData *)data
 {

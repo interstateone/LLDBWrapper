@@ -18,9 +18,10 @@
 - (instancetype)init UNIVERSE_UNAVAILABLE_METHOD;
 
 - (LLDBFileSpec*)executableFileSpec;
+
+- (LLDBBreakpoint*)createBreakpointByLocationWithFileSpec:(LLDBFileSpec*)fileSpec lineNumber:(uint32_t)lineNumber;
 - (LLDBBreakpoint*)createBreakpointByName:(NSString*)symbolName;
 - (LLDBBreakpoint*)createBreakpointByName:(NSString*)symbolName moduleName:(NSString*)moduleName;
-
 - (LLDBProcess*)launchProcessSimplyWithWorkingDirectory:(NSString*)workingDirectory;
 //- (LLDBProcess*)instantiateProcessByLaunchingSimplyWithArguments:(NSArray*)arguments environments:(NSArray*)environments workingDirectory:(NSString*)workingDirectory;
 - (LLDBProcess*)attachToProcessWithID:(uint64_t)pid error:(LLDBError**)error;		///<	`error` parameter cannot be `nil`.
@@ -42,3 +43,13 @@
 //- (NSArray*)allModules;
 //- (NSArray*)allBreakpoints;
 //@end
+
+
+
+
+
+
+
+
+
+

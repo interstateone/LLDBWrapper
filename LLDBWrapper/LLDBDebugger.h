@@ -22,23 +22,29 @@ extern NSString* const		LLDBArchDefault64Bit;
 
 
 
+
+
+
 @interface	LLDBDebugger : LLDBObject
 - (instancetype)init;
 @property	(readwrite,nonatomic,assign)	BOOL		async;
 - (NSString*)stringOfState:(LLDBStateType)state;													///<	Use @c LLDBState~ constants.
 - (LLDBTarget*)createTargetWithFilename:(NSString*)filename;
 - (LLDBTarget*)createTargetWithFilename:(NSString*)filename andArchname:(NSString*)archname;		///<	You can use one of @c LLDBArchDefault~ constants.
-@property	(readonly,nonatomic,assign)		NSUInteger	numberOfTargets;
-- (LLDBTarget*)targetAtIndex:(NSUInteger)index;
-
-/*!
- As far as I discovered, `SBDebugger` is the only class that seems properly to "own" the `SBSourceManager`.
- So, `LLDBDebugger` will keep an instance to `LLDBSourceManager` object internally.
- */
-@property	(readonly,nonatomic,strong)		LLDBSourceManager*		sourceManager;
-//- (LLDBSourceManager*)sourceManager;
+@property	(readonly,nonatomic,assign)		uint32_t	numberOfTargets;
+- (LLDBTarget*)targetAtIndex:(uint32_t)index;
+@property	(readonly,nonatomic,copy)		LLDBSourceManager*		sourceManager;
 
 - (BOOL)isEqualTo:(id)object UNIVERSE_UNAVAILABLE_METHOD;
 - (BOOL)isEqual:(id)object UNIVERSE_UNAVAILABLE_METHOD;
+
 @end
+
+
+
+
+
+
+
+
 

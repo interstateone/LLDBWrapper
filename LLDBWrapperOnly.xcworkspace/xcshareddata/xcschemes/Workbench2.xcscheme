@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "455E97D41A6F467200D38FF9"
-               BuildableName = "InterfaceTranslator.app"
-               BlueprintName = "InterfaceTranslator"
-               ReferencedContainer = "container:LLDBWrapper.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "455E97E31A6F467200D38FF9"
-               BuildableName = "InterfaceTranslatorTests.xctest"
-               BlueprintName = "InterfaceTranslatorTests"
+               BlueprintIdentifier = "45C511501A7954F20055DC1D"
+               BuildableName = "Workbench2.app"
+               BlueprintName = "Workbench2"
                ReferencedContainer = "container:LLDBWrapper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,23 +28,13 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "455E97E31A6F467200D38FF9"
-               BuildableName = "InterfaceTranslatorTests.xctest"
-               BlueprintName = "InterfaceTranslatorTests"
-               ReferencedContainer = "container:LLDBWrapper.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "455E97D41A6F467200D38FF9"
-            BuildableName = "InterfaceTranslator.app"
-            BlueprintName = "InterfaceTranslator"
+            BlueprintIdentifier = "45C511501A7954F20055DC1D"
+            BuildableName = "Workbench2.app"
+            BlueprintName = "Workbench2"
             ReferencedContainer = "container:LLDBWrapper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,18 +51,12 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "455E97D41A6F467200D38FF9"
-            BuildableName = "InterfaceTranslator.app"
-            BlueprintName = "InterfaceTranslator"
+            BlueprintIdentifier = "45C511501A7954F20055DC1D"
+            BuildableName = "Workbench2.app"
+            BlueprintName = "Workbench2"
             ReferencedContainer = "container:LLDBWrapper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "&quot;$SRCROOT/LLDBWrapper&quot;"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -99,9 +69,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "455E97D41A6F467200D38FF9"
-            BuildableName = "InterfaceTranslator.app"
-            BlueprintName = "InterfaceTranslator"
+            BlueprintIdentifier = "45C511501A7954F20055DC1D"
+            BuildableName = "Workbench2.app"
+            BlueprintName = "Workbench2"
             ReferencedContainer = "container:LLDBWrapper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -12,8 +12,7 @@
 
 @interface	LLDBFileSpec : LLDBObject
 - (instancetype)init UNIVERSE_UNAVAILABLE_METHOD;
-
-//- (instancetype)initWithPath:(NSString*)path resolve:(BOOL)resolve;
+- (instancetype)initWithPath:(NSString*)path resolve:(BOOL)resolve;
 //
 //@property	(readonly,nonatomic,assign)	BOOL		exists;
 //

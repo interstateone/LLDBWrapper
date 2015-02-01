@@ -163,14 +163,14 @@ LLDBOBJECT_INIT_IMPL(lldb::SBThread);
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(fileSpec, LLDBFileSpec);
 	
 	auto const	r	=	_raw.StepOverUntil(frame->_raw, fileSpec->_raw, line);
-	return	[LLDBError errorWithMaybeCPPObject:r];
+	return	[[LLDBError alloc] initWithCPPObject:r];
 }
 - (LLDBError *)jumpToFile:(LLDBFileSpec *)fileSpec line:(uint32_t)line
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(fileSpec, LLDBFileSpec);
 	
 	auto const	r	=	_raw.JumpToLine(fileSpec->_raw, line);
-	return	[LLDBError errorWithMaybeCPPObject:r];
+	return	[[LLDBError alloc] initWithCPPObject:r];
 }
 - (void)runToAddress:(LLDBAddressType)address
 {
@@ -184,7 +184,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBThread);
 	lldb::SBValue	rv;
 	auto const	e	=	_raw.ReturnFromFrame(frame->_raw, rv);
 	*returnValue	=	[[LLDBValue alloc] initWithCPPObject:rv];
-	return	[LLDBError errorWithMaybeCPPObject:e];
+	return	[[LLDBError alloc] initWithCPPObject:e];
 }
 
 

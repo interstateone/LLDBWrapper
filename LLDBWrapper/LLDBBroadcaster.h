@@ -17,16 +17,28 @@
 - (instancetype)init UNIVERSE_UNAVAILABLE_METHOD;
 - (instancetype)initWithName:(NSString*)name;
 
-- (void)	broadcastEventByType:(uint32_t)eventType unique:(BOOL)unique;
-- (void)	broadcastEvent:(LLDBEvent*)event unique:(BOOL)unique;
-
-- (void)	addInitialEventsToListener:(LLDBListener*)listener requestedEvents:(uint32_t)requestedEvents;
-- (uint32_t)addListener:(LLDBListener*)listener eventMask:(uint32_t)eventMask;
-
-@property	(readonly,nonatomic,copy)	NSString*	name;
-
-- (BOOL)	eventTypeHasListeners:(uint32_t)eventType;
-- (BOOL)	removeListener:(LLDBListener*)listener eventMask:(uint32_t)eventMask;
+//- (void)	broadcastEventByType:(uint32_t)eventType unique:(BOOL)unique;
+//- (void)	broadcastEvent:(LLDBEvent*)event unique:(BOOL)unique;
+//
+//- (void)	addInitialEventsToListener:(LLDBListener*)listener requestedEvents:(uint32_t)requestedEvents;
+//- (uint32_t)addListener:(LLDBListener*)listener eventMask:(uint32_t)eventMask;
+//
+//@property	(readonly,nonatomic,copy)	NSString*	name;
+//
+//- (BOOL)	eventTypeHasListeners:(uint32_t)eventType;
+//- (BOOL)	removeListener:(LLDBListener*)listener eventMask:(uint32_t)eventMask;
+//
+//
+//
+///*!
+// Defines sort order of broadcaster object.
+// */
+//- (BOOL)	isLessThanBroadcaster:(LLDBBroadcaster*)broadcaster;
+//- (BOOL)	isLessThan:(id)object;
+//
+//- (BOOL)	isLessThanOrEqualTo:(id)object UNIVERSE_UNAVAILABLE_METHOD;
+//- (BOOL)	isGreaterThan:(id)object UNIVERSE_UNAVAILABLE_METHOD;
+//- (BOOL)	isGreaterThanOrEqualTo:(id)object UNIVERSE_UNAVAILABLE_METHOD;
 
 
 /*!
@@ -35,16 +47,5 @@
 - (BOOL)	isEqualToBroadcaster:(LLDBBroadcaster*)broadcaster;
 - (BOOL)	isEqual:(id)object;
 
-/*!
- Defines sort order of broadcaster object.
- */
-- (BOOL)	isLessThanBroadcaster:(LLDBBroadcaster*)broadcaster;
-- (BOOL)	isLessThan:(id)object;
-
-- (BOOL)	isLessThanOrEqualTo:(id)object UNIVERSE_UNAVAILABLE_METHOD;
-- (BOOL)	isGreaterThan:(id)object UNIVERSE_UNAVAILABLE_METHOD;
-- (BOOL)	isGreaterThanOrEqualTo:(id)object UNIVERSE_UNAVAILABLE_METHOD;
-
 - (NSString *)description UNIVERSE_UNAVAILABLE_METHOD;
-
 @end

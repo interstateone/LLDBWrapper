@@ -25,8 +25,8 @@ import LLDBWrapper
 ///	MARK:	Drivers
 
 
-extension LLDBDebugger {
-	var	allTargets:[LLDBTarget] {
+public extension LLDBDebugger {
+	public var	allTargets:[LLDBTarget] {
 		get {
 			return	(0..<self.numberOfTargets).map { i in self.targetAtIndex(i) }
 		}
@@ -34,16 +34,20 @@ extension LLDBDebugger {
 }
 
 
-extension LLDBTarget {
-	var	allModules:[LLDBModule] {
+public extension LLDBTarget {
+	public var	allModules:[LLDBModule] {
 		get {
 			return	(0..<self.numberOfModules).map { i in self.moduleAtIndex(i) }
 		}
 	}
-	var allBreakpoints:[LLDBBreakpoint] {
+	public var allBreakpoints:[LLDBBreakpoint] {
 		get {
 			return	(0..<self.numberOfBreakpoints).map { i in self.breakpointAtIndex(i) }
 		}
+	}
+	public func createBreakpointByLocationWithFilePath(file:String, lineNumber:UInt32) -> LLDBBreakpoint {
+		let	fs	=	LLDBFileSpec(path: file, resolve: true)
+		return	self.createBreakpointByLocationWithFileSpec(fs, lineNumber: lineNumber)
 	}
 }
 
@@ -82,13 +86,13 @@ extension LLDBTarget {
 ///	MARK:
 ///	MARK:	Execution States
 
-extension LLDBProcess {
-	var	allThreads:[LLDBThread] {
+public extension LLDBProcess {
+	public var	allThreads:[LLDBThread] {
 		get {
 			return	(0..<self.numberOfThreads).map { i in self.threadAtIndex(i) }
 		}
 	}
-	func writeToStandardInput(source:NSData) -> Int {
+	public func writeToStandardInput(source:NSData) -> Int {
 		let	sz				=	source.length
 		let	sz1				=	size_t(sz)
 		let	written_len		=	self.putStandardInput(UnsafePointer<CChar>(source.bytes), length: sz1)
@@ -101,7 +105,7 @@ extension LLDBProcess {
 //		let	len	=	writeToStandardInput(d)
 //		precondition(len == d.length, "Couldn't write all string to STDIN.")
 	//	}
-	func readFromStandardOutput(maximumLength:Int) -> NSData {
+	public func readFromStandardOutput(maximumLength:Int) -> NSData {
 		let	d			=	NSMutableData()
 		let	len			=	size_t(maximumLength)
 		d.length		=	maximumLength
@@ -110,7 +114,7 @@ extension LLDBProcess {
 		let	d1			=	d.subdataWithRange(NSRange(location: 0, length: read_len1))
 		return	d1
 	}
-	func readFromStandardError(maximumLength:Int) -> NSData {
+	public func readFromStandardError(maximumLength:Int) -> NSData {
 		let	d			=	NSMutableData()
 		let	len			=	size_t(maximumLength)
 		d.length		=	maximumLength
@@ -120,7 +124,7 @@ extension LLDBProcess {
 		return	d1
 	}
 	
-	func readMemory(range:Range<LLDBAddressType>) -> (data:NSData, error:LLDBError?) {
+	public func readMemory(range:Range<LLDBAddressType>) -> (data:NSData, error:LLDBError?) {
 		let	len		=	range.endIndex - range.startIndex
 		let	d		=	NSMutableData()
 		var	e		=	 nil as LLDBError?
@@ -131,7 +135,7 @@ extension LLDBProcess {
 		let	d1		=	d.subdataWithRange(NSRange(location: 0, length: avail1))
 		return	(d1, e)
 	}
-	func writeMemory(range:Range<LLDBAddressType>, data:NSData) -> (length:Int, error:LLDBError?) {
+	public func writeMemory(range:Range<LLDBAddressType>, data:NSData) -> (length:Int, error:LLDBError?) {
 		let	sz		=	range.endIndex - range.startIndex
 		let	sz1		=	size_t(sz)
 		var	e		=	nil as LLDBError?
@@ -141,10 +145,10 @@ extension LLDBProcess {
 		return	(avail1, e)
 	}
 	
-	class func allRestartedReasonsForEvent(event:LLDBEvent) -> [String] {
+	public class func allRestartedReasonsForEvent(event:LLDBEvent) -> [String] {
 		return	(0..<self.numberOfRestartedReasonsFromEvent(event)).map { i in self.restartedReasonAtIndexFromEvent(event, index: i) }
 	}
-	var numberOfSupportedHardwareWatchpoints:(number:Int, error:LLDBError?) {
+	public var numberOfSupportedHardwareWatchpoints:(number:Int, error:LLDBError?) {
 		get {
 			var	e	=	nil as LLDBError?
 			let	r	=	self.numberOfSupportedHardwareWatchpoints(&e)
@@ -153,7 +157,7 @@ extension LLDBProcess {
 		}
 	}
 	
-	func loadImage(imageSpec:LLDBFileSpec) -> (Int, LLDBError?) {
+	public func loadImage(imageSpec:LLDBFileSpec) -> (Int, LLDBError?) {
 		var	e	=	nil as LLDBError?
 		let	r	=	self.loadImage(imageSpec, error: &e)
 		let	r1	=	Int(r)
@@ -170,18 +174,25 @@ extension LLDBProcess {
 
 
 
-extension LLDBThread {
-	var	allFrames:[LLDBFrame] {
+public extension LLDBThread {
+//	///	Returns collection of all valid frames.
+//	///	Number of returned frames may be different
+//	///	because `frameAtIndex` may return `nil`,
+//	public var frames:[LLDBFrame] {
+//		get {
+//		}
+//	}
+	public var	allFrames:[LLDBFrame?] {
 		get {
 			return	(0..<self.numberOfFrames).map { i in self.frameAtIndex(i) }
 		}
 	}
-	var	allStopReasonData:[UInt64] {
+	public var	allStopReasonData:[UInt64] {
 		get {
 			return	(0..<self.stopReasonDataCount).map { i in self.stopReasonDataAtIndex(UInt32(i)) }
 		}
 	}
-	func returnFromFrame(frame:LLDBFrame) -> (returnValue:LLDBValue, error:LLDBError?) {
+	public func returnFromFrame(frame:LLDBFrame) -> (returnValue:LLDBValue, error:LLDBError?) {
 		var	v	=	nil as LLDBValue?
 		let	e	=	self.returnFromFrame(frame, returnValue: &v);
 		return	(v!,e)
@@ -221,7 +232,7 @@ extension LLDBValueList: CollectionType {
 			}
 		}
 	}
-	var	allValues:[LLDBValue] {
+	public var	allValues:[LLDBValue] {
 		get {
 			return	(0..<self.count).map { i in self[i] }
 		}
@@ -230,8 +241,8 @@ extension LLDBValueList: CollectionType {
 
 
 
-extension LLDBValue {
-	var	allChildren:[LLDBValue] {
+public extension LLDBValue {
+	public var	allChildren:[LLDBValue] {
 		get {
 			return	(0..<self.numberOfChildren).map { i in self.childAtIndex(i) }
 		}
@@ -271,8 +282,8 @@ extension LLDBValue {
 ///	MARK:
 ///	MARK:	Code Database
 
-extension LLDBModule {
-	var	allSymbols:[LLDBSymbol] {
+public extension LLDBModule {
+	public var	allSymbols:[LLDBSymbol] {
 		get {
 			return	(0..<self.numberOfSymbols).map { i in self.symbolAtIndex(i) }
 		}
@@ -312,7 +323,7 @@ extension LLDBInstructionList: CollectionType {
 			}
 		}
 	}
-	var	allInstructions:[LLDBInstruction] {
+	public var	allInstructions:[LLDBInstruction] {
 		get {
 			return	(0..<self.count).map { i in self[i] }
 		}
@@ -351,13 +362,13 @@ extension LLDBInstructionList: CollectionType {
 ///	MARK:
 ///	MARK:	Source Tracking
 
-extension LLDBCompileUnit {
-	var	allLineEntries:[LLDBLineEntry] {
+public extension LLDBCompileUnit {
+	public var	allLineEntries:[LLDBLineEntry] {
 		get {
 			return	(0..<self.numberOfLineEntries).map { i in self.lineEntryAtIndex(i) }
 		}
 	}
-	var	allSupportFiles:[LLDBFileSpec] {
+	public var	allSupportFiles:[LLDBFileSpec] {
 		get {
 			return	(0..<self.numberOfSupportFiles).map { i in self.supportFileAtIndex(i) }
 		}
@@ -398,10 +409,10 @@ extension LLDBCompileUnit {
 ///	MARK:
 ///	MARK:	Event Listening Related
 
-extension LLDBBroadcaster {
-	func broadcastEventByType2(eventType:UInt32) {
-		self.broadcastEventByType(eventType, unique: false);
-	}
+public extension LLDBBroadcaster {
+//	func broadcastEventByType2(eventType:UInt32) {
+//		self.broadcastEventByType(eventType, unique: false);
+//	}
 }
 
 
@@ -423,8 +434,8 @@ extension LLDBBroadcaster {
 ///	MARK:
 ///	MARK:	Infrastructure Utilities
 
-extension LLDBData {
-	var	data:NSData {
+public extension LLDBData {
+	public var	data:NSData {
 		get {
 			let	d		=	NSMutableData()
 			var	e		=	nil as LLDBError?

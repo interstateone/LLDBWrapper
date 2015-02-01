@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		451C11451A76C099004B217C /* LLDBWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; };
 		451C11491A76C0BA004B217C /* LLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C993221A6E5D3400BA2BC4 /* LLDB.framework */; };
 		4580C70D19BB49B100BDB38A /* LLDBWrapper.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4584EEA31A7809A8009A6CCB /* LLDBAddress.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EEA11A7809A8009A6CCB /* LLDBAddress.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +53,9 @@
 		4584EEF61A780C66009A6CCB /* LLDBWatchpoint.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4584EEF41A780C66009A6CCB /* LLDBWatchpoint.mm */; };
 		4584EEFA1A780D2D009A6CCB /* LLDBSymbolContextList.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584EEF81A780D2D009A6CCB /* LLDBSymbolContextList.h */; };
 		4584EEFB1A780D2D009A6CCB /* LLDBSymbolContextList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4584EEF91A780D2D009A6CCB /* LLDBSymbolContextList.m */; };
+		45A0BB1E1A794EA900D11282 /* liblldb-core-hack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C473D01A77DFC100640712 /* liblldb-core-hack.a */; };
+		45A0BB1F1A794EC300D11282 /* LLDBWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; };
+		45A0BB201A794EC300D11282 /* LLDBWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45A0FB7A199FBA9C0020D59D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB79199FBA9C0020D59D /* Cocoa.framework */; };
 		45A0FBA7199FBABD0020D59D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB79199FBA9C0020D59D /* Cocoa.framework */; };
 		45A0FBAD199FBABD0020D59D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45A0FBAB199FBABD0020D59D /* InfoPlist.strings */; };
@@ -67,6 +69,13 @@
 		45AED2E51A751B55002F83AB /* LLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C993221A6E5D3400BA2BC4 /* LLDB.framework */; };
 		45AED2E61A751B55002F83AB /* LLDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45C993221A6E5D3400BA2BC4 /* LLDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45AED2EA1A751B90002F83AB /* Try1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45AED2E81A751B90002F83AB /* Try1.cpp */; };
+		45C5114C1A7954CF0055DC1D /* liblldb-core-hack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C473D01A77DFC100640712 /* liblldb-core-hack.a */; };
+		45C511561A7954F20055DC1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C511551A7954F20055DC1D /* AppDelegate.swift */; };
+		45C511581A7954F20055DC1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C511571A7954F20055DC1D /* Images.xcassets */; };
+		45C5115B1A7954F20055DC1D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C511591A7954F20055DC1D /* MainMenu.xib */; };
+		45C5116E1A7955190055DC1D /* LLDBWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; };
+		45C5116F1A7955190055DC1D /* LLDBWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45C511731A7955220055DC1D /* LLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C993221A6E5D3400BA2BC4 /* LLDB.framework */; };
 		45C9932D1A6E5D4A00BA2BC4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45C9932C1A6E5D4A00BA2BC4 /* AppDelegate.mm */; };
 		45C9932F1A6E5D4A00BA2BC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C9932E1A6E5D4A00BA2BC4 /* main.m */; };
 		45C993311A6E5D4A00BA2BC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45C993301A6E5D4A00BA2BC4 /* Images.xcassets */; };
@@ -141,6 +150,27 @@
 			remoteGlobalIDString = 45A0FB75199FBA9C0020D59D;
 			remoteInfo = InteractiveDebugger;
 		};
+		45995ADC1A7E2D9F00214E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A0FB6B199FBA850020D59D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45C9934D1A6E5DF700BA2BC4;
+			remoteInfo = SampleProgram3;
+		};
+		45A0BB211A794EC300D11282 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A0FB6B199FBA850020D59D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45A0FB75199FBA9C0020D59D;
+			remoteInfo = LLDBWrapper;
+		};
+		45C511701A7955190055DC1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 45A0FB6B199FBA850020D59D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 45A0FB75199FBA9C0020D59D;
+			remoteInfo = LLDBWrapper;
+		};
 		45C993551A6E5E0A00BA2BC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 45A0FB6B199FBA850020D59D /* Project object */;
@@ -172,6 +202,17 @@
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45A0BB231A794EC300D11282 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45A0BB201A794EC300D11282 /* LLDBWrapper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45AED2E71A751B55002F83AB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,6 +220,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				45AED2E61A751B55002F83AB /* LLDB.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45C511721A7955190055DC1D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45C5116F1A7955190055DC1D /* LLDBWrapper.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +359,11 @@
 		45AED2E81A751B90002F83AB /* Try1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Try1.cpp; sourceTree = "<group>"; };
 		45AED2E91A751B90002F83AB /* Try1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Try1.h; sourceTree = "<group>"; };
 		45C473D01A77DFC100640712 /* liblldb-core-hack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "liblldb-core-hack.a"; sourceTree = "<group>"; };
+		45C511511A7954F20055DC1D /* Workbench2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workbench2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C511541A7954F20055DC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45C511551A7954F20055DC1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45C511571A7954F20055DC1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		45C5115A1A7954F20055DC1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		45C993221A6E5D3400BA2BC4 /* LLDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LLDB.framework; sourceTree = "<group>"; };
 		45C993271A6E5D4A00BA2BC4 /* Workbench1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workbench1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C9932A1A6E5D4A00BA2BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -341,6 +398,7 @@
 			files = (
 				45A0FB7A199FBA9C0020D59D /* Cocoa.framework in Frameworks */,
 				45A389751A70CE78008C6793 /* LLDB.framework in Frameworks */,
+				45A0BB1E1A794EA900D11282 /* liblldb-core-hack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,12 +418,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45C5114E1A7954F20055DC1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C5116E1A7955190055DC1D /* LLDBWrapper.framework in Frameworks */,
+				45C511731A7955220055DC1D /* LLDB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45C993241A6E5D4A00BA2BC4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				451C11451A76C099004B217C /* LLDBWrapper.framework in Frameworks */,
+				45A0BB1F1A794EC300D11282 /* LLDBWrapper.framework in Frameworks */,
 				451C11491A76C0BA004B217C /* LLDB.framework in Frameworks */,
+				45C5114C1A7954CF0055DC1D /* liblldb-core-hack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +528,8 @@
 				45F9E1B61A6C81A5003692B8 /* BasicObject.m */,
 				45F9E1BA1A6C822F003692B8 /* NSObject+Universe.h */,
 				45F9E1BB1A6C822F003692B8 /* NSObject+Universe.m */,
+				4580C72E19BB592000BDB38A /* LLDBObject.h */,
+				4580C72F19BB592000BDB38A /* LLDBObject.mm */,
 			);
 			name = "(basics)";
 			sourceTree = "<group>";
@@ -475,6 +545,7 @@
 				45C993281A6E5D4A00BA2BC4 /* Workbench1 */,
 				45C9934F1A6E5DF700BA2BC4 /* SampleProgram3 */,
 				45AED2C61A751B35002F83AB /* SampleProgram4 */,
+				45C511521A7954F20055DC1D /* Workbench2 */,
 				45A0FB78199FBA9C0020D59D /* Frameworks */,
 				45A0FB77199FBA9C0020D59D /* Products */,
 			);
@@ -488,6 +559,7 @@
 				45C993271A6E5D4A00BA2BC4 /* Workbench1.app */,
 				45C9934E1A6E5DF700BA2BC4 /* SampleProgram3 */,
 				45AED2C51A751B35002F83AB /* SampleProgram4.app */,
+				45C511511A7954F20055DC1D /* Workbench2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -521,19 +593,17 @@
 				4580C75319BB64B300BDB38A /* LLDBDeclarations.mm */,
 				459CA8271A6E6C2100867082 /* LLDBEnums.h */,
 				459CA8281A6E6C2100867082 /* LLDBEnums.mm */,
+				45F73ADB1A77FFBD00AAEF0C /* LLDBExtensions.swift */,
 				459CA8201A6E6A5600867082 /* (basics) */,
 				45A389761A70D305008C6793 /* (junkyard) */,
-				4580C72E19BB592000BDB38A /* LLDBObject.h */,
-				4580C72F19BB592000BDB38A /* LLDBObject.mm */,
 				4584EEFC1A780DDD009A6CCB /* (driver) */,
-				45F0CA551A78BC6300004A75 /* (source file tracking) */,
-				45F0CA561A78BC9B00004A75 /* (program aseemblies) */,
 				45F0CA571A78BCB400004A75 /* (execution states) */,
+				45F0CA561A78BC9B00004A75 /* (program aseemblies) */,
+				45F0CA551A78BC6300004A75 /* (source file tracking) */,
 				4584EEFD1A780E15009A6CCB /* (event listening) */,
-				45ED48AF1A790CB400A16068 /* (infrastructures) */,
 				4584EEF71A780C6A009A6CCB /* (type stuffs) */,
 				4584EEFE1A780E46009A6CCB /* (empty stubs) */,
-				45F73ADB1A77FFBD00AAEF0C /* LLDBExtensions.swift */,
+				45ED48AF1A790CB400A16068 /* (infrastructures) */,
 				4580C71E19BB556C00BDB38A /* LLDB_Internals.h */,
 				4580C71F19BB556C00BDB38A /* LLDB_Internals.mm */,
 				45F63E721A7898EF00244DBC /* LLDB_Internals_EnumTranslation.h */,
@@ -601,6 +671,25 @@
 				45AED2CC1A751B35002F83AB /* main.m */,
 				45AED2E81A751B90002F83AB /* Try1.cpp */,
 				45AED2E91A751B90002F83AB /* Try1.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		45C511521A7954F20055DC1D /* Workbench2 */ = {
+			isa = PBXGroup;
+			children = (
+				45C511551A7954F20055DC1D /* AppDelegate.swift */,
+				45C511571A7954F20055DC1D /* Images.xcassets */,
+				45C511591A7954F20055DC1D /* MainMenu.xib */,
+				45C511531A7954F20055DC1D /* Supporting Files */,
+			);
+			path = Workbench2;
+			sourceTree = "<group>";
+		};
+		45C511531A7954F20055DC1D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				45C511541A7954F20055DC1D /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -818,6 +907,26 @@
 			productReference = 45AED2C51A751B35002F83AB /* SampleProgram4.app */;
 			productType = "com.apple.product-type.application";
 		};
+		45C511501A7954F20055DC1D /* Workbench2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45C511681A7954F20055DC1D /* Build configuration list for PBXNativeTarget "Workbench2" */;
+			buildPhases = (
+				45C5114D1A7954F20055DC1D /* Sources */,
+				45C5114E1A7954F20055DC1D /* Frameworks */,
+				45C5114F1A7954F20055DC1D /* Resources */,
+				45C511721A7955190055DC1D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				45995ADD1A7E2D9F00214E64 /* PBXTargetDependency */,
+				45C511711A7955190055DC1D /* PBXTargetDependency */,
+			);
+			name = Workbench2;
+			productName = Workbench2;
+			productReference = 45C511511A7954F20055DC1D /* Workbench2.app */;
+			productType = "com.apple.product-type.application";
+		};
 		45C993261A6E5D4A00BA2BC4 /* Workbench1 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45C993411A6E5D4A00BA2BC4 /* Build configuration list for PBXNativeTarget "Workbench1" */;
@@ -825,11 +934,13 @@
 				45C993231A6E5D4A00BA2BC4 /* Sources */,
 				45C993241A6E5D4A00BA2BC4 /* Frameworks */,
 				45C993251A6E5D4A00BA2BC4 /* Resources */,
+				45A0BB231A794EC300D11282 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				45C993561A6E5E0A00BA2BC4 /* PBXTargetDependency */,
+				45A0BB221A794EC300D11282 /* PBXTargetDependency */,
 			);
 			name = Workbench1;
 			productName = Workbench1;
@@ -864,6 +975,9 @@
 					45AED2C41A751B35002F83AB = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					45C511501A7954F20055DC1D = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
 					45C993261A6E5D4A00BA2BC4 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -890,6 +1004,7 @@
 				45C993261A6E5D4A00BA2BC4 /* Workbench1 */,
 				45C9934D1A6E5DF700BA2BC4 /* SampleProgram3 */,
 				45AED2C41A751B35002F83AB /* SampleProgram4 */,
+				45C511501A7954F20055DC1D /* Workbench2 */,
 			);
 		};
 /* End PBXProject section */
@@ -917,6 +1032,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		45C5114F1A7954F20055DC1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C511581A7954F20055DC1D /* Images.xcassets in Resources */,
+				45C5115B1A7954F20055DC1D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,6 +1133,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		45C5114D1A7954F20055DC1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45C511561A7954F20055DC1D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45C993231A6E5D4A00BA2BC4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1033,6 +1165,21 @@
 			isa = PBXTargetDependency;
 			target = 45A0FB75199FBA9C0020D59D /* LLDBWrapper */;
 			targetProxy = 4580C70E19BB4A4D00BDB38A /* PBXContainerItemProxy */;
+		};
+		45995ADD1A7E2D9F00214E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45C9934D1A6E5DF700BA2BC4 /* SampleProgram3 */;
+			targetProxy = 45995ADC1A7E2D9F00214E64 /* PBXContainerItemProxy */;
+		};
+		45A0BB221A794EC300D11282 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45A0FB75199FBA9C0020D59D /* LLDBWrapper */;
+			targetProxy = 45A0BB211A794EC300D11282 /* PBXContainerItemProxy */;
+		};
+		45C511711A7955190055DC1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 45A0FB75199FBA9C0020D59D /* LLDBWrapper */;
+			targetProxy = 45C511701A7955190055DC1D /* PBXContainerItemProxy */;
 		};
 		45C993561A6E5E0A00BA2BC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1062,6 +1209,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				45A0FBB8199FBABD0020D59D /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		45C511591A7954F20055DC1D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45C5115A1A7954F20055DC1D /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -1392,6 +1547,104 @@
 			};
 			name = Release;
 		};
+		45C511691A7954F20055DC1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Workbench2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks $(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		45C5116A1A7954F20055DC1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Workbench2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks $(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		45C993421A6E5D4A00BA2BC4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1413,6 +1666,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1472,6 +1726,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1613,6 +1868,15 @@
 			buildConfigurations = (
 				45AED2E01A751B35002F83AB /* Debug */,
 				45AED2E11A751B35002F83AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45C511681A7954F20055DC1D /* Build configuration list for PBXNativeTarget "Workbench2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45C511691A7954F20055DC1D /* Debug */,
+				45C5116A1A7954F20055DC1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

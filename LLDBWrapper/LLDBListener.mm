@@ -10,6 +10,7 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBListener
+LLDBOBJECT_INIT_IMPL(lldb::SBListener)
 - (instancetype)init
 {
 	UNIVERSE_DELETED_METHOD();
@@ -23,26 +24,33 @@
 
 
 
+
+
+
 - (void)addEvent:(LLDBEvent *)event
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(event, LLDBEvent);
+	
 	_raw.AddEvent(event->_raw);
 }
 - (BOOL)peekAtNextEvent:(LLDBEvent *)event
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(event, LLDBEvent);
+	
 	return	_raw.PeekAtNextEvent(event->_raw) == true;
 }
 - (BOOL)peekAtNextEventForBroadcaster:(LLDBBroadcaster *)broadcaster event:(LLDBEvent *)event
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(broadcaster, LLDBBroadcaster);
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(event, LLDBEvent);
+	
 	return	_raw.PeekAtNextEventForBroadcaster(broadcaster->_raw, event->_raw) == true;
 }
 - (BOOL)peekAtNextEventForBroadcasterWithType:(LLDBBroadcaster *)broadcaster eventTypeMask:(uint32_t)eventTypeMask event:(LLDBEvent *)event
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(broadcaster, LLDBBroadcaster);
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(event, LLDBEvent);
+	
 	return	_raw.PeekAtNextEventForBroadcasterWithType(broadcaster->_raw, eventTypeMask, event->_raw) == true;
 }
 
@@ -50,6 +58,7 @@
 {
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(debugger, LLDBDebugger);
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(broadcasterClass, NSString);
+	
 	return	_raw.StartListeningForEventClass(debugger->_raw, broadcasterClass.UTF8String, eventMask);
 }
 

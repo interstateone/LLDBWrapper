@@ -56,7 +56,7 @@
 /// block that defines this frame. If the PC isn't currently in an inlined
 /// function, the lexical block that defines the function is returned.
 @property	(readonly,nonatomic,copy)	LLDBBlock*			frameBlock;
-@property	(readonly,nonatomic,copy)	LLDBLineEntry*		lineEntry;
+@property	(readonly,nonatomic,copy)	LLDBLineEntry*		lineEntry;			///<	Can return `nil` if frame does not have a proper line-entry information.
 @property	(readonly,nonatomic,copy)	LLDBThread*			thread;
 
 @property	(readonly,nonatomic,copy)	NSString*			disassembly;

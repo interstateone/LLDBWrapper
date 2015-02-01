@@ -11,6 +11,12 @@
 
 @implementation LLDBFileSpec
 LLDBOBJECT_INIT_IMPL(lldb::SBFileSpec);
+
+- (instancetype)initWithPath:(NSString *)path resolve:(BOOL)resolve
+{
+	return	[self initWithCPPObject:lldb::SBFileSpec(path.UTF8String, resolve == YES)];
+}
+
 - (NSString *)filename
 {
 	return	fromC(_raw.GetFilename());

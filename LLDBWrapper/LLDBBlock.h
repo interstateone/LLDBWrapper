@@ -6,6 +6,7 @@
 //
 //
 
+#pragma once
 #import <LLDBWrapper/LLDBWrapper.h>
 
 @interface LLDBBlock : LLDBObject

@@ -56,16 +56,16 @@ extern "C"
 #define UNIVERSE_NON_RETURNING_METHOD						__attribute__((noreturn))
 
 #define	UNIVERSE_ERROR_LOG(...)								{ _universe_error_log(([NSString stringWithFormat:__VA_ARGS__])); }
-#define UNIVERSE_FORBIDDEN_METHOD()							{ UNIVERSE_ERROR_LOG(@"Calling of this method has been forbidden. Do not call this method."); [self doesNotRecognizeSelector:_cmd]; abort(); };
-#define UNIVERSE_DELETED_METHOD()							{ UNIVERSE_ERROR_LOG(@"This method semantically deleted. Do not call this method.%@", @""); [self doesNotRecognizeSelector:_cmd]; abort(); };
+#define UNIVERSE_FORBIDDEN_METHOD()							{ UNIVERSE_ERROR_LOG(@"Calling of this method has been forbidden. Do not call this method."); [((NSObject*)self) doesNotRecognizeSelector:_cmd]; abort(); };
+#define UNIVERSE_DELETED_METHOD()							{ UNIVERSE_ERROR_LOG(@"This method semantically deleted. Do not call this method.%@", @""); [((NSObject*)self) doesNotRecognizeSelector:_cmd]; abort(); };
 #define UNIVERSE_UNIMPLEMENTED_METHOD()						{ UNIVERSE_ERROR_LOG(@"This method should be exists here, but has not yet been implemented. Please contact the developer.%@", @""); [self doesNotRecognizeSelector:_cmd]; abort(); };
 
 #if		EONIL_DEBUG_MODE
 void	_universe_error_log(NSString* message);
 void	UNIVERSE_DEBUG_ASSERT(BOOL cond);					
 void	UNIVERSE_DEBUG_ASSERT_WITH_MESSAGE(BOOL cond, NSString* message);
-#define	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(obj,type)			UNIVERSE_DEBUG_ASSERT([obj isKindOfClass:[type class]])
-#define	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE_OR_NIL(obj,type)	UNIVERSE_DEBUG_ASSERT([obj isKindOfClass:[type class]] || obj == nil)
+#define	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(obj,type)			UNIVERSE_DEBUG_ASSERT([((NSObject*)obj) isKindOfClass:[type class]])
+#define	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE_OR_NIL(obj,type)	UNIVERSE_DEBUG_ASSERT([((NSObject*)obj) isKindOfClass:[type class]] || obj == nil)
 #define	UNIVERSE_DEBUG_ASSERT_PROTOCOL_CONFORMANCE(obj,pro)	UNIVERSE_DEBUG_ASSERT([(id)(obj) conformsToProtocol:@protocol(pro)])
 //void	UNIVERSE_DEBUG_ASSERT_FOR_EACH_ELEMENTS_IN_ARRAY(NSArray* elements, BOOL(^test)(id element));																							///<	Will be deprecated. Use UNIVERSE_DEBUG_RUN_FOR_EACH macro insted of.
 //#define	UNIVERSE_DEBUG_ASSERT_FOR_EACH_ELEMENTS_TYPE_IN_ARRAY(arr,type)	UNIVERSE_DEBUG_ASSERT_FOR_EACH_ELEMENTS_IN_ARRAY((arr), ^(id e){ return [e isKindOfClass:[type class]]; });				///<	Will be deprecated. Use UNIVERSE_DEBUG_RUN_FOR_EACH macro insted of.

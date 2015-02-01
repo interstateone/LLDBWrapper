@@ -28,6 +28,8 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (LLDBTarget *)target
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	[[LLDBTarget alloc] initWithCPPObject:_raw.GetTarget()];
 }
 
@@ -36,14 +38,20 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (size_t)putStandardInput:(const char *)source length:(size_t)length
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.PutSTDIN(source, length);
 }
 - (size_t)getStandardOutput:(char *)destination length:(size_t)length
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetSTDOUT(destination, length);
 }
 - (size_t)getStandardError:(char *)destination length:(size_t)length
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetSTDERR(destination, length);
 }
 
@@ -55,10 +63,13 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (NSUInteger)numberOfThreads
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetNumThreads();
 }
 - (LLDBThread *)threadAtIndex:(NSUInteger)index
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
 	UNIVERSE_DEBUG_ASSERT(index < [self numberOfThreads]);
 	
 	////
@@ -75,10 +86,14 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 //}
 - (LLDBThread *)selectedThread
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	[LLDBThread threadWithMaybeCPPObject:_raw.GetSelectedThread()];
 }
 - (BOOL)setSelectedThread:(LLDBThread *)selectedThread
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.SetSelectedThread(selectedThread->_raw) == true;
 }
 
@@ -89,14 +104,20 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (LLDBStateType)state
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	fromCPP(_raw.GetState());
 }
 - (int)exitStatus
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetExitStatus();
 }
 - (NSString *)exitDescription
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	fromC(_raw.GetExitDescription());
 }
 
@@ -107,16 +128,22 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (LLDBProcessIDType)processID
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetProcessID();
 }
 - (uint32_t)uniqueID
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetUniqueID();
 }
 
 
 - (uint32_t)addressByteSize
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetAddressByteSize();
 }
 
@@ -132,44 +159,64 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (LLDBError *)destroy
 {
-	return	[LLDBError errorWithMaybeCPPObject:_raw.Destroy()];
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBError alloc] initWithCPPObject:_raw.Destroy()];
 }
 - (LLDBError *)continue
 {
-	return	[LLDBError errorWithMaybeCPPObject:_raw.Continue()];
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBError alloc] initWithCPPObject:_raw.Continue()];
 }
 - (LLDBError *)stop
 {
-	return	[LLDBError errorWithMaybeCPPObject:_raw.Stop()];
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBError alloc] initWithCPPObject:_raw.Stop()];
 }
 - (LLDBError *)kill
 {
-	return	[LLDBError errorWithMaybeCPPObject:_raw.Kill()];
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBError alloc] initWithCPPObject:_raw.Kill()];
 }
 - (LLDBError *)detach
 {
-	return	[LLDBError errorWithMaybeCPPObject:_raw.Detach()];
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBError alloc] initWithCPPObject:_raw.Detach()];
 }
 - (LLDBError *)detach:(BOOL)keepStopped
 {
-	return	[LLDBError errorWithMaybeCPPObject:_raw.Detach(keepStopped)];
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBError alloc] initWithCPPObject:_raw.Detach(keepStopped)];
 }
 - (LLDBError *)signal:(int)signal
 {
-	return	[LLDBError errorWithMaybeCPPObject:_raw.Signal(signal)];
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBError alloc] initWithCPPObject:_raw.Signal(signal)];
 }
 
 
 - (void)sendAsynchronousInterrupt
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SendAsyncInterrupt();
 }
 - (uint32_t)stopID:(BOOL)includeExpressionStops
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetStopID(includeExpressionStops == true);
 }
 - (uint32_t)stopID
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	[self stopID:NO];
 }
 
@@ -180,20 +227,22 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (size_t)readMemory:(LLDBAddressType)address buffer:(void *)buffer size:(size_t)size error:(LLDBError *__autoreleasing *)error
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
 	UNIVERSE_DEBUG_ASSERT(error != nullptr);
 	
 	lldb::SBError	e;
 	auto const		r	=	_raw.ReadMemory(address, buffer, size, e);
-	*error				=	[LLDBError errorWithMaybeCPPObject:e];
+	*error				=	[[LLDBError alloc] initWithCPPObject:e];
 	return	r;
 }
 - (size_t)writeMemory:(LLDBAddressType)address buffer:(const void *)buffer size:(size_t)size error:(LLDBError *__autoreleasing *)error
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
 	UNIVERSE_DEBUG_ASSERT(error != nullptr);
 	
 	lldb::SBError	e;
 	auto const		r	=	_raw.WriteMemory(address, buffer, size, e);
-	*error				=	[LLDBError errorWithMaybeCPPObject:e];
+	*error				=	[[LLDBError alloc] initWithCPPObject:e];
 	return	r;
 }
 
@@ -233,6 +282,8 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (LLDBBroadcaster *)broadcaster
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	[[LLDBBroadcaster alloc] initWithCPPObject:_raw.GetBroadcaster()];
 }
 + (NSString *)broadcasterClass
@@ -244,26 +295,30 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (uint32_t)numberOfSupportedHardwareWatchpoints:(LLDBError *__autoreleasing *)error
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
 	UNIVERSE_DEBUG_ASSERT(error != nil);
 	
 	lldb::SBError	e;
 	auto const		r	=	_raw.GetNumSupportedHardwareWatchpoints(e);
-	*error				=	[LLDBError errorWithMaybeCPPObject:e];
+	*error				=	[[LLDBError alloc] initWithCPPObject:e];
 	return	r;
 }
 - (uint32_t)loadImage:(LLDBFileSpec *)imageSpec error:(LLDBError *__autoreleasing *)error
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(imageSpec, LLDBFileSpec);
 	UNIVERSE_DEBUG_ASSERT(error != nil);
 	
 	lldb::SBError	e;
 	auto const		r	=	_raw.LoadImage(imageSpec->_raw, e);
-	*error				=	[LLDBError errorWithMaybeCPPObject:e];
+	*error				=	[[LLDBError alloc] initWithCPPObject:e];
 	return	r;
 }
 - (LLDBError *)unloadImage:(uint32_t)imageToken
 {
-	return	[LLDBError errorWithMaybeCPPObject:_raw.UnloadImage(imageToken)];
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
+	return	[[LLDBError alloc] initWithCPPObject:_raw.UnloadImage(imageToken)];
 }
 
 
@@ -277,10 +332,14 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 
 - (uint32_t)numberOfExtendedBacktraceTypes
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetNumExtendedBacktraceTypes();
 }
 - (NSString *)extendedBacktraceTypeAtIndex:(uint32_t)index
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	fromC(_raw.GetExtendedBacktraceTypeAtIndex(index));
 }
 
@@ -304,6 +363,8 @@ LLDBOBJECT_INIT_IMPL(lldb::SBProcess)
 }
 - (NSString *)description
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	get_description_of(_raw);
 }
 @end

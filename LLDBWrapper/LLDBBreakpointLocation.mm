@@ -25,14 +25,18 @@ LLDBOBJECT_INIT_IMPL(lldb::SBBreakpointLocation);
 
 - (BOOL)isEqualTo:(id)object
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
 	UNIVERSE_DELETED_METHOD();
 }
 - (BOOL)isEqual:(id)object
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
 	UNIVERSE_DELETED_METHOD();
 }
 - (NSString *)description
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	get_description_of(_raw, lldb::DescriptionLevel::eDescriptionLevelVerbose);
 }
 @end

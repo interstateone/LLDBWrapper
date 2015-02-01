@@ -10,6 +10,7 @@
 #import "LLDB_Internals.h"
 
 @implementation LLDBBroadcaster
+LLDBOBJECT_INIT_IMPL(lldb::SBBroadcaster)
 - (instancetype)init
 {
 	UNIVERSE_DELETED_METHOD();
@@ -26,6 +27,32 @@
 - (void)broadcastEventByType:(uint32_t)eventType unique:(BOOL)unique
 {
 	_raw.BroadcastEventByType(eventType, unique);
+}
+
+
+
+
+
+
+
+
+- (BOOL)isEqualToBroadcaster:(LLDBBroadcaster *)broadcaster
+{
+	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(broadcaster, LLDBBroadcaster);
+	
+	return	_raw.operator==(broadcaster->_raw);
+}
+- (BOOL)isEqualTo:(id)object
+{
+	if ([object isKindOfClass:[LLDBBroadcaster class]])
+	{
+		return	[self isEqualToBroadcaster:object];
+	}
+	return	NO;
+}
+- (BOOL)isEqual:(id)object
+{
+	return	[self isEqualTo:object];
 }
 
 - (NSString *)description

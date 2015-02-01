@@ -185,7 +185,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBValue);
 	
 	lldb::SBError	e{};
 	auto const		r	=	[[LLDBWatchpoint alloc] initWithCPPObject:_raw.Watch(resolveLocation == YES, read == YES, write == YES, e)];
-	*error				=	[LLDBError errorWithMaybeCPPObject:e];
+	*error				=	[[LLDBError alloc] initWithCPPObject:e];
 	return	r;
 }
 - (LLDBWatchpoint *)watchPointee:(BOOL)resolveLocation read:(BOOL)read write:(BOOL)write error:(LLDBError *__autoreleasing *)error
@@ -194,7 +194,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBValue);
 	
 	lldb::SBError	e{};
 	auto const		r	=	[[LLDBWatchpoint alloc] initWithCPPObject:_raw.WatchPointee(resolveLocation == YES, read == YES, write == YES, e)];
-	*error				=	[LLDBError errorWithMaybeCPPObject:e];
+	*error				=	[[LLDBError alloc] initWithCPPObject:e];
 	return	r;
 }
 

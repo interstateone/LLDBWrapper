@@ -39,6 +39,8 @@ LLDBOBJECT_INIT_IMPL(lldb::SBBreakpoint);
 
 - (LLDBBreakpointIDType)ID
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetID();
 }
 
@@ -47,77 +49,113 @@ LLDBOBJECT_INIT_IMPL(lldb::SBBreakpoint);
 
 - (BOOL)isEnabled
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.IsEnabled() == true;
 }
 - (void)setEnabled:(BOOL)enabled
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SetEnabled(enabled == YES);
 }
 
 - (BOOL)isOneShot
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.IsOneShot() == true;
 }
 - (void)setOneShot:(BOOL)oneShot
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SetOneShot(oneShot == YES);
 }
 - (BOOL)isInternal
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.IsInternal() == true;
 }
 
 
 - (uint32_t)hitCount
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetHitCount();
 }
 - (uint32_t)ignoreCount
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetIgnoreCount();
 }
 - (void)setIgnoreCount:(uint32_t)ignoreCount
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SetIgnoreCount(ignoreCount);
 }
 - (NSString *)condition
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	fromC(_raw.GetCondition());
 }
 - (void)setCondition:(NSString *)condition
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SetCondition(condition.UTF8String);
 }
 - (LLDBThreadIDType)threadID
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetThreadID();
 }
 - (void)setThreadID:(LLDBThreadIDType)threadID
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SetThreadID(threadID);
 }
 - (uint32_t)threadIndex
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	_raw.GetThreadIndex();
 }
 - (void)setThreadIndex:(uint32_t)threadIndex
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SetThreadIndex(threadIndex);
 }
 - (NSString *)threadName
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	fromC(_raw.GetThreadName());
 }
 - (void)setThreadName:(NSString *)threadName
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SetThreadName(threadName.UTF8String);
 }
 - (NSString *)queueName
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	fromC(_raw.GetQueueName());
 }
 - (void)setQueueName:(NSString *)queueName
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SetQueueName(queueName.UTF8String);
 }
 
@@ -133,6 +171,8 @@ LLDBOBJECT_INIT_IMPL(lldb::SBBreakpoint);
 
 - (void)setCallback:(LLDBBreakpointHitCallback)callback
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	_raw.SetCallback(nullptr, NULL);
 	
 	_callback	=	[callback copy];
@@ -145,11 +185,15 @@ LLDBOBJECT_INIT_IMPL(lldb::SBBreakpoint);
 
 - (BOOL)isEqualToBreakpoint:(LLDBBreakpoint *)breakpoint
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
 	UNIVERSE_DEBUG_ASSERT_OBJECT_TYPE(breakpoint, LLDBBreakpoint);
+	
 	return	_raw.operator==(breakpoint->_raw);
 }
 - (BOOL)isEqualTo:(id)object
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	if (self == object)
 	{
 		return	YES;
@@ -164,10 +208,22 @@ LLDBOBJECT_INIT_IMPL(lldb::SBBreakpoint);
 }
 - (BOOL)isEqual:(id)object
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	[self isEqualTo:object];
 }
 - (NSString *)description
 {
+	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
+	
 	return	get_description_of(_raw);
 }
 @end
+
+
+
+
+
+
+
+

@@ -64,6 +64,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBFrame);
 - (LLDBLineEntry *)lineEntry
 {
 	return	[[LLDBLineEntry alloc] initWithCPPObject:_raw.GetLineEntry()];
+//	return	[LLDBLineEntry lineEntryWithMaybeCPPObject:_raw.GetLineEntry()];
 }
 - (LLDBThread *)thread
 {
