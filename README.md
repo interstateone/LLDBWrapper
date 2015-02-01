@@ -44,9 +44,9 @@ library so should be correct. But I think this is not truly reliable because ori
 does not define specific value, and that means it must be treated as symbols rather than 
 numbers to be reliable. I will change this later to use name-based mapping. 
 
--	This does not fully cover all API. Only covers what I need.
-	For example, this fully lacks asynchronous event notification part. Anyway such features
-	can be added later if I feel need for it.
+This does not fully cover all API. Only covers what I need.
+For example, this fully lacks asynchronous event notification part. Anyway such features
+can be added later if I feel need for it.
 
 
 
@@ -54,9 +54,10 @@ numbers to be reliable. I will change this later to use name-based mapping.
 
 Lessons from History
 --------------------
--	I have tried to generate SWIG-like C API from C++ source code, but I realised it require 
+-	I have tried to generate SWIG-like C API from C++ source code, but I realised it requires 
 	too much work and Swift compiler is not stable enough yet. I don't have such time. DO NOT 
-	TRY THIS AT HOME EVER AGAIN.
+	TRY THIS AT HOME EVER AGAIN unless you have enough idle time. (I wasted about 3 weeks and
+	finally abandoned the approach --- failure)
 
 
 
@@ -86,7 +87,7 @@ Wrapping Design Choices
 -	Strings will always be passed by copying into a new `NSString` by default. Raw C-string pointers
 	will not be exposed unless required.
 
--	Enums will be redefined in C side, and will be mapped to corresponding C++ types and values.
+-	Enums should be redefined in C side, and mapped to corresponding C++ constants.
 
 -	No exception. Because (1) to be used with Swift. (2) I don't think exceptions are truly good one.
 	Wrapper method must return a proper error or crash reliably.
@@ -104,7 +105,7 @@ This project is licensed under "MIT License". That is limited only to my works. 
 contains files from LLVM/LLDB projects that are licensed under 
 "University of Illinois/NCSA Open Source License". Product of this project will be dynamically
 linked to some components of Xcode if there is one exists at runtime. I DO NOT redistribute
-those components. So I don't think this linkage would not cause any license issue, but anyway, 
+those components. So I don't think this linkage would cause any license issue, but anyway, 
 I am not a laywer. If you think something is wrong, please let me know.
 
 
