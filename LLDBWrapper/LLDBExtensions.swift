@@ -232,9 +232,14 @@ extension LLDBValueList: CollectionType {
 			}
 		}
 	}
-	public var	allValues:[LLDBValue] {
+	public var	allValues:[LLDBValue?] {
 		get {
 			return	(0..<self.count).map { i in self[i] }
+		}
+	}
+	public var allAvailableValues:[LLDBValue] {
+		get {
+			return	allValues.filter({ v in v != nil }).map({ v in v! })
 		}
 	}
 }
@@ -242,9 +247,14 @@ extension LLDBValueList: CollectionType {
 
 
 public extension LLDBValue {
-	public var	allChildren:[LLDBValue] {
+	public var	allChildren:[LLDBValue?] {
 		get {
 			return	(0..<self.numberOfChildren).map { i in self.childAtIndex(i) }
+		}
+	}
+	public var allAvailableChildren:[LLDBValue] {
+		get {
+			return	allChildren.filter({ v in v != nil }).map({ v in v! })
 		}
 	}
 }
