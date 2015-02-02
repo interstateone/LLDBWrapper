@@ -22,7 +22,7 @@
 @property	(readonly,nonatomic,assign)		size_t				byteSize;
 @property	(readonly,nonatomic,assign)		BOOL				isInScope;
 @property	(readwrite,nonatomic,assign)	LLDBFormat			format;
-@property	(readonly,nonatomic,copy)		NSString*			value;
+@property	(readonly,nonatomic,copy)		NSString*			valueExpression;		///<	`SBValue::GetValue()`.
 
 
 

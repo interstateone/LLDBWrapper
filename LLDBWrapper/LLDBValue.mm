@@ -57,7 +57,7 @@ LLDBOBJECT_INIT_IMPL(lldb::SBValue);
 {
 	return	_raw.SetFormat(toCPP(format));
 }
-- (NSString *)value
+- (NSString *)valueExpression
 {
 	return	fromC(_raw.GetValue());
 }
