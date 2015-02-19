@@ -757,7 +757,6 @@ get_description_of(T _raw, lldb::DescriptionLevel level)
 #define LLDBOBJECT_INIT_IMPL(typename)					\
 	- (instancetype)initWithCPPObject:(typename)raw		\
 	{													\
-		UNIVERSE_DEBUG_ASSERT(raw.IsValid() == true);	\
 		if (self = [super init]) {						\
 			_raw	=	raw;							\
 		}												\
