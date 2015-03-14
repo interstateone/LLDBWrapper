@@ -33,6 +33,12 @@ Now see the source code of "TestdriveApp" to see how to use this framework.
 
 
 
+Requirements
+------------
+-	Swift 1.2.
+
+
+
 
 Caution
 -------
