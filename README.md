@@ -46,8 +46,7 @@ Caution
 -	You have to add `$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks` to 
 	`LD_RUNPATH_SEARCH_PATHS` in build settings of your build target.
 
--	Do not embed included `LLDB.framework` in your product. That is not a fake. See below 
-	for details.
+-	Do not embed included `LLDB.framework` in your product. See below for details.
 
 Though this framework originally intended to work with open-sourced LLDB build, but there were
 two problems.
