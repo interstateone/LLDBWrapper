@@ -4,6 +4,7 @@ Hoon H.
 
 2014/09/07
 2015/02/01
+2015/08/20
 
 
 
@@ -35,7 +36,7 @@ Now see the source code of "TestdriveApp" to see how to use this framework.
 
 Requirements
 ------------
--	Swift 1.2.
+-	Swift 2.0.
 
 
 
