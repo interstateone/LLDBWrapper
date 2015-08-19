@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import LLDBWrapper
+
 
 
 
@@ -175,7 +175,7 @@ public extension LLDBProcess {
 	typealias	BroadcastBit	=	LLDbProcessBroadcastBit
 }
 //	Values are explicitly assigned at C++ level, so it seems safe to copy them here.
-public struct LLDbProcessBroadcastBit: RawOptionSetType {
+public struct LLDbProcessBroadcastBit: OptionSetType {
 	public typealias RawValue			=	UInt32
 	
 	public static let allZeros			=	LLDbProcessBroadcastBit(rawValue: 0)
@@ -279,9 +279,9 @@ extension LLDBValueList: CollectionType {
 			return	valueAtIndex(UInt32(index))
 		}
 	}
-	public func generate() -> GeneratorOf<LLDBValue> {
+	public func generate() -> AnyGenerator<LLDBValue> {
 		var	idx	=	0
-		return	GeneratorOf { [weak self] in
+		return	anyGenerator { [weak self] in
 			idx++
 			if idx == self!.count {
 				return	nil
@@ -380,9 +380,9 @@ extension LLDBInstructionList: CollectionType {
 			return	instructionAtIndex(UInt32(index))
 		}
 	}
-	public func generate() -> GeneratorOf<LLDBInstruction> {
+	public func generate() -> AnyGenerator<LLDBInstruction> {
 		var	idx	=	0
-		return	GeneratorOf { [weak self] in
+		return	anyGenerator { [weak self] in
 			idx++
 			if idx == self!.count {
 				return	nil

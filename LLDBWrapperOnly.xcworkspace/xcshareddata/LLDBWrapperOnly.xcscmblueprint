@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "48B9C1DE76C8BEA5F768021CB65ADA820F587B93",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "48B9C1DE76C8BEA5F768021CB65ADA820F587B93" : 0,
+    "E197FC5339120FD6BBF1327A27ADC9BE16798D67" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "85E094BB-33F8-4AF1-9C80-B2AA53DB1DB6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "48B9C1DE76C8BEA5F768021CB65ADA820F587B93" : "LLDBWrapper.ObjectiveC",
+    "E197FC5339120FD6BBF1327A27ADC9BE16798D67" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LLDBWrapperOnly",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LLDBWrapperOnly.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Eonil\/LLDBWrapper.ObjectiveC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "48B9C1DE76C8BEA5F768021CB65ADA820F587B93"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Eonil\/Editor",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E197FC5339120FD6BBF1327A27ADC9BE16798D67"
+    }
+  ]
+}

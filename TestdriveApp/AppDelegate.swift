@@ -30,19 +30,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		dbg.async	=	false
 		
-		let	f	=	NSBundle.mainBundle().bundlePath.stringByDeletingLastPathComponent.stringByAppendingPathComponent("SampleProgram3")
+		let	f	=	((NSBundle.mainBundle().bundlePath as NSString).stringByDeletingLastPathComponent as NSString).stringByAppendingPathComponent("SampleProgram3")
 		assert(NSFileManager.defaultManager().fileExistsAtPath(f))
 	
 		let	t	=	dbg.createTargetWithFilename(f, andArchname: LLDBArchDefault)
 		let	b	=	t.createBreakpointByName("main")
 		b.enabled	=	true
 		
-		let	p	=	t.launchProcessSimplyWithWorkingDirectory(f.stringByDeletingLastPathComponent)
+		let	p	=	t.launchProcessSimplyWithWorkingDirectory((f as NSString).stringByDeletingLastPathComponent)
 		
-		println(t.triple())
-		println(p.state.rawValue)
-		println(p.allThreads[0].allFrames[0]?.lineEntry)
-		println(p.allThreads[0].allFrames[0]?.functionName)
+		print(t.triple())
+		print(p.state.rawValue)
+		print(p.allThreads[0].allFrames[0]?.lineEntry)
+		print(p.allThreads[0].allFrames[0]?.functionName)
 		
 //		let	r	=	p.addListener(l, eventMask: LLDBProcess.BroadcastBit.StateChanged | LLDBProcess.BroadcastBit.Interrupt | LLDBProcess.BroadcastBit.STDOUT)
 //		assert(r == LLDBProcess.BroadcastBit.StateChanged | LLDBProcess.BroadcastBit.Interrupt | LLDBProcess.BroadcastBit.STDOUT)
@@ -72,7 +72,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	
 	@IBAction @objc
-	func performStepOver(AnyObject?) {
+	func performStepOver(_: AnyObject?) {
 //		tv.debugger	=	nil
 //		dbg.allTargets[0].process.allThreads[0].stepOver()
 //		tv.debugger	=	dbg
