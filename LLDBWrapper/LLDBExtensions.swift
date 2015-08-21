@@ -505,6 +505,7 @@ public extension LLDBProcess {
 //}
 
 public extension LLDBListener {
+	/// Returns `nil` for timeout.
 	func waitForEvent(seconds:Int) -> LLDBEvent? {
 		let	s	=	UInt32(seconds)
 		var	e	=	nil as LLDBEvent?
