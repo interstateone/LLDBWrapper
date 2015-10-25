@@ -11,6 +11,7 @@
 #include <atomic>
 #import <LLDB/LLDB.h>
 #import "LLDB_Internals.h"
+#import "LLDBGlobals.h"
 
 using namespace lldb;
 
@@ -21,12 +22,12 @@ using namespace lldb;
 
 
 
-static std::atomic_int		num_live_debugger(0);
+//static std::atomic_int		num_live_debugger(0);
 
 
 
 
-NSString* const	LLDBArchDefault			=	[NSString stringWithUTF8String:LLDB_ARCH_DEFAULT];
+NSString* const	LLDBArchDefault		=	[NSString stringWithUTF8String:LLDB_ARCH_DEFAULT];
 NSString* const	LLDBArchDefault32Bit	=	[NSString stringWithUTF8String:LLDB_ARCH_DEFAULT_32BIT];
 NSString* const	LLDBArchDefault64Bit	=	[NSString stringWithUTF8String:LLDB_ARCH_DEFAULT_64BIT];
 
@@ -93,13 +94,15 @@ NSString* const	LLDBArchDefault64Bit	=	[NSString stringWithUTF8String:LLDB_ARCH_
 LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 - (instancetype)init
 {
+	UNIVERSE_DEBUG_ASSERT_WITH_MESSAGE([LLDBGlobals isLLDBWrapperReady], @"You MUST call `initializeLLDBWrapper() BEFORE using any feature.`");
+
 	self	=	[super init];
 	if (self) {
-		if (num_live_debugger == 0) {
-			SBDebugger::Initialize();
-		}
-		num_live_debugger++;
-		
+//		if (num_live_debugger == 0) {
+//			SBDebugger::Initialize();
+//		}
+//		num_live_debugger++;
+
 		////
 	
 		_raw	=	SBDebugger::Create();
@@ -136,11 +139,11 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 	
 	////
 	
-	num_live_debugger--;
-	if (num_live_debugger == 0) {
-		SBDebugger::Terminate();
-	}
-	UNIVERSE_DEBUG_ASSERT(num_live_debugger >= 0);
+//	num_live_debugger--;
+//	if (num_live_debugger == 0) {
+//		SBDebugger::Terminate();
+//	}
+//	UNIVERSE_DEBUG_ASSERT(num_live_debugger >= 0);
 }
 
 

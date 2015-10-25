@@ -8,6 +8,8 @@
 
 #pragma once
 
+#import "LLDBGlobals.h"
+
 #import "LLDBDebugger.h"
 #import "LLDBTarget.h"
 #import "LLDBBreakpoint.h"
