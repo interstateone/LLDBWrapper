@@ -93,7 +93,10 @@
 @property	(readonly,nonatomic,assign,getter=isStopped)	BOOL	stopped;
 
 @property	(readonly,nonatomic,assign)	uint32_t		numberOfFrames;
-- (LLDBFrame*)frameAtIndex:(uint32_t)index;
+- (LLDBFrame*)	frameAtIndex:(uint32_t)index;
+
+@property	(readonly,nonatomic,assign)	LLDBFrame*		selectedFrame;
+- (LLDBFrame*)	setSelectedFrameByIndex:(uint32_t)frameIndex;
 
 @property	(readonly,nonatomic,strong)	LLDBProcess*	process;
 

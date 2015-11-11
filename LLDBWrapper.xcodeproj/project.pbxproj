@@ -138,7 +138,7 @@
 		45F73AD91A77FC5A00AAEF0C /* LLDBError.h in Headers */ = {isa = PBXBuildFile; fileRef = 4580C75E19BB69BF00BDB38A /* LLDBError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45F73ADA1A77FC5A00AAEF0C /* LLDB_Internals.h in Headers */ = {isa = PBXBuildFile; fileRef = 4580C71E19BB556C00BDB38A /* LLDB_Internals.h */; };
 		45F73ADC1A77FFBD00AAEF0C /* LLDBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F73ADB1A77FFBD00AAEF0C /* LLDBExtensions.swift */; };
-		45FF2EEC1BDCF1A4001577B7 /* LLDBGlobals.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45FF2EEB1BDCF1A4001577B7 /* LLDBGlobals.mm */; settings = {ASSET_TAGS = (); }; };
+		45FF2EEC1BDCF1A4001577B7 /* LLDBGlobals.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45FF2EEB1BDCF1A4001577B7 /* LLDBGlobals.mm */; };
 		45FF2EED1BDCF2F1001577B7 /* LLDBGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = 45FF2EEA1BDCF192001577B7 /* LLDBGlobals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -544,7 +544,9 @@
 				45A0FB78199FBA9C0020D59D /* Frameworks */,
 				45A0FB77199FBA9C0020D59D /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		45A0FB77199FBA9C0020D59D /* Products */ = {
 			isa = PBXGroup;

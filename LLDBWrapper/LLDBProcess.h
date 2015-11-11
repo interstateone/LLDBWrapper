@@ -28,8 +28,8 @@
 - (LLDBThread*)threadAtIndex:(NSUInteger)index;
 //- (LLDBThread*)threadByID:(LLDBThreadIDType)threadID;
 //- (LLDBThread*)threadByIndexID:(uint32_t)indexID;
-//@property	(readonly,nonatomic,copy)	LLDBThread*			selectedThread;
-//- (BOOL)	setSelectedThread:(LLDBThread*)thread;
+@property	(readonly,nonatomic,copy)	LLDBThread*			selectedThread;
+- (BOOL)	setSelectedThread:(LLDBThread*)thread;
 
 @property	(readonly,nonatomic,assign)	LLDBStateType		state;					///<	Use one of @c LLDBState~ constants.
 @property	(readonly,nonatomic,assign)	int					exitStatus;

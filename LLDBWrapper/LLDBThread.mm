@@ -223,6 +223,14 @@ LLDBOBJECT_INIT_IMPL(lldb::SBThread);
 	
 	return	[[LLDBFrame alloc] initWithCPPObject:_raw.GetFrameAtIndex(index)];
 }
+- (LLDBFrame *)selectedFrame
+{
+	return	[[LLDBFrame alloc] initWithCPPObject:_raw.GetSelectedFrame()];
+}
+- (LLDBFrame *)setSelectedFrameByIndex:(uint32_t)frameIndex
+{
+	return	[[LLDBFrame alloc] initWithCPPObject:_raw.SetSelectedFrame(frameIndex)];
+}
 
 - (LLDBProcess *)process
 {
