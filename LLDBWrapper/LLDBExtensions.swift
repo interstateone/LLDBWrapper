@@ -281,8 +281,8 @@ extension LLDBValueList: CollectionType {
 	}
 	public func generate() -> AnyGenerator<LLDBValue> {
 		var	idx	=	0
-		return	anyGenerator { [weak self] in
-			idx++
+		return	AnyGenerator { [weak self] in
+			idx += 1
 			if idx == self!.count {
 				return	nil
 			} else {
@@ -382,8 +382,8 @@ extension LLDBInstructionList: CollectionType {
 	}
 	public func generate() -> AnyGenerator<LLDBInstruction> {
 		var	idx	=	0
-		return	anyGenerator { [weak self] in
-			idx++
+		return	AnyGenerator { [weak self] in
+			idx += 1
 			if idx == self!.count {
 				return	nil
 			} else {
