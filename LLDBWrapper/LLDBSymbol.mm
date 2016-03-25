@@ -102,7 +102,17 @@ LLDBOBJECT_INIT_IMPL(lldb::SBSymbol);
 }
 - (BOOL)isEqual:(id)object
 {
-	return	[self isEqualTo:object];
+    if (self == object)
+    {
+        return	YES;
+    }
+
+    if ([object isKindOfClass:[LLDBSymbol class]])
+    {
+        return	[self isEqualToSymbol:object];
+    }
+    
+    return	NO;
 }
 
 - (NSString *)description

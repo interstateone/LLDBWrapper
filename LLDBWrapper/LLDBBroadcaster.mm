@@ -75,7 +75,11 @@ LLDBOBJECT_INIT_IMPL(lldb::SBBroadcaster)
 }
 - (BOOL)isEqual:(id)object
 {
-	return	[self isEqualTo:object];
+    if ([object isKindOfClass:[LLDBBroadcaster class]])
+    {
+        return	[self isEqualToBroadcaster:object];
+    }
+    return	NO;
 }
 
 - (NSString *)description

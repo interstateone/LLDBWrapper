@@ -128,7 +128,17 @@ LLDBOBJECT_INIT_IMPL(lldb::SBSection);
 }
 - (BOOL)isEqual:(id)object
 {
-	return	[self isEqualTo:object];
+    if (self == object)
+    {
+        return	YES;
+    }
+
+    if ([object isKindOfClass:[LLDBSection class]])
+    {
+        return	[self isEqualToSection:object];
+    }
+    
+    return	NO;
 }
 
 

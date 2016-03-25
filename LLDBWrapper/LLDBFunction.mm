@@ -100,7 +100,17 @@ LLDBOBJECT_INIT_IMPL(lldb::SBFunction);
 }
 - (BOOL)isEqual:(id)object
 {
-	return	[self isEqualTo:object];
+    if (self == object)
+    {
+        return	YES;
+    }
+
+    if ([object isKindOfClass:[LLDBFunction class]])
+    {
+        return	[self isEqualToFunction:object];
+    }
+    
+    return	NO;
 }
 
 - (NSString *)description
