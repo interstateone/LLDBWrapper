@@ -131,6 +131,10 @@ Wrapping Design Choices
 
 
 
+Further Readings
+----------------
+- https://docs.google.com/presentation/d/1dpj5xHQhERl8fb-kX4kl_ntkCCckNmqTQRP9Z7oUmKo/present?slide=id.i198
+
 
 
 
