@@ -4,25 +4,25 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "48B9C1DE76C8BEA5F768021CB65ADA820F587B93" : 0,
+    "48B9C1DE76C8BEA5F768021CB65ADA820F587B93" : 9223372036854775807,
     "4635F48624E6C9FA8E74FC196050F32737C9F216" : 9223372036854775807
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "85E094BB-33F8-4AF1-9C80-B2AA53DB1DB6",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8C070D0A-6EA2-4AAB-B773-59A60E7B8EDB",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "48B9C1DE76C8BEA5F768021CB65ADA820F587B93" : "LLDBWrapper\/",
     "4635F48624E6C9FA8E74FC196050F32737C9F216" : ".."
   },
-  "DVTSourceControlWorkspaceBlueprintNameKey" : "LLDBWrapperOnly",
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LLDBWrapper",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LLDBWrapperOnly.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LLDBWrapper.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Eonil\/Editor",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/eonil\/editor",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4635F48624E6C9FA8E74FC196050F32737C9F216"
     },
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Eonil\/LLDBWrapper.ObjectiveC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/eonil\/LLDBWrapper",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "48B9C1DE76C8BEA5F768021CB65ADA820F587B93"
     }

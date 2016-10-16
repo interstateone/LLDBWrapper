@@ -21,23 +21,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	let	sv	=	NSScrollView()
 	let	tv	=	ExecutionStateTreeViewController()
 	
-	let	dbg	=	LLDBDebugger()
+	lazy var	dbg	=	LLDBDebugger()!
 	let	l	=	LLDBListener(name: "My Listener 1")
 
-	func applicationDidFinishLaunching(aNotification: NSNotification) {
+	func applicationDidFinishLaunching(_ aNotification: Notification) {
+        LLDBGlobals.initializeLLDBWrapper()
 		sv.documentView		=	tv.view
 		window.contentView	=	sv
 		
 		dbg.async	=	false
 		
-		let	f	=	((NSBundle.mainBundle().bundlePath as NSString).stringByDeletingLastPathComponent as NSString).stringByAppendingPathComponent("SampleProgram3")
-		assert(NSFileManager.defaultManager().fileExistsAtPath(f))
-	
-		let	t	=	dbg.createTargetWithFilename(f, andArchname: LLDBArchDefault)
-		let	b	=	t.createBreakpointByName("main")
-		b.enabled	=	true
-		
-		let	p	=	t.launchProcessSimplyWithWorkingDirectory((f as NSString).stringByDeletingLastPathComponent)
+		let	f	=	((Bundle.main.bundlePath as NSString).deletingLastPathComponent as NSString).appendingPathComponent("SampleProgram3")
+		assert(FileManager.default.fileExists(atPath: f))
+
+        let t   =   dbg.createTarget(withFilename: f, andArchname: LLDBArchDefault)!
+
+		let	b	=	t.createBreakpoint(byName: "main")!
+        b.isEnabled =   true
+
+		let	p	=	t.launchProcessSimply(withWorkingDirectory: (f as NSString).deletingLastPathComponent)!
 		
 		print(t.triple())
 		print(p.state.rawValue)
@@ -67,7 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	}
 
-	func applicationWillTerminate(aNotification: NSNotification) {
+	func applicationWillTerminate(_ aNotification: Notification) {
 	}
 
 	
@@ -101,10 +103,11 @@ class ExecutionStateTreeViewController: NSViewController, NSOutlineViewDataSourc
 			self.representedObject	=	v
 		}
 	}
-	
-	override var representedObject:AnyObject? {
+
+
+    override var representedObject: Any? {
 		get {
-			return	super.representedObject
+			return	super.representedObject as AnyObject?
 		}
 		set(v) {
 			precondition(v == nil || v is LLDBDebugger)
@@ -124,39 +127,39 @@ class ExecutionStateTreeViewController: NSViewController, NSOutlineViewDataSourc
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.outlineView.setDataSource(self)
-		self.outlineView.setDelegate(self)
+		self.outlineView.dataSource = self
+		self.outlineView.delegate = self
 		
 		let	tc1	=	NSTableColumn()
 		self.outlineView.addTableColumn(tc1)
 		self.outlineView.outlineTableColumn	=	tc1
 	}
 	
-	func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
+	func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
 		if item == nil {
 			return	debugger == nil ? 0 : 1
 		}
 		let	n	=	item as! NodeBase
 		return	n.subnodes.count
 	}
-	func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
+	func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
 		if item == nil {
 			return	_rootNode!
 		}
 		let	n	=	item as! NodeBase
 		return	n.subnodes[index]
 	}
-	func outlineView(outlineView: NSOutlineView, objectValueForTableColumn tableColumn: NSTableColumn?, byItem item: AnyObject?) -> AnyObject? {
+	func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item: Any?) -> Any? {
 		let	n	=	item as! NodeBase
 		return	n.label
 	}
-	func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
+	func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
 		return	self.outlineView(outlineView, numberOfChildrenOfItem: item) > 0
 	}
 	
 	////
 	
-	private var	_rootNode:DebuggerNode?
+	fileprivate var	_rootNode:DebuggerNode?
 }
 
 

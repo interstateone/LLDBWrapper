@@ -94,7 +94,7 @@ NSString* const	LLDBArchDefault64Bit	=	[NSString stringWithUTF8String:LLDB_ARCH_
 LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 - (instancetype)init
 {
-	UNIVERSE_DEBUG_ASSERT_WITH_MESSAGE([LLDBGlobals isLLDBWrapperReady], @"You MUST call `initializeLLDBWrapper() BEFORE using any feature.`");
+	UNIVERSE_DEBUG_ASSERT_WITH_MESSAGE([LLDBGlobals isLLDBWrapperReady], @"You MUST call `LLDBGlobals.initializeLLDBWrapper() BEFORE using any feature.`");
 
 	self	=	[super init];
 	if (self) {

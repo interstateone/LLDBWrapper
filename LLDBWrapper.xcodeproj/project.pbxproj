@@ -961,6 +961,9 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
+					45A0FB75199FBA9C0020D59D = {
+						LastSwiftMigration = 0800;
+					};
 					45AED2C41A751B35002F83AB = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
@@ -975,6 +978,7 @@
 					};
 					45E5EF201A7E6817009967D2 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -1282,6 +1286,7 @@
 				PRODUCT_NAME = LLDBWrapper;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WARNING_CFLAGS = "-Wno-format-security";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1337,6 +1342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Eonil.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = LLDBWrapper;
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 				WARNING_CFLAGS = "-Wno-format-security";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -1770,6 +1776,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1816,6 +1823,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Eonil.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
