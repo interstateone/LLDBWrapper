@@ -36,7 +36,7 @@ Now see the source code of "TestdriveApp" to see how to use this framework.
 
 Requirements
 ------------
--	Swift 2.0.
+-	Swift 3.0.
 
 
 
