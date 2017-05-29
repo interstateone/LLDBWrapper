@@ -17,36 +17,38 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
-		let	dbg	=	LLDBDebugger()
-		dbg.async	=	false
+		let	dbg = LLDBDebugger()!
+		dbg.async = false
 		print(dbg)
 
-		let	u	=	NSBundle.mainBundle().bundleURL.URLByDeletingLastPathComponent!.URLByAppendingPathComponent("SampleProgram3")
-		assert(NSFileManager.defaultManager().fileExistsAtPath(u.path!))
-		
-		let	t	=	dbg.createTargetWithFilename(u.path!, andArchname: LLDBArchDefault)
-		let	b	=	t.createBreakpointByName("main")
-		let	b1	=	t.createBreakpointByName("printf")
-		b.enabled	=	true
-		b1.enabled	=	true
+		let	u = Bundle.main.bundleURL.deletingLastPathComponent().appendingPathComponent("SampleProgram3")
+		assert(FileManager.default.fileExists(atPath: u.path))
 
-		let	p	=	t.launchProcessSimplyWithWorkingDirectory(u.URLByDeletingLastPathComponent!.path!)
+
+		let	t = dbg.createTarget(withFilename: u.path, andArchname: LLDBArchDefault)!
+		let	b = t.createBreakpoint(byName: "main")!
+		let	b1 = t.createBreakpoint(byName: "printf")!
+		b.isEnabled	=	true
+		b1.isEnabled	=	true
+
+
+		let	p = t.launchProcessSimply(withWorkingDirectory: u.deletingLastPathComponent().path)!
 
 		print(p.state.rawValue)
-		print(p.allThreads[0].allFrames[0]?.lineEntry)
+		print(p.allThreads[0].allFrames[0]!.lineEntry)
 		p.`continue`()
 
 		print(p.state.rawValue)
-		print(p.allThreads[0].allFrames[0]?.lineEntry)
+		print(p.allThreads[0].allFrames[0]!.lineEntry)
 		p.`continue`()
 		
 		print(p.state.rawValue)
-		print(p.allThreads[0].allFrames[0]?.lineEntry)
+		print(p.allThreads[0].allFrames[0]!.lineEntry)
 		p.`continue`()
 		
 		print(p.state.rawValue)
 		print(p.allThreads[0].numberOfFrames)
-		print(p.allThreads[0].allFrames[0]?.lineEntry.line)
+		print(p.allThreads[0].allFrames[0]!.lineEntry.line)
 		p.`continue`()
 		
 		print("done")
