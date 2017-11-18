@@ -546,7 +546,7 @@ public extension LLDBData {
 			var	e		=	nil as LLDBError?
 			d.length	=	Int(self.byteSize)
 			let	sz1		=	self.readRawData(withOffset: LLDBOffsetType(0), buffer: d.mutableBytes, size: self.byteSize, error: &e)
-			precondition(e == nil, "An error `\(e)` occured while reading from this object.")
+			precondition(e == nil, "An error `\(e!)` occured while reading from this object.")
 			precondition(sz1 == d.length)
 			precondition(sz1 == self.byteSize)
 			return	d as Data
@@ -555,7 +555,7 @@ public extension LLDBData {
 			var	e		=	nil as LLDBError?
 			self.setDataWithBuffer((v as NSData).bytes, size: size_t(v.count), endian: self.byteOrder, addressSize: self.addressByteSize, error: &e)
 			
-			precondition(e == nil, "An error `\(e)` occured while writing to this object.")
+			precondition(e == nil, "An error `\(e!)` occured while writing to this object.")
 		}
 	}
 }

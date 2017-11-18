@@ -70,7 +70,7 @@ void	UNIVERSE_DEBUG_ASSERT_WITH_MESSAGE(BOOL cond, NSString* message);
 //void	UNIVERSE_DEBUG_ASSERT_FOR_EACH_ELEMENTS_IN_ARRAY(NSArray* elements, BOOL(^test)(id element));																							///<	Will be deprecated. Use UNIVERSE_DEBUG_RUN_FOR_EACH macro insted of.
 //#define	UNIVERSE_DEBUG_ASSERT_FOR_EACH_ELEMENTS_TYPE_IN_ARRAY(arr,type)	UNIVERSE_DEBUG_ASSERT_FOR_EACH_ELEMENTS_IN_ARRAY((arr), ^(id e){ return [e isKindOfClass:[type class]]; });				///<	Will be deprecated. Use UNIVERSE_DEBUG_RUN_FOR_EACH macro insted of.
 //void	UNIVERSE_DEBUG_RUN_FOR_EACH(id collection, void(^block)(id element));		///<	Runs the block for all each elements in the collection only in debug build.
-void	UNIVERSE_UNREACHABLE_CODE() UNIVERSE_NON_RETURNING_METHOD;
+void	UNIVERSE_UNREACHABLE_CODE(void) UNIVERSE_NON_RETURNING_METHOD;
 #else
 #define	_universe_error_log(message)
 #define	UNIVERSE_DEBUG_ASSERT(cond)
