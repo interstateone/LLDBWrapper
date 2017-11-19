@@ -81,7 +81,7 @@
 		45E5EF4A1A7E6864009967D2 /* LLDBWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; };
 		45E5EF4B1A7E6864009967D2 /* LLDBWrapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0FB76199FBA9C0020D59D /* LLDBWrapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45E5EF4F1A7E6870009967D2 /* LLDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C993221A6E5D3400BA2BC4 /* LLDB.framework */; };
-		45ED48AD1A79012300A16068 /* LLDBBreakpointLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ED48AB1A79012300A16068 /* LLDBBreakpointLocation.h */; };
+		45ED48AD1A79012300A16068 /* LLDBBreakpointLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45ED48AB1A79012300A16068 /* LLDBBreakpointLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45ED48AE1A79012300A16068 /* LLDBBreakpointLocation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45ED48AC1A79012300A16068 /* LLDBBreakpointLocation.mm */; };
 		45F63E741A7898EF00244DBC /* LLDB_Internals_EnumTranslation.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F63E721A7898EF00244DBC /* LLDB_Internals_EnumTranslation.h */; };
 		45F63E751A7898EF00244DBC /* LLDB_Internals_EnumTranslation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45F63E731A7898EF00244DBC /* LLDB_Internals_EnumTranslation.mm */; };

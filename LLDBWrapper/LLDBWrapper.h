@@ -13,6 +13,7 @@
 #import "LLDBDebugger.h"
 #import "LLDBTarget.h"
 #import "LLDBBreakpoint.h"
+#import "LLDBBreakpointLocation.h"
 #import "LLDBWatchpoint.h"
 
 #import "LLDBProcess.h"
