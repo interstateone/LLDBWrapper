@@ -8,6 +8,7 @@
 
 #import "LLDBFrame.h"
 #import	"LLDB_Internals.h"
+#import "LLDBExpressionOptions.h"
 
 @implementation LLDBFrame
 LLDBOBJECT_INIT_IMPL(lldb::SBFrame);
@@ -105,7 +106,9 @@ LLDBOBJECT_INIT_IMPL(lldb::SBFrame);
 	return	[[LLDBValueList alloc] initWithCPPObject:_raw.GetRegisters()];
 }
 
-
+- (LLDBValue *)evaluateExpression:(NSString*)expression options:(LLDBExpressionOptions*)options {
+	return [[LLDBValue alloc] initWithCPPObject:_raw.EvaluateExpression([expression UTF8String], options->_raw)];
+}
 
 
 //- (LLDBValue *)watchValueWithName:(NSString *)name valueType:(LLDBValueType)valueType watchtype:(uint32_t)watchType

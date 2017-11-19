@@ -31,6 +31,7 @@
 #import "LLDBProcess.h"
 #import "LLDBThread.h"
 #import "LLDBFrame.h"
+#import "LLDBExpressionOptions.h"
 #import "LLDBFunction.h"
 #import "LLDBBlock.h"
 #import "LLDBInstructionList.h"
@@ -116,6 +117,14 @@
 	lldb::SBFrame		_raw;
 }
 - (instancetype)initWithCPPObject:(lldb::SBFrame)raw;
+@end
+
+@interface  LLDBExpressionOptions ()
+{
+    @package
+    lldb::SBExpressionOptions _raw;
+}
+- (instancetype)initWithCPPObject:(lldb::SBExpressionOptions)raw;
 @end
 
 @interface	LLDBFunction ()

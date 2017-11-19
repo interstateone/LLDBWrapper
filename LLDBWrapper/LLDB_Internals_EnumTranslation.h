@@ -162,6 +162,15 @@ toCPP(LLDBFormat v) -> lldb::Format {
 	return	(lldb::Format)v;
 }
 
+static inline auto
+fromCPP(lldb::LanguageType v) -> LLDBLanguageType {
+	return (LLDBLanguageType)v;
+}
+static inline auto
+toCPP(LLDBLanguageType v) -> lldb::LanguageType {
+	return (lldb::LanguageType)v;
+}
+
 
 
 

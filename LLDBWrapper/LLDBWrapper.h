@@ -19,6 +19,7 @@
 #import "LLDBProcess.h"
 #import "LLDBThread.h"
 #import "LLDBFrame.h"
+#import "LLDBExpressionOptions.h"
 #import "LLDBValue.h"
 #import "LLDBValueList.h"
 

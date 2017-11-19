@@ -140,6 +140,8 @@
 		45F73ADC1A77FFBD00AAEF0C /* LLDBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F73ADB1A77FFBD00AAEF0C /* LLDBExtensions.swift */; };
 		45FF2EEC1BDCF1A4001577B7 /* LLDBGlobals.mm in Sources */ = {isa = PBXBuildFile; fileRef = 45FF2EEB1BDCF1A4001577B7 /* LLDBGlobals.mm */; };
 		45FF2EED1BDCF2F1001577B7 /* LLDBGlobals.h in Headers */ = {isa = PBXBuildFile; fileRef = 45FF2EEA1BDCF192001577B7 /* LLDBGlobals.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAF37CC91FC1F5A10023DB72 /* LLDBExpressionOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = CAF37CC71FC1F5A10023DB72 /* LLDBExpressionOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CAF37CCA1FC1F5A10023DB72 /* LLDBExpressionOptions.mm in Sources */ = {isa = PBXBuildFile; fileRef = CAF37CC81FC1F5A10023DB72 /* LLDBExpressionOptions.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -383,6 +385,8 @@
 		45F9E1C11A6C82C6003692B8 /* UniverseDoctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniverseDoctor.h; sourceTree = "<group>"; };
 		45FF2EEA1BDCF192001577B7 /* LLDBGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLDBGlobals.h; sourceTree = "<group>"; };
 		45FF2EEB1BDCF1A4001577B7 /* LLDBGlobals.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LLDBGlobals.mm; sourceTree = "<group>"; };
+		CAF37CC71FC1F5A10023DB72 /* LLDBExpressionOptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLDBExpressionOptions.h; sourceTree = "<group>"; };
+		CAF37CC81FC1F5A10023DB72 /* LLDBExpressionOptions.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = LLDBExpressionOptions.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -769,6 +773,8 @@
 				4580C75719BB661100BDB38A /* LLDBValueList.mm */,
 				4580C75A19BB679E00BDB38A /* LLDBValue.h */,
 				4580C75B19BB679E00BDB38A /* LLDBValue.mm */,
+				CAF37CC71FC1F5A10023DB72 /* LLDBExpressionOptions.h */,
+				CAF37CC81FC1F5A10023DB72 /* LLDBExpressionOptions.mm */,
 			);
 			name = "(execution states)";
 			sourceTree = "<group>";
@@ -803,6 +809,7 @@
 				45F73AD41A77FC5A00AAEF0C /* LLDBInstructionList.h in Headers */,
 				4584EECB1A780BC2009A6CCB /* LLDBModuleSpec.h in Headers */,
 				4584EEE51A780C35009A6CCB /* LLDBTypeFormat.h in Headers */,
+				CAF37CC91FC1F5A10023DB72 /* LLDBExpressionOptions.h in Headers */,
 				45F63E781A78A46200244DBC /* LLDB_Internals_ObjectTranslation.h in Headers */,
 				4584EEDD1A780C27009A6CCB /* LLDBTypeCategory.h in Headers */,
 				45F73AD81A77FC5A00AAEF0C /* LLDBValue.h in Headers */,
@@ -1104,6 +1111,7 @@
 				4584EEA41A7809A8009A6CCB /* LLDBAddress.mm in Sources */,
 				45F73ABC1A77FC4700AAEF0C /* UniverseCommon.m in Sources */,
 				4584EEB41A780B7F009A6CCB /* LLDBData.mm in Sources */,
+				CAF37CCA1FC1F5A10023DB72 /* LLDBExpressionOptions.mm in Sources */,
 				45F73AAD1A77FB1D00AAEF0C /* LLDBSourceManager.mm in Sources */,
 				4584EEB81A780B8C009A6CCB /* LLDBDeclaration.m in Sources */,
 				45F73AB71A77FB1D00AAEF0C /* LLDBValueList.mm in Sources */,

@@ -29,6 +29,7 @@
 #include <LLDB/SBDeclaration.h>
 #include <LLDB/SBError.h>
 #include <LLDB/SBEvent.h>
+#include <LLDB/SBExpressionOptions.h>
 #include <LLDB/SBFileSpec.h>
 #include <LLDB/SBFrame.h>
 #include <LLDB/SBFunction.h>

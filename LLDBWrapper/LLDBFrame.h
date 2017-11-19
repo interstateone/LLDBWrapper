@@ -82,7 +82,7 @@
 ///// You can use LLDB_WATCH_TYPE_READ | LLDB_WATCH_TYPE_WRITE for 'rw' watch.
 //- (LLDBValue*)watchLocationWithName:(NSString*)name valueType:(LLDBValueType)valueType watchtype:(uint32_t)watchType size:(size_t)size;
 
-
+- (LLDBValue*)evaluateExpression:(NSString*)expression options:(LLDBExpressionOptions*)options;
 
 
 

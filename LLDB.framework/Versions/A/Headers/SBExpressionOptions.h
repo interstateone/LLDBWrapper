@@ -71,6 +71,15 @@ public:
     void
     SetTrapExceptions (bool trap_exceptions = true);
 
+    void
+    SetLanguage(lldb::LanguageType language);
+
+    void
+    SetAutoApplyFixIts(bool b = true);
+
+    bool
+    GetAutoApplyFixIts();
+
 protected:
 
     SBExpressionOptions (lldb_private::EvaluateExpressionOptions &expression_options);

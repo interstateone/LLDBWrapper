@@ -32,6 +32,7 @@ typedef	int32_t		LLDBWatchIDType;
 @class	LLDBProcess;
 @class	LLDBThread;
 @class	LLDBFrame;
+@class	LLDBExpressionOptions;
 
 
 @class	LLDBSourceManager;
