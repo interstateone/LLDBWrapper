@@ -54,6 +54,8 @@ extern NSString* const		LLDBArchDefault64Bit;
 
 //@property	(readwrite,nonatomic,strong)	LLDBFileHandle*			outputFileHandle;				///<	Sets output file handle without transferring ownership.
 
+- (void)handleCommand:(NSString *)command;
+
 
 @property	(readonly,nonatomic,assign)		uint32_t	numberOfTargets;
 - (LLDBTarget*)targetAtIndex:(uint32_t)index;

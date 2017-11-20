@@ -252,6 +252,10 @@ LLDBOBJECT_INIT_IMPL(lldb::SBDebugger);
 
 
 
+- (void)handleCommand:(NSString *)command {
+	_raw.HandleCommand([command UTF8String]);
+}
+
 - (uint32_t)numberOfTargets
 {
 	UNIVERSE_DEBUG_ASSERT(_raw.IsValid());
