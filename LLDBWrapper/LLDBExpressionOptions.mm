@@ -62,4 +62,16 @@ LLDBOBJECT_INIT_IMPL(lldb::SBExpressionOptions);
     _raw.SetLanguage(toCPP(language));
 }
 
+- (BOOL)stopOthers {
+    return _raw.GetStopOthers();
+}
+
+- (void)setStopOthers:(BOOL)stop {
+    _raw.SetStopOthers(stop);
+}
+
+- (void)setPlaygroundTransformEnabled:(BOOL)enabled {
+    _raw.SetPlaygroundTransformEnabled(enabled);
+}
+
 @end

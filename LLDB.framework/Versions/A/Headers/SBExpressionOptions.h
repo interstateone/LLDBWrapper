@@ -80,6 +80,16 @@ public:
     bool
     GetAutoApplyFixIts();
 
+    bool
+    GetStopOthers() const;
+
+    void
+    SetStopOthers(bool stop_others = true);
+
+    // This is exclusive to the LLDB that ships with Xcode
+    void
+    SetPlaygroundTransformEnabled(bool b);
+
 protected:
 
     SBExpressionOptions (lldb_private::EvaluateExpressionOptions &expression_options);

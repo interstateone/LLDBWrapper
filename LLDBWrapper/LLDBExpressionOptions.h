@@ -16,9 +16,11 @@
 @property(nonatomic, assign) uint32_t timeoutInMicroseconds;
 @property(nonatomic, assign) BOOL trapExceptions;
 @property(nonatomic, assign) BOOL autoApplyFixIts;
+@property(nonatomic, assign) BOOL stopOthers;
 
 - (__nullable instancetype)init;
 
 - (void)setLanguage:(LLDBLanguageType)language;
+- (void)setPlaygroundTransformEnabled:(BOOL)enabled;
 
 @end
