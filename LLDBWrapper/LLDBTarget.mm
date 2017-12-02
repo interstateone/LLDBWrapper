@@ -146,7 +146,9 @@ LLDBOBJECT_INIT_IMPL(lldb::SBTarget);
 	return	[[LLDBBreakpoint alloc] initWithCPPObject:_raw.GetBreakpointAtIndex(index)];
 }
 
-
+- (void)deleteAllBreakpoints {
+    _raw.DeleteAllBreakpoints();
+}
 
 
 

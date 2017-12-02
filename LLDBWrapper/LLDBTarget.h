@@ -38,6 +38,8 @@
 @property	(readonly,nonatomic,assign)	uint32_t			numberOfBreakpoints;
 - (LLDBBreakpoint*)breakpointAtIndex:(uint32_t)index;
 
+- (void)deleteAllBreakpoints;
+
 
 
 
